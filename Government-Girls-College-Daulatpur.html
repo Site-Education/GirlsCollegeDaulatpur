@@ -11,7 +11,7 @@
     <style>
         /* Global Styles */
         body {
-            font-size: 1rem; /* Font size is relative to the root font size */
+            font-size: 1rem;
             line-height: 1.5;
             margin: 0;
             padding: 0;
@@ -20,9 +20,9 @@
 
         /* Custom Navbar Color and Padding */
         .navbar-custom {
-            background-color: blue; /* Blue background */
-            padding-left: 2vw; /* Left padding relative to the viewport width */
-            padding-right: 2vw; /* Right padding relative to the viewport width */
+            background-color: blue;
+            padding-left: 2vw;
+            padding-right: 2vw;
         }
 
         /* Gallery container styling */
@@ -30,17 +30,17 @@
             display: block;
             border: 1px solid gray;
             margin: 1%;
-            box-sizing: border-box; /* Prevents padding from affecting width */
+            box-sizing: border-box;
             text-align: center;
             transition: all 0.3s ease;
-            width: 100%; /* Set relative width based on container size */
+            width: 100%;
         }
 
         /* Image styling */
         .gallery img {
-            width: 100%; /* Ensure image takes up 100% of its container's width */
-            height: 15vw; /* Set height relative to viewport width (this scales with screen size) */
-            object-fit: cover; /* Ensure images cover the container without distortion */
+            width: 100%;
+            height: 15vw;
+            object-fit: cover;
             transition: all 0.3s ease;
         }
 
@@ -64,8 +64,8 @@
         }
 
         .modal img {
-            width: 80%; /* Relative to the modal container */
-            max-width: 50rem; /* Use rem for max-width to keep it scalable */
+            width: 80%;
+            max-width: 50rem;
             height: auto;
         }
 
@@ -74,7 +74,7 @@
             top: 2%;
             right: 2%;
             color: white;
-            font-size: 2rem; /* Relative size */
+            font-size: 2rem;
             cursor: pointer;
         }
 
@@ -83,7 +83,7 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            font-size: 2rem; /* Relative to root font size */
+            font-size: 2rem;
             color: white;
             background-color: rgba(0, 0, 0, 0.5);
             padding: 1em;
@@ -106,13 +106,13 @@
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .gallery {
-                width: 45%; /* Adjust width relative to screen size */
+                width: 45%;
             }
         }
 
         @media (max-width: 480px) {
             .gallery {
-                width: 90%; /* Adjust width relative to screen size */
+                width: 90%;
             }
         }
     </style>
@@ -130,11 +130,11 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link text-white active" aria-current="page" href="index.html">HOME</a></li>
+                        <a class="nav-link text-white active" aria-current="page" href="index.html">HOME</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="ONLINE-TEST.html">ONLINE TEST</a>
                     </li>
-                   
                     <li class="nav-item">
                         <a class="nav-link text-white" href="ABOUT-US.html">ABOUT US</a>
                     </li>
@@ -180,67 +180,8 @@
                     </a>
                 </div>
             </div>
-			 <div class="col-12 col-md-4 col-lg-3 mb-4">
-                <div class="gallery">
-                    <a href="#" onclick="openModal(2)">
-                        <img src="./gallery/hh.jpg" alt="hh" class="img-fluid">
-                        
-                    </a>
-                </div>
-            </div>
-			 <div class="col-12 col-md-4 col-lg-3 mb-4">
-                <div class="gallery">
-                    <a href="#" onclick="openModal(2)">
-                        <img src="./gallery/gg.jpg" alt="gg" class="img-fluid">
-                        
-                    </a>
-                </div>
-            </div>
-			 <div class="col-12 col-md-4 col-lg-3 mb-4">
-                <div class="gallery">
-                    <a href="#" onclick="openModal(2)">
-                        <img src="./gallery/ff.jpg" alt="ff" class="img-fluid">
-                        
-                    </a>
-                </div>
-            </div>
-			 <div class="col-12 col-md-4 col-lg-3 mb-4">
-                <div class="gallery">
-                    <a href="#" onclick="openModal(2)">
-                        <img src="./gallery/ee.jpg" alt="ee" class="img-fluid">
-                        
-                    </a>
-                </div>
-            </div>
-			 <div class="col-12 col-md-4 col-lg-3 mb-4">
-                <div class="gallery">
-                    <a href="#" onclick="openModal(2)">
-                        <img src="./college/gallery/dd.jpg" alt="dd" class="img-fluid">
-                        
-                    </a>
-                </div>
-            </div>
-			 <div class="col-12 col-md-4 col-lg-3 mb-4">
-                <div class="gallery">
-                    <a href="#" onclick="openModal(2)">
-                        <img src="./gallery/cc.jpg" alt="cc" class="img-fluid">
-                        
-                    </a>
-                </div>
-            </div>
- <div class="col-12 col-md-4 col-lg-3 mb-4">
-                <div class="gallery">
-                    <a href="#" onclick="openModal(2)">
-			    
-                        <img src="./gallery/bb.jpg" alt="bb" class="img-fluid">
-                        
-                    </a>
-                </div>
-            </div>
 
-            <!-- Add
-            <!-- Add more images similarly... -->
-
+            <!-- More gallery items... -->
         </div>
     </div>
 
@@ -256,17 +197,16 @@
     <script>
         // Array of image paths
         const images = [
-            'C:./gallery/aa.jpg',
-            'C:./gallery/jj.jpg',
-            'C:./gallery/ii.jpg',
-            'C:./gallery/hh.jpg',
-            'C:./gallery/gg.jpg',
-            'C:./gallery/ff.jpg',
-            'C:./gallery/ee.jpg',
-            'C:./gallery/dd.jpg',
-            'C:./gallery/cc.jpg',
-            'C:./gallery/bb.jpg',
-            'C:./gallery/aa.jpg'
+            './gallery/aa.jpg',
+            './gallery/jj.jpg',
+            './gallery/ii.jpg',
+            './gallery/hh.jpg',
+            './gallery/gg.jpg',
+            './gallery/ff.jpg',
+            './gallery/ee.jpg',
+            './gallery/dd.jpg',
+            './gallery/cc.jpg',
+            './gallery/bb.jpg'
         ];
 
         let currentImageIndex = -1;
