@@ -23,29 +23,50 @@
             padding-left: 2vw; /* Relative padding based on viewport width */
             padding-right: 2vw; /* Relative padding based on viewport width */
         }
-        
-		   /* Main Content */
-        .content {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-        }
+/* Full-screen container for the background image */
+    .hero {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
 
-        .content .text-section {
-            width: 100%;
-            max-width: 600px;
-            text-align: center;
-            font-size: 1.25rem;
-        }
+    /* The hero image which transitions */
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 1s ease-in-out;
+    }
 
-        .content img {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            border-radius: 10px;
-        }
+
+    /* Keyframe for image transitions */
+    @keyframes imageTransition {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    /* Apply animation to the images */
+    .hero img:nth-child(1) {
+      animation: imageTransition 3s infinite;
+    }
+
+    .hero img:nth-child(2) {
+      animation: imageTransition 3s 4s infinite;
+    }
+
+    .hero img:nth-child(3) {
+      animation: imageTransition 3s 8s infinite;
+    }
+	        
+
+
 		.second-image {
             width: 40%; /* 90% of the container width */
             max-width: 100%; /* Ensures it doesn't stretch beyond its container */
@@ -64,6 +85,7 @@
             margin-top: 0.5rem;
             color: #333;
         }
+	
 
         /* Responsive adjustments */
         @media (max-width: 767px) {
@@ -88,10 +110,19 @@
         footer {
             background-color: #1d4ed8;
         }
-		
-	</style>	
-</head>
-<body>
+	
+
+      /* Footer Styling */
+        footer {
+            background-color: crimson;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+  </head>
+  <body>
     <!-- Bootstrap Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light navbar-custom p-4">
         <div class="container-fluid">
@@ -116,53 +147,49 @@
             </div>
         </div>
     </nav>
-
-    <div class="container mt-5">
-        <!-- Buttons with Dropdowns in a Row -->
-        <div class="row">
-            <div class="col-12 col-md-4 mb-3">
-                <div class="btn-group w-100">
-                  
-                    <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span class="visually">UNIVERSITIES</span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="https://www.sbbusba.edu.pk/" target="_self">Shaheed Benazir Bhutto University</a></li>
-                        <li><a class="dropdown-item" href="https://www.usindh.edu.pk/" target="_self">University of Sindh JAMSHORO</a></li>
-                    </ul>
-                </div>
+<div class="container mt-2">
+    <!-- Buttons with Dropdowns in a Row -->
+    <div class="row">
+        <div class="col-12 col-md-4 mb-3">
+            <div class="btn-group w-100">
+                <!-- Red Button (btn-danger) for UNIVERSITIES -->
+                <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="visually">UNIVERSITIES</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://www.sbbusba.edu.pk/" target="_self">Shaheed Benazir Bhutto University</a></li>
+                    <li><a class="dropdown-item" href="https://www.usindh.edu.pk/" target="_self">University of Sindh JAMSHORO</a></li>
+                </ul>
             </div>
-           <div class="col-12 col-md-4 mb-3">
-                <div class="btn-group w-100">
-                    
-                    <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span class="visually">ABOUT</span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="Government-Girls-College-Daulatpur.html" target="_self">GGC,Daulatpur</a></li>
-                        <li><a class="dropdown-item" href="COLLEGE.html" target="_self">College</a></li>
-                    </ul>
-                </div>
+        </div>
+        <div class="col-12 col-md-4 mb-3">
+            <div class="btn-group w-100">
+                <!-- Red Button (btn-danger) for ABOUT -->
+                <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="visually">ABOUT</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="Government-Girls-College-Daulatpur.html" target="_self">GGC, Daulatpur</a></li>
+                    <li><a class="dropdown-item" href="COLLEGE.html" target="_self">College</a></li>
+                </ul>
             </div>
+        </div>
 
-	<p style="text-align: center; color: white; padding-left: 2em; padding-right: 2em;">Education is a daily journey, where both your commitment and your teachers' hard work shape your future. Embrace every class, stay focused, and together we’ll unlock your full potential.</p>
-  </div>
+        <p style="text-align: center; color: white; padding-left: 2em; padding-right: 2em;">Education is a daily journey, where both your commitment and your teachers' hard work shape your future. Embrace every class, stay focused, and together we’ll unlock your full potential.</p>
+    </div>
 </div>
-   <!-- Main Content Section -->
-    <div class="container mt-5 d-flex flex-wrap justify-content-between">
-        <!-- Left-side image -->
-        <div class="col-12 col-md-6">
-            <img src="./gallery/aa.jpg" alt="Image related to chemistry learning" class="img-fluid">
-        </div>
 
-        <!-- Right-side text -->
-        <div class="col-12 col-md-6 text-center">
-            <p class="text-blue-900 fs-2">WELCOME TO GOVERNMENT GIRLS COLLEGE DAULATPUR</p><br>
-            <p>Wait</p><br>
-            <p class="text-danger fs-2"> New update is coming</p><br>
-            <p class="text-danger fs-2">..</p><br>
 
-        </div>
+
+ <div class="hero">
+  
+    <img src="C:/Users/hp/Desktop/college/gallery/aa.jpg" alt="Hero Image 1" class="section-img img-fluid rounded" />
+   <img src="C:/Users/hp/Desktop/college/gallery/aa.jpg" alt="Hero Image 2" class="section-img img-fluid rounded" />
+   <img src="C:/Users/hp/Desktop/college/gallery/aa.jpg" alt="Hero Image 3" class="section-img img-fluid rounded" />
+           </div>
+	
+  
+      </div>
     </div>
 	<p style="text-align: center; color: black; font-size: 1.3rem; font-family: Arial, sans-serif; padding-left: 1em; padding-right: 2em;">Note: Students must follow college rules and wear the official uniform neatly and respectfully, reflecting the values of our institution!.</p>
 	<div class="container mt-5 d-flex flex-wrap justify-content-between">
@@ -181,7 +208,7 @@
  <!-- Footer -->
         </div>
     </div>
-
+  
     <footer class="bg-blue-600 text-white text-center py-4">
         <p>&copy; 2025 Government Girls College Daulatpur All rights reserved.</p>
     </footer>
