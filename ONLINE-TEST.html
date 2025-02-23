@@ -1,14 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Government Girls College</title>
+    <title>ZahidSiyal</title>
     
-    <!-- Bootstrap 5 CDN -->
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    
+    <!-- Include MathJax for proper fraction display -->
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
     <style>
       
              body {
@@ -26,7 +29,7 @@
 
 
 		.container {
-    width: 85%; /* The width of the container */
+    width: 60%; /* The width of the container */
     margin: 0 auto; /* Centers the container horizontally */
     background-color: #fae8e4;
     padding: 0.4em;
@@ -168,1804 +171,197 @@
             margin-top: 50px;
             color: #2c3e50;
         }
-		.prof-list {
-		 margin-top: 20px;
-      padding-left: 12px;
-      padding-right: 12px;
-    }
-
     </style>
-</head>
+  </head>
+
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-     
-				  <a class="navbar-brand text-white" href="index.html">HOME</a>
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+         
+                        <a class="nav-link text-white active" aria-current="page" href="../index.html" aria-label="Go to Home Page">HOME</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                    
+                        <a class="nav-link text-white" href="./onlineTest.html" aria-label="Online Test">ONLINE TEST</a>
+                    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                        <a class="nav-link text-white" href="./TEST-PDF.html" aria-label="Download Test PDFs">TEST PDF</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                    
+                        <a class="nav-link text-white" href="./CONTACT.html" aria-label="Contact Us">CONTACT</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                    
+                        <a class="nav-link text-white" href="./ABOUT.html" aria-label="About Us">ABOUT</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+	     <a class="navbar-brand text-white" href="./ChemistryWithMe.html">ChemistryWithMe</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-				</button>
-				  <a class="navbar-brand text-white" href="ONLINE-TEST.html">ONLINE TEST</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-				</button>
-				
-				  <a class="navbar-brand text-white" href="ABOUT-US.html">ABOUT US</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-				</button>
-				  <a class="navbar-brand text-white" href="CONTACT-US.html">CONTACT US</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-				</button>
-				  <a class="navbar-brand text-white" href="Government-Girls-College-Daulatpur.html">GGCD</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-        </button>
-</nav>
+            </button>
+    </nav>
 
- 
-
-<div class="container">
-    <h2 style="color : Blue ;">All the Best!</h2>
-    <div id="subject-selection" class="section">
-	<h3 style="color : red;">WELCOME TO MCQs Quiz Test Preparation SECTION</h3>
+    <div class="container">
+      <h2 style="color: Blue">*WISH YOU BEST OF LUCK*</h2>
+      <div id="subject-selection" class="section">
         <h1>Select a Subject</h1>
-        <button class="btn start-btn" onclick="selectChapter(1)">11:Biology</button>
-        <button class="btn start-btn" onclick="selectChapter(2)">11:Physics</button>
-        <button class="btn start-btn" onclick="selectChapter(3)">11:Chemistry</button>
-        <button class="btn start-btn" onclick="selectChapter(4)">11:Mathematics</button>
-        <button class="btn start-btn" onclick="selectChapter(5)">English(Grammar)</button>
-        <button class="btn start-btn" onclick="selectChapter(6)">12:Biology</button>
-        <button class="btn start-btn" onclick="selectChapter(7)">12:Physics</button>
-        <button class="btn start-btn" onclick="selectChapter(8)">12:Chemistry</button>
-        <button class="btn start-btn" onclick="selectChapter(9)">12:Mathematics</button>
-		 <div class="bottom-heading">
-	 <h2 style="text-align: center; color: red; font-size: 18px">The teachers who provided MCQs for every subject</h2>
-     
-		  <p class="prof-list">
-		  Sir: Khalid Hussain Buriro &nbsp;&nbsp; (Zoology)<br><br>
-    Sir: Athar Siyal &nbsp;&nbsp;(physics :: The MCQs will be provided to you as soon as possible)<br><br>
-    Sir: Zahid Hussain Siyal &nbsp;&nbsp; (chemistry)<br><br>
-	Sir: Fida Hussain &nbsp;&nbsp; (Mathematics :: The MCQs will be provided to you as soon as possible)<br><br>
-	
-	</br>
-  </p>
-    </div>
-	</div>
-	  
+        <button class="btn start-btn" onclick="selectChapter(1)">
+          9th:Chemistry
+        </button>
+        <button class="btn start-btn" onclick="selectChapter(2)">
+          10th:Chemistry
+        </button>
+        
+		<h2 style="text-align: center; color: blue; font-size: 18px">Dear students: More MCQs will be provided to you as soon as possible</h2>
+      </div>
 
-
-    <div id="chapter-selection" class="section">
+      <div id="chapter-selection" class="section">
         <h1>Select a Chapter</h1>
         <div id="chapter-buttons"></div>
-        <button class="btn back-btn" onclick="goBackToSubject()">Back to Subject</button>
-    </div>
+        <button class="btn back-btn" onclick="goBackToSubject()">
+          Back to Subject
+        </button>
+      </div>
 
-    <div id="question-number-selection" class="section">
+      <div id="question-number-selection" class="section">
         <h1>Total Questions</h1>
-        <button class="btn start-btn" onclick="startQuiz(25)">25 Questions</button>
-    </div>
+        <button class="btn start-btn" onclick="startQuiz(25)">
+          25 Questions
+        </button>
+      </div>
 
-    <div id="quiz-container" class="section">
+      <div id="quiz-container" class="section">
         <h2 id="quiz-title"></h2>
-		<h3 id="chapter-title"></h3> 
-        <div class="timer">Time Remaining: <span id="timer">300</span> seconds</div>
-        <div class="question-number">Question <span id="current-question-number">1</span> of <span id="total-questions"></span></div>
+        <h3 id="chapter-title"></h3>
+        <!-- Chapter Title -->
+        <div class="timer">
+          Time Remaining: <span id="timer">300</span> seconds
+        </div>
+        <div class="question-number">
+          Question <span id="current-question-number">1</span> of
+          <span id="total-questions"></span>
+        </div>
         <div class="question" id="question-container"></div>
         <div class="options" id="options-container"></div>
-        <button class="btn" id="explanation-btn" onclick="toggleExplanation()">Show Explanation</button>
-        <div id="detailed-explanation" class="detailed-explanation" style="display:none;"></div>
+        <button class="btn" id="explanation-btn" onclick="toggleExplanation()">
+          Show Explanation
+        </button>
+        <div
+          id="detailed-explanation"
+          class="detailed-explanation"
+          style="display: none"
+        ></div>
 
         <div class="question-navigation">
-            <button class="btn prev-btn" id="prev-btn" onclick="goToPreviousQuestion()" disabled>Previous Question</button>
-            <button class="btn next-btn" id="next-btn" onclick="goToNextQuestion()" disabled>Next Question</button>
+          <button
+            class="btn prev-btn"
+            id="prev-btn"
+            onclick="goToPreviousQuestion()"
+            disabled
+          >
+            Previous Question
+          </button>
+          <button
+            class="btn next-btn"
+            id="next-btn"
+            onclick="goToNextQuestion()"
+            disabled
+          >
+            Next Question
+          </button>
         </div>
 
-        <button class="btn close-btn" onclick="closeQuestion()">Close Question</button>
-        <button class="btn back-btn" onclick="goBackToSubject()">Back to Subject</button>
-    </div>
+        <button class="btn close-btn" onclick="closeQuestion()">
+          Close Question
+        </button>
+        <button class="btn back-btn" onclick="goBackToSubject()">
+          Back to Subject
+        </button>
+      </div>
 
-    <div id="score-container" class="section">
+      <div id="score-container" class="section">
         <h2>Your Score: <span id="score"></span></h2>
-        <button class="btn back-btn" onclick="goBackToSubject()">Back to Select a Subject</button>
+        <button class="btn back-btn" onclick="goBackToSubject()">
+          Back to Select a Subject
+        </button>
+      </div>
     </div>
-</div>
-<script>
-    let currentSubject = null;
-    let currentChapter = 0;
-    let currentQuestionIndex = 0;
-    let score = 0;
-    let timer = 60;
-    let totalQuestions = 0;
-    let timerInterval = null;
+    <script>
+      let currentSubject = null;
+      let currentChapter = 0;
+      let currentQuestionIndex = 0;
+      let score = 0;
+      let timer = 300;
+      let totalQuestions = 0;
+      let timerInterval = null;
 
-    let quizData = {
+      let quizData = {
         1: {
-            title: "11:BIOLOGY - Test Preparation",
-            chapters: [
+          title: "9:Chemistry -Test Preparation",
+          chapters: [
+            {
+              title: "1...",
+              questions: [
+			  {
+  question: "Which of the following represents a fraction?",
+  options: [
+    "A. <span>\\( \\frac{n}{d} \\)</span>",  // Inline fraction
+    "B. <span>\\( \\dfrac{n}{d} \\)</span>",  // Display-style fraction
+    "C. <span>\\( \\tfrac{n}{d} \\)</span>",  // Tiny fraction
+    "D. None of the above"
+  ],
+  correct: "B",
+  explanation: "Option B uses the \\( \\dfrac \\) command, which renders the fraction in display-style math for a more prominent fraction."
+},
+
                 {
-                    title: "Entomology (Insect Study)",
-                    questions: [
-                          {
-    question: "What is the study of insects called?",
-    options: ["A) Entomology", "B) Arachnology", "C) Herpetology", "D) Ornithology"],
-    correct: "A) Entomology",
-    explanation: "Entomology is the scientific study of insects."
-  },
-  {
-    question: "Which of the following is an example of a beneficial insect?",
-    options: ["A) Mosquito", "B) Cockroach", "C) Honey bee", "D) Housefly"],
-    correct: "C) Honey bee",
-    explanation: "Honey bees are essential for pollination and contribute to ecosystem health."
-  },
+  question: "What is the equation for a fraction?",
+  options: [
+    "A. <span>\\( z = \\frac{\\sum_{i=1}^N{x_i}}{\\sum_{i=1}^N{y_i}} \\)</span>",
+    "B. <span>\\( z = \\dfrac{\\sum_{i=1}^N{x_i}}{\\sum_{i=1}^N{y_i}} \\)</span>",
+    "C. <span>\\( z = \\tfrac{\\sum_{i=1}^N{x_i}}{\\sum_{i=1}^N{y_i}} \\)</span>",
+    "D. <span>\\( \\int_{0}^{1} x^2 \, dx \\)</span>"
+  ],
+  correct: "B",
+  explanation: "Option B uses the \\( \\dfrac \\) command, which is a larger fraction suitable for display-style math."
+},
 
-  // Herpetology (Reptile and Amphibian Study)
-  {
-    question: "What is the study of reptiles and amphibians called?",
-    options: ["A) Herpetology", "B) Ichthyology", "C) Mammalogy", "D) Ornithology"],
-    correct: "A) Herpetology",
-    explanation: "Herpetology is the study of amphibians and reptiles."
-  },
-  {
-    question: "Which of the following is an example of a reptile?",
-    options: ["A) Frog", "B) Snake", "C) Turtle", "D) All of the above except A"],
-    correct: "D) All of the above except A",
-    explanation: "Reptiles include snakes and turtles, but frogs are amphibians."
-  },
-
-  // Ichthyology (Fish Study)
-  {
-    question: "What is the study of fish called?",
-    options: ["A) Ichthyology", "B) Herpetology", "C) Mammalogy", "D) Ornithology"],
-    correct: "A) Ichthyology",
-    explanation: "Ichthyology is the branch of zoology that focuses on the study of fish."
-  },
-  {
-    question: "Which of the following is an example of a bony fish?",
-    options: ["A) Shark", "B) Ray", "C) Salmon", "D) Swordfish"],
-    correct: "C) Salmon",
-    explanation: "Salmon are bony fish, while sharks and rays are cartilaginous."
-  },
-
-  // Mammalogy (Mammal Study)
-  {
-    question: "What is the study of mammals called?",
-    options: ["A) Mammalogy", "B) Ornithology", "C) Entomology", "D) Herpetology"],
-    correct: "A) Mammalogy",
-    explanation: "Mammalogy is the study of mammals, a class of animals characterized by hair and milk production."
-  },
-  {
-    question: "Which of the following is an example of a mammal?",
-    options: ["A) Lizard", "B) Fish", "C) Elephant", "D) Frog"],
-    correct: "C) Elephant",
-    explanation: "Elephants are mammals, which have characteristics like warm-bloodedness and live births."
-  }
-
-                    ]
+				
+				       {
+    question: "What is the equation for a fraction?",
+    options: [
+        "A. \[ z = \frac{\sum_{i=1}^N{x_i}}{\sum_{i=1}^N{y_i}} \]",
+        "B. \( z = \dfrac{\sum_{i=1}^N{x_i}}{\sum_{i=1}^N{y_i}} \)",
+        "C. \( z = \tfrac{\sum_{i=1}^N{x_i}}{\sum_{i=1}^N{y_i}} \)",
+        "D. \[\int_{0}^{1} x^2 \, dx\]"
+    ],
+    correct: "B",
+    explanation: "Option B uses the \\( \\dfrac \\) command, which is a larger fraction suitable for display-style math."
+},
+				{
+                  question: "Antiprotozoal drug is also known as ________?",
+                  options: [
+                    "Anti-allergic",
+                    "Antibiotic",
+                    "Antimalarial",
+                    "Antivirus",
+                  ],
+                  correct: "Antimalarial",
+                  explanation:
+                    "Antiprotozoal drugs are used to treat infections caused by protozoa, such as malaria.",
                 },
-				{ title: "1.Mock Test",
-				questions: [ 
-				{
-    question: "Which one of following is true about chloroplast?",
-    options: ["A) It is underground part", "B) It helps in pollination", "C) Self replicating organelle", "D) Involve in Lipid synthesis"],
-    correct: "C) Self replicating organelle",
-    explanation: "Chloroplasts are self-replicating organelles that contain the pigment chlorophyll for photosynthesis."
-  },
-  {
-    question: "One of the following is not a double membranous structure",
-    options: ["A) Mitochondrion", "B) Vacuole", "C) Chloroplast", "D) Nucleus"],
-    correct: "B) Vacuole",
-    explanation: "Vacuoles do not have a double membrane, unlike mitochondria, chloroplasts, and the nucleus."
-  },
-  {
-    question: "Tay Sach’s disease is because of",
-    options: ["A) Accumulation of proteins", "B) Accumulation of glycogen", "C) Accumulation of lipids", "D) Accumulation of vitamins"],
-    correct: "C) Accumulation of lipids",
-    explanation: "Tay Sach's disease is caused by the accumulation of lipids due to the absence of a specific enzyme."
-  },
-  {
-    question: "Modification of proteins and lipids as glycopeptides and lipoproteins occur in",
-    options: ["A) Ribosomes", "B) Golgi apparatus", "C) SER", "D) All A, B and C"],
-    correct: "B) Golgi apparatus",
-    explanation: "The Golgi apparatus is responsible for modifying proteins and lipids, including glycosylation."
-  },
-  {
-    question: "Ribosomes are chemically composed of",
-    options: ["A) Protein", "B) Only DNA", "C) RNA", "D) Both A + C"],
-    correct: "D) Both A + C",
-    explanation: "Ribosomes are composed of both proteins and ribosomal RNA (rRNA)."
-  },
-  {
-    question: "Detoxification of harmful drugs is the function",
-    options: ["A) RER", "B) SER", "C) Both A and B", "D) None of the above"],
-    correct: "B) SER",
-    explanation: "The smooth endoplasmic reticulum (SER) is involved in detoxifying harmful substances."
-  },
-  {
-    question: "Which type of cell would probably be most appropriate to study chloroplasts?",
-    options: ["A) Conducting cell", "B) Photosynthetic cell", "C) Pericycle cell", "D) All options are correct"],
-    correct: "B) Photosynthetic cell",
-    explanation: "Chloroplasts are found in photosynthetic cells, where they facilitate photosynthesis."
-  },
-  {
-    question: "Cell wall consist of",
-    options: ["A) One main layer", "B) Two main layers", "C) Three main layers", "D) Four main layers"],
-    correct: "C) Three main layers",
-    explanation: "The plant cell wall typically has three layers: the primary, secondary, and middle lamella."
-  },
-  {
-    question: "Leucoplast are found",
-    options: ["A) Petals", "B) Ripened fruits", "C) Underground parts", "D) Leaves"],
-    correct: "C) Underground parts",
-    explanation: "Leucoplasts are found in non-photosynthetic tissues like underground parts, storing starch."
-  },
-  {
-    question: "The intake of solid food by infolding of cell membrane is called",
-    options: ["A) Exocytosis", "B) Pinocytosis", "C) Phagocytosis", "D) Both B and C"],
-    correct: "C) Phagocytosis",
-    explanation: "Phagocytosis is the process where a cell engulfs large particles or food by infolding the cell membrane."
-  },
-  {
-    question: "The structure within a cell that distinguishes the cell as being eukaryotic, and prokaryotic is",
-    options: ["A) Ribosomes", "B) Cell membrane", "C) Cell wall", "D) Nucleus"],
-    correct: "D) Nucleus",
-    explanation: "The nucleus is the defining feature of eukaryotic cells, while prokaryotic cells lack a nucleus."
-  },
-  {
-    question: "Microtubules consist of helically stacked molecules of the protein",
-    options: ["A) Actin", "B) Myosin", "C) Keratin", "D) Tubulin"],
-    correct: "D) Tubulin",
-    explanation: "Microtubules are made up of tubulin, a protein that helps in cell shape, transport, and division."
-  },
-  {
-    question: "The microfilaments composed of",
-    options: ["A) Actin protein", "B) Gelatin protein", "C) Keratin protein", "D) Tubulin protein"],
-    correct: "A) Actin protein",
-    explanation: "Microfilaments are composed of actin protein, which provides structural support to the cell."
-  },
-  {
-    question: "Lysosomes have",
-    options: ["A) Single-layered membrane", "B) Double-layered membrane", "C) Three-layered membrane", "D) No membrane"],
-    correct: "A) Single-layered membrane",
-    explanation: "Lysosomes are membrane-bound organelles with a single-layered membrane that contains digestive enzymes."
-  },
-  {
-    question: "Which of the following are regularly assembled and disassembled during the cell cycle?",
-    options: ["A) Microtubules", "B) Intermediate filaments", "C) Both A and B", "D) None of these"],
-    correct: "A) Microtubules",
-    explanation: "Microtubules are constantly assembled and disassembled during the cell cycle, particularly during mitosis."
-  },
-  {
-    question: "Plant cell wall",
-    options: ["A) Provide rigidity to the cell", "B) Maintains cell shape", "C) Prevents expansion of cell", "D) All A, B and C"],
-    correct: "D) All A, B and C",
-    explanation: "The plant cell wall provides rigidity, maintains cell shape, and prevents excessive cell expansion."
-  },
-  {
-    question: "In which organelle the following reaction takes place: 6 CO2 + 6 H2O + energy (from sunlight) ---------> C6H12O6 + 6 O2",
-    options: ["A) Mitochondrion", "B) Peroxisome", "C) Chloroplast", "D) Glyoxysome"],
-    correct: "C) Chloroplast",
-    explanation: "This is the process of photosynthesis, which takes place in the chloroplasts of plant cells."
-  },
-  {
-    question: "SER is abundant in cells that are involved in",
-    options: ["A) Lipid metabolism", "B) Protein metabolism", "C) Glucose metabolism", "D) Calcium metabolism"],
-    correct: "A) Lipid metabolism",
-    explanation: "The smooth endoplasmic reticulum (SER) is involved in lipid metabolism and detoxification."
-  },
-  {
-    question: "The transport vesicles from the Endoplasmic Reticulum (ER) fuse with the ________________ of the Golgi apparatus.",
-    options: ["A) Cis face", "B) Trans face", "C) Coated face", "D) Both A and B"],
-    correct: "A) Cis face",
-    explanation: "Transport vesicles from the ER fuse with the cis face of the Golgi apparatus."
-  },
-  {
-    question: "The door to your house is like the __________________ of a cell membrane?",
-    options: ["A) Phospholipid bilayer", "B) Integral protein", "C) Recognition protein", "D) Peripheral protein"],
-    correct: "B) Integral protein",
-    explanation: "The integral protein acts as a gate or channel in the cell membrane."
-  },
-  {
-    question: "A semi permeable membrane is stretched across a chamber filled with water. The membrane is only permeable to water. 60 mg of salt is added to the left side of the chamber. Which of the following will happen?",
-    options: ["A) Water will move toward the right side", "B) Salt will move toward the right side", "C) Water will move toward the left side", "D) Salt will move toward the left side"],
-    correct: "C) Water will move toward the left side",
-    explanation: "Water will move toward the higher salt concentration due to osmosis."
-  },
-  {
-    question: "Dye injected into a plant cell might be able to enter an adjacent cell through a",
-    options: ["A) Tight junction", "B) Microtubule", "C) Desmosome", "D) Plasmodesma"],
-    correct: "D) Plasmodesma",
-    explanation: "Plasmodesmata are channels between plant cells that allow for the movement of molecules."
-  },
-  {
-    question: "What are the two faces of the Golgi body?",
-    options: ["A) Funny face and goofy face", "B) Coated face and non-coated face", "C) Saving face and losing face", "D) Cis face and Trans face"],
-    correct: "D) Cis face and Trans face",
-    explanation: "The Golgi apparatus has two faces: the cis face (receiving side) and the trans face (shipping side)."
-  },
-  {
-    question: "Adjacent plant cells are 'cemented' together by",
-    options: ["A) Their primary walls", "B) Their secondary walls", "C) A middle lamella", "D) Plasmodesmata"],
-    correct: "C) A middle lamella",
-    explanation: "The middle lamella is the layer that 'cements' adjacent plant cells together."
-  },
-  {
-    question: "What is a microscope's ability to distinguish between separate objects that are close together?",
-    options: ["A) Magnification", "B) Contrast", "C) Resolving power", "D) Scanning power"],
-    correct: "C) Resolving power",
-    explanation: "Resolving power refers to the ability of a microscope to distinguish two objects that are close together."
-  }
-				]
-				},
-				{ title: "2.Mock Test",
-				questions: [
-				 {
-    question: "What is the power of the objective lens of a microscope if an eyepiece of power 10x is used and the total magnification of the object is 40x?",
-    options: ["A) 4", "B) 10", "C) 40", "D) 400"],
-    correct: "A) 4",
-    explanation: "The power of the objective lens is calculated by dividing the total magnification by the eyepiece magnification (40x/10x = 4x)."
-  },
-  {
-    question: "Within chloroplasts, light is captured by",
-    options: ["A) Grana within cisternae", "B) Thylakoids within grana", "C) Cisternae within grana", "D) Grana within thylakoids"],
-    correct: "B) Thylakoids within grana",
-    explanation: "Thylakoids within grana contain chlorophyll, which captures light for photosynthesis."
-  },
-  {
-    question: "If a gene mutation prevents formation of an enzyme normally used by a lysosome, a disease may result known as",
-    options: ["A) Lysosomal abstracted disease", "B) Lysosomal secretory disease", "C) Lysosomal storage disease", "D) All A, B and C"],
-    correct: "C) Lysosomal storage disease",
-    explanation: "Lysosomal storage diseases are caused by enzyme deficiencies that lead to the accumulation of substances in lysosomes."
-  },
-  {
-    question: "Sodium ions are 'pumped' from a region of lower concentration to a region of higher concentration in the nerve cells of humans. This process is an example of",
-    options: ["A) Diffusion", "B) Passive transport", "C) Osmosis", "D) Active transport"],
-    correct: "D) Active transport",
-    explanation: "Active transport requires energy to move ions against their concentration gradient."
-  },
-  {
-    question: "The diagram below shows the structure of chloroplast. The structure labeled as X is",
-    options: ["A) Granum", "B) Stroma", "C) Frets", "D) Lamella"],
-    correct: "A) Granum",
-    explanation: "The granum is a stack of thylakoid membranes where photosynthesis occurs."
-  },
-  {
-    question: "Which of the following correctly matches an organelle with its function?",
-    options: ["A) Mitochondrion . . . photosynthesis", "B) Nucleus . . . cellular respiration", "C) Ribosome . . . manufacture of lipids", "D) Central vacuole . . . storage"],
-    correct: "D) Central vacuole . . . storage",
-    explanation: "The central vacuole in plant cells stores water, nutrients, and waste products."
-  },
-  {
-    question: "By which of the following can movement of materials across animal cell membranes be accomplished?",
-    options: ["I Active transport, II Diffusion, III Pinocytosis", "A) I only", "B) II only", "C) I and II only", "D) All I, II, and III"],
-    correct: "D) All I, II, and III",
-    explanation: "All three processes (active transport, diffusion, and pinocytosis) are involved in material movement across the membrane."
-  },
-  {
-    question: "Hydrogen peroxide degradation in a cell is a function of",
-    options: ["A) Ribosomes", "B) Mitochondria", "C) Peroxisomes", "D) Glyoxisomes"],
-   correct: "C) Peroxisomes",
-    explanation: "Peroxisomes contain enzymes that break down hydrogen peroxide into water and oxygen."
-  },
-  {
-    question: "Cells are commonly studied in the lab. If you were examining various unlabelled slides of cells under the microscope, you could tell if the cell was from a plant by the presence of",
-    options: ["A) A nucleus", "B) A cell membrane", "C) Cytoplasm", "D) A cell wall"],
-    correct: "D) A cell wall",
-    explanation: "The presence of a cell wall is characteristic of plant cells."
-  },
-  {
-    question: "Ribosomes are constructed in the",
-    options: ["A) Endoplasmic reticulum", "B) Nucleoid", "C) Nucleolus", "D) Nuclear pore"],
-    correct: "C) Nucleolus",
-    explanation: "Ribosomes are synthesized in the nucleolus and then transported to the cytoplasm."
-  },
-  {
-    question: "Each chloroplast encloses a system of flattened, membranous sacs called",
-    options: ["A) Cristae", "B) Thylakoids", "C) Plastids", "D) Cisternae"],
-    correct: "B) Thylakoids",
-    explanation: "Thylakoids are the membrane-bound sacs inside chloroplasts where the light-dependent reactions of photosynthesis occur."
-  },
-  {
-    question: "Which one of the following is an exception to cell theory?",
-    options: ["A) Bacteria", "B) Viruses", "C) Protists", "D) Protozoans"],
-    correct: "B) Viruses",
-    explanation: "Viruses are not considered living organisms and do not follow cell theory as they lack a cellular structure."
-  },
-  {
-    question: "The site of enzymes directing the metabolic oxidation (respiration), ATP synthesis and considered as the power house of the cell are",
-    options: ["A) Lysosomes", "B) Microsomes", "C) Mitochondria", "D) Golgi apparatus"],
-    correct: "C) Mitochondria",
-    explanation: "Mitochondria are known as the powerhouses of the cell because they generate ATP through cellular respiration."
-  },
-  {
-    question: "Dictyosome is also known as",
-    options: ["A) Golgi body", "B) Ribosome", "C) Lysosome", "D) Peroxisome"],
-    correct: "A) Golgi body",
-    explanation: "Dictyosome is another name for the Golgi apparatus, which modifies, sorts, and packages proteins and lipids."
-  },
-  {
-    question: "Biochemically the ribosome consists of _______________ and some 50 structural _______________.",
-    options: ["A) mRNA, Carbohydrates", "B) tRNA, lipids", "C) mRNA, Proteins", "D) rRNA, Proteins"],
-   correct: "D) rRNA, Proteins",
-    explanation: "Ribosomes are made up of ribosomal RNA (rRNA) and proteins, facilitating protein synthesis."
-  },
-  {
-    question: "It is a mesh of interconnected membranes that serve a function involving protein synthesis and transport.",
-    options: ["A) Endoplasmic reticulum", "B) Cytoskeleton", "C) Golgi apparatus", "D) Both A and B"],
-    correct: "A) Endoplasmic reticulum",
-    explanation: "The endoplasmic reticulum (ER) is involved in protein synthesis and transport. The smooth ER synthesizes lipids, while the rough ER has ribosomes for protein synthesis."
-  },
-  {
-    question: "Plant cells contain the following 3 things not found in animal cells _________, ____________ and ____________.",
-    options: ["A) Plastids / Chlorophyll / Membrane", "B) Chloroplast / Cell wall / Golgi body", "C) Plastids / Cell wall / Chlorophyll", "D) Mitochondria / Cell wall"],
-    correct: "C) Plastids / Cell wall / Chlorophyll",
-    explanation: "Plant cells contain plastids (including chloroplasts), a cell wall, and chlorophyll, which are not found in animal cells."
-  },
-  {
-    question: "The largest organelle in a mature living plant cell is the",
-    options: ["A) Chloroplast", "B) Nucleus", "C) Central vacuole", "D) Dictyosomes"],
-    correct: "C) Central vacuole",
-    explanation: "The central vacuole is typically the largest organelle in plant cells and stores water, nutrients, and waste products."
-  },
-  {
-    question: "Which of the following structure-function pairs is mismatched?",
-    options: ["A) Lysosome - intracellular digestion", "B) Golgi body - secretion of cell products", "C) Ribosome - protein synthesis", "D) Glyoxysome - detoxification"],
-    correct: "D) Glyoxysome - detoxification",
-    explanation: "Glyoxysomes are involved in converting stored fats into sugars during germination, not detoxification."
-  },
-  {
-    question: "The three-dimensional network of protein filaments within the cytoplasm of eukaryotic cells is called the",
-    options: ["A) Endoplasmic reticulum", "B) Golgi apparatus", "C) Cytoskeleton", "D) None of these"],
-    correct: "C) Cytoskeleton",
-    explanation: "The cytoskeleton is a network of protein filaments that provides structural support and facilitates cell movement."
-  },
-  {
-    question: "Which of the following is NOT a membranous organelle?",
-    options: ["A) Lysosomes", "B) Peroxisomes", "C) Centrioles", "D) Mitochondria"],
-    correct: "C) Centrioles",
-    explanation: "Centrioles are not membranous organelles; they are involved in cell division and are made up of microtubules."
-  },
-  {
-    question: "A cell that is missing lysosomes would have difficulty doing what?",
-    options: ["A) Digesting food", "B) Storing energy", "C) Packaging proteins", "D) Moving cytoplasm"],
-    correct: "A) Digesting food",
-    explanation: "Lysosomes contain enzymes that break down waste and food particles within the cell."
-  },
-  {
-    question: "Which of the following cell parts is described as a 'fluid mosaic'?",
-    options: ["A) Chloroplast", "B) Vacuole", "C) Cell membrane", "D) Endoplasmic reticulum"],
-    correct: "C) Cell membrane",
-    explanation: "The fluid mosaic model describes the structure of the cell membrane, where lipids and proteins move fluidly."
-  },
-  {
-    question: "What part of the cell serves as the intracellular highway?",
-    options: ["A) Endoplasmic reticulum", "B) Golgi apparatus", "C) Cell membrane", "D) Mitochondria"],
-    correct: "A) Endoplasmic reticulum",
-    explanation: "The endoplasmic reticulum (ER) acts as a transport system for proteins and lipids within the cell."
-  },
-  {
-    question: "Which of the following would you NOT find in a bacterial cell?",
-    options: ["A) DNA", "B) Cell membrane", "C) Golgi apparatus", "D) Ribosomes"],
-    correct: "C) Golgi apparatus",
-    explanation: "Bacterial cells lack a Golgi apparatus, as they are simpler prokaryotic cells."
-  }
-				]
-				},
-				{ title:"3.Mock Test",
-				questions: [
-				 {
-    question: "Somatic cells of a human have ____ chromosomes and are called",
-    options: ["A) 10, haploid", "B) 92, diploid", "C) 23, haploid", "D) 46, diploid"],
-    correct: "D) 46, diploid",
-    explanation: "Human somatic cells contain 46 chromosomes, arranged in 23 pairs, and are diploid (2n)."
-  },
-  {
-    question: "Each chromosome consists of two identical",
-    options: ["A) Genes", "B) Nuclei", "C) Chromatids", "D) Bases"],
-    correct: "C) Chromatids",
-    explanation: "Each chromosome consists of two identical chromatids, which are joined at the centromere."
-  },
-  {
-    question: "An animal has 80 chromosomes in its gametes, how many chromosomes would you expect to find in this animal's brain cells?",
-    options: ["A) 120", "B) 240", "C) 40", "D) 160"],
-    correct: "D) 160",
-    explanation: "Somatic (body) cells are diploid, so they would have twice the number of chromosomes as the gametes. Thus, 80 × 2 = 160 chromosomes."
-  },
-  {
-    question: "The length of each mitochondrion is about",
-    options: ["A) 1.0 μm", "B) 0.2 μm", "C) 10 μm", "D) 2.0 μm"],
-    correct: "A) 1.0 μm",
-    explanation: "Mitochondria typically range in size from 0.5 to 1.0 μm in length."
-  },
-  {
-    question: "Isolation of cellular components to determine their chemical composition is called",
-    options: ["A) Cell differentiation", "B) Chromatography", "C) Cell fractionation", "D) All of these"],
-    correct: "C) Cell fractionation",
-    explanation: "Cell fractionation is a technique used to separate cellular components based on their size and density."
-  },
-  {
-    question: "According to the mosaic model by Singer and Nicholson, plasma membrane is composed of",
-    options: ["A) Phospholipids", "B) Extrinsic proteins", "C) Intrinsic proteins", "D) All of these"],
-    correct: "D) All of these",
-    explanation: "The fluid mosaic model describes the plasma membrane as composed of phospholipids and proteins (both intrinsic and extrinsic)."
-  },
-  {
-    question: "Robert Brown is well known for his discovery of",
-    options: ["A) Chloroplast", "B) Photometer", "C) Nucleus", "D) Nucleolus"],
-    correct: "C) Nucleus",
-    explanation: "Robert Brown discovered the nucleus in plant cells in the early 19th century."
-  },
-  {
-    question: "Which organelle releases oxygen?",
-    options: ["A) Mitochondrion", "B) Chloroplast", "C) Glyoxysome", "D) Both A and B"],
-    correct: "B) Chloroplast",
-    explanation: "Chloroplasts release oxygen as a byproduct of photosynthesis."
-  },
-  {
-    question: "Endoskeleton of a cell is made up of",
-    options: ["A) Microtubules", "B) Microfilaments", "C) Intermediate filaments", "D) All of these"],
-    correct: "D) All of these",
-    explanation: "The cytoskeleton, or endoskeleton, consists of microtubules, microfilaments, and intermediate filaments."
-  },
-  {
-    question: "Ribosomes are attached with ER by",
-    options: ["A) Larger subunit", "B) Smaller subunit", "C) Na+ ions", "D) None of these"],
-    correct: "A) Larger subunit",
-    explanation: "Ribosomes attach to the rough endoplasmic reticulum (ER) through their larger subunit, which facilitates protein synthesis."
-  },
-  {
-    question: "The outermost layer of the cell wall is",
-    options: ["A) Primary wall", "B) Secondary wall", "C) Middle lamella", "D) Plasma membrane"],
-    correct: "A) Primary wall",
-    explanation: "The primary cell wall is the first layer that forms during cell growth."
-  },
-  {
-    question: "Infoldings of inner membrane in mitochondria are called",
-    options: ["A) Grana", "B) Thylakoids", "C) Cristae", "D) Frets"],
-    correct: "C) Cristae",
-    explanation: "Cristae are the infoldings of the inner mitochondrial membrane that increase the surface area for ATP production."
-  },
-  {
-    question: "Chromosome with equal arms is called",
-    options: ["A) Metacentric", "B) Sub-metacentric", "C) Acrocentric", "D) Telocentric"],
-    correct: "A) Metacentric",
-    explanation: "A metacentric chromosome has its centromere located centrally, creating two equal arms."
-  },
-  {
-    question: "A chromosome with the centromere located very close to one end so that the shorter arm is very small is termed as",
-    options: ["A) Telocentric", "B) Sub-telocentric", "C) Acrocentric", "D) Both B and C"],
-    correct: "D) Both B and C",
-    explanation: "Acrocentric and sub-telocentric chromosomes have the centromere close to one end, resulting in a very small shorter arm."
-  },
-  {
-    question: "The matrix surrounding the grana in the inner membrane of chloroplasts is",
-    options: ["A) Cytosol", "B) Frets", "C) Stroma", "D) Inter-granal lamellae"],
-    correct: "C) Stroma",
-    explanation: "The stroma is the fluid-filled area inside chloroplasts that surrounds the thylakoids (grana)."
-  },
-  {
-    question: "A chromosome whose centromere lies at one end.",
-    options: ["A) Sum-metacentric", "B) Metacentric", "C) Telocentric", "D) Acrocentric"],
-    correct: "C) Telocentric",
-    explanation: "A telocentric chromosome has its centromere at one end, leaving only one arm."
-  },
-  {
-    question: "Lysosomes arise from",
-    options: ["A) Nucleus", "B) Endoplasmic reticulum", "C) Golgi apparatus", "D) Cell membrane"],
-    correct: "C) Golgi apparatus",
-    explanation: "Lysosomes are formed by the Golgi apparatus and are involved in intracellular digestion."
-  },
-  {
-    question: "The primary structural component(s) of centrioles is (are):",
-    options: ["A) Microtubules", "B) Microfilaments", "C) Intermediate filaments", "D) Basal bodies"],
-   correct: "A) Microtubules",
-    explanation: "Centrioles are composed of microtubules arranged in a specific pattern."
-  },
-  {
-    question: "The process of self-digestion of selective non-functional organelles by a cell through the action of enzymes originating within the cell is referred to as",
-    options: ["A) Pinocytosis", "B) Endocytosis", "C) Autophagy", "D) Cytotoxicity"],
-    correct: "C) Autophagy",
-    explanation: "Autophagy is the process by which cells degrade and recycle their own components, including damaged organelles."
-  },
-  {
-    question: "‘Proteins icebergs in a sea of lipids’ is stated by",
-    options: ["A) Lamellar Model", "B) Unit-membrane Model", "C) Fluid-Mosaic model", "D) Micellar Model"],
-   correct: "C) Fluid-Mosaic model",
-    explanation: "The Fluid-Mosaic model, proposed by Singer and Nicholson, describes the plasma membrane as a fluid structure with proteins embedded in a lipid bilayer."
-  },
-  {
-    question: "The chloroplast develops from",
-    options: ["A) ER", "B) Golgi complex", "C) Nuclear membrane", "D) Proplastids"],
-   correct: "D) Proplastids",
-    explanation: "Chloroplasts develop from proplastids, which are undifferentiated plastids found in plant cells."
-  },
-  {
-    question: "Peroxisomes and Glyoxisomes are",
-    options: ["A) Energy transducers", "B) Membrane-less organelles", "C) Micro bodies", "D) Basal bodies"],
-    correct: "C) Micro bodies",
-    explanation: "Peroxisomes and glyoxysomes are small, membrane-bound organelles known as micro bodies, involved in oxidative reactions."
-  },
-  {
-    question: "These are involved in conversion of fats to carbohydrates by oxidation of fats.",
-    options: ["A) Peroxisomes", "B) Microsomes", "C) Glyoxisomes", "D) Phagosomes"],
-    correct: "C) Glyoxisomes",
-    explanation: "Glyoxisomes convert stored fats into carbohydrates during seed germination."
-  },
-  {
-    question: "Xanthophyll is a pigment having",
-    options: ["A) Yellow colour", "B) Green colour", "C) Red colour", "D) Blue colour"],
-   correct: "A) Yellow colour",
-    explanation: "Xanthophyll is a yellow pigment found in the chloroplasts of plants and plays a role in photosynthesis."
-  },
-  {
-    question: "The covering of vacuole is known as",
-    options: ["A) Chromoplast", "B) Chloroplast", "C) Amyloplast", "D) Tonoplast"],
-    correct: "D) Tonoplast",
-    explanation: "The tonoplast is the membrane surrounding the vacuole in plant cells."
-  }
-				]
-				},
-				{ title: "4.Mock Test",
-				questions:[
-				{
-    question: "Insulin is secreted from cells in this way",
-    options: ["A) Endocytosis", "B) Pinocytosis", "C) Phagocytosis", "D) Exocytosis"],
-    correct: "D) Exocytosis",
-    explanation: "Insulin is secreted by pancreatic cells through exocytosis, where it is packaged into vesicles and released into the bloodstream."
-  },
-  {
-    question: "______________ increases size of an object.",
-    options: ["A) Magnification", "B) Resolution", "C) Resolving power", "D) Contrast"],
-    correct: "A) Magnification",
-    explanation: "Magnification refers to increasing the size of an object, making it appear larger under a microscope."
-  },
-  {
-    question: "The chromosome 'B' in this diagram is",
-    options: ["A) Metacentric", "B) Sub-metacentric", "C) Acrocentric", "D) Telocentric"],
-    correct: "A) Metacentric",
-    explanation: "A metacentric chromosome has the centromere located near the middle, resulting in two approximately equal arms."
-  },
-  {
-    question: "Select the correct label for 'B' in this diagram.",
-    options: ["A) Endoplasmic reticulum", "B) Peroxisome", "C) Golgi apparatus", "D) Glyoxysome"],
-    correct: "C) Golgi apparatus",
-    explanation: "The Golgi apparatus is responsible for modifying, sorting, and packaging proteins and lipids for secretion or delivery to other organelles."
-  },
-  {
-    question: "Which of the following organelles or structures is found in both plant and animal cells?",
-    options: ["A) Central vacuole", "B) Tonoplast", "C) Cell wall", "D) Peroxisomes"],
-    correct: "D) Peroxisomes",
-    explanation: "Peroxisomes are found in both plant and animal cells, involved in the breakdown of fatty acids and detoxification processes."
-  },
-  {
-    question: "The catalytic activity of an enzyme is restricted to its small portion called",
-    options: ["A) Active site", "B) Passive site", "C) Allosteric site", "D) All Choices are correct"],
-   correct: "A) Active site",
-    explanation: "The active site of an enzyme is the region where the substrate binds and the chemical reaction takes place."
-  },
-  {
-    question: "An activated enzyme made of polypeptide chain and a cofactor is",
-    options: ["A) Coenzyme", "B) Substrate", "C) Apoenzyme", "D) Holoenzyme"],
-    correct: "D) Holoenzyme",
-    explanation: "A holoenzyme is the active form of an enzyme, consisting of a polypeptide chain and a cofactor."
-  },
-  {
-    question: "Koshland in 1959 proposed",
-    options: ["A) Fluid mosaic model", "B) Induced fit model", "C) Lock and key model", "D) Reflective index model"],
-    correct: "B) Induced fit model",
-    explanation: "The induced fit model, proposed by Koshland, describes how an enzyme's active site undergoes conformational changes upon substrate binding."
-  },
-  {
-    question: "Enzymes are largely _________________________ in their chemical nature.",
-    options: ["A) Lipids", "B) Steroids", "C) Proteinaceous", "D) All A, B, and C"],
-   correct: "C) Proteinaceous",
-    explanation: "Enzymes are primarily made up of proteins, although some may require non-protein cofactors to function."
-  },
-  {
-    question: "Who proposed the 'lock and key' model to study enzyme-substrate interaction?",
-    options: ["A) Koshland (1959)", "B) Wilhelm Kuhne (1878)", "C) Fischer (1898)", "D) None of these"],
-    correct: "C) Fischer (1898)",
-    explanation: "The 'lock and key' model was proposed by Fischer in 1898, suggesting that the enzyme's active site has a specific shape that exactly fits the substrate."
-  },
-  {
-    question: "In human body the optimum temperature for enzymatic activities is",
-    options: ["A) 37°C", "B) 40°C", "C) 25°C", "D) 30°C"],
-    correct: "A) 37°C",
-    explanation: "The optimum temperature for most enzymes in the human body is around 37°C, which is the average body temperature."
-  },
-  {
-    question: "Optimum pH value for pepsin is",
-    options: ["A) 5.5", "B) 7.4", "C) 4.1", "D) 1.4"],
-    correct: "C) 4.1",
-    explanation: "Pepsin, an enzyme in the stomach, functions best at a very acidic pH, around 4.1."
-  },
-  {
-    question: "Competitive inhibitors stop an enzyme from working by",
-    options: ["A) Changing the shape of the enzyme", "B) Merging with the substrate instead", "C) Blocking the active site of the enzyme", "D) Combining with the product of the reaction"],
-    correct: "C) Blocking the active site of the enzyme",
-    explanation: "Competitive inhibitors prevent the enzyme from binding to its substrate by occupying the active site."
-  },
-  {
-    question: "The enzymes are sensitive to",
-    options: ["A) Changes in pH", "B) Changes in temperature", "C) Both A and B", "D) None of these"],
-    correct: "C) Both A and B",
-    explanation: "Enzymes are sensitive to changes in pH and temperature, which can affect their structure and function."
-  },
-  {
-    question: "Enzyme B requires Zn2+ in order to catalyze the conversion of substrate X. The zinc is best identified as a(n):",
-    options: ["A) Coenzyme", "B) Activator", "C) Substrate", "D) Product"],
-    correct: "B) Activator",
-    explanation: "Zinc is an activator that helps the enzyme catalyze the reaction, making it more effective."
-  },
-  {
-    question: "The enzyme minus its coenzyme is referred to as the",
-    options: ["A) Iso-enzyme", "B) Metalloenzyme", "C) Apoenzyme", "D) All of these"],
-    correct: "C) Apoenzyme",
-    explanation: "An apoenzyme is the inactive form of an enzyme, which requires a coenzyme to become active."
-  },
-  {
-    question: "The 'lock and key' model of enzyme action illustrates that a particular enzyme molecule",
-    options: ["A) Forms a permanent enzyme-substrate complex", "B) May be destroyed and resynthesized several times", "C) Interacts with a specific type of substrate molecule", "D) Reacts at identical rates under all conditions"],
-    correct: "C) Interacts with a specific type of substrate molecule",
-    explanation: "The lock and key model suggests that enzymes are highly specific for their substrates, much like a key fitting into a lock."
-  },
-  {
-    question: "Consider this reaction. A + B --> C + D + energy.",
-    options: ["A) This reaction is exergonic", "B) An enzyme could still speed the reaction", "C) A and B are reactants; C and D are products", "D) All of these are correct"],
-    correct: "D) All of these are correct",
-    explanation: "This reaction is exergonic (releases energy), and an enzyme can speed it up by lowering the activation energy."
-  },
-  {
-    question: "An inhibitor that changes the overall shape and chemistry of an enzyme is known as a(n)",
-    options: ["A) Auto-steric inhibitor", "B) Competitive inhibitor", "C) Steric inhibitor", "D) Noncompetitive inhibitor"],
-    correct: "D) Noncompetitive inhibitor",
-    explanation: "Noncompetitive inhibitors bind to an enzyme at a site other than the active site, altering the enzyme's shape and function."
-  },
-  {
-    question: "Non-protein components of enzymes are known as",
-    options: ["A) Coenzymes", "B) Activators", "C) Cofactors", "D) All A, B, and C"],
-    correct: "D) All A, B, and C",
-    explanation: "Coenzymes, activators, and cofactors are all non-protein components that assist enzymes in catalyzing reactions."
-  },
-  {
-    question: "The reaction below occurs within the cells to prevent the accumulation of hydrogen peroxide. In this reaction, catalase functions as an",
-    options: ["A) Enzyme in the breakdown of hydrogen peroxide", "B) Enzyme in the synthesis of hydrogen peroxide", "C) Emulsifier in the digestion of hydrogen peroxide", "D) Indicator in the detection of hydrogen peroxide"],
-    correct: "A) Enzyme in the breakdown of hydrogen peroxide",
-    explanation: "Catalase is an enzyme that breaks down hydrogen peroxide into water and oxygen, preventing toxic accumulation."
-  },
-  {
-    question: "An enzyme is generally named by adding ________ to the end of the name of the __________.",
-    options: ["A) '-ase'. coenzyme", "B) '-ase'. cell in which it is found", "C) '-ose'. substrate", "D) '-ase'. Substrate"],
-    correct: "D) '-ase'. Substrate",
-    explanation: "Enzymes are typically named by adding the suffix '-ase' to the substrate they act upon (e.g., amylase acts on starch)."
-  },
-  {
-    question: "The minimum amount of energy needed for a process to occur is called the",
-    options: ["A) Minimal energy theory", "B) Process energy", "C) Kinetic energy", "D) Activation energy"],
-    correct: "D) Activation energy",
-    explanation: "Activation energy is the energy required to start a chemical reaction."
-  },
-  {
-    question: "A student conducts an experiment to test the efficiency of a certain enzyme. Which would probably not result in a change in the enzyme's efficiency?",
-    options: ["A) Adding an acidic solution to the setup", "B) Adding more substrate but not enzyme", "C) Increasing temperature of solution", "D) All a, b, & c change enzyme's efficiency"],
-    correct: "B) Adding more substrate but not enzyme",
-    explanation: "Adding more substrate (without increasing enzyme concentration) may not significantly affect enzyme efficiency once the enzyme is saturated with substrate."
-  },
-  {
-    question: "Enzymes function as",
-    options: ["A) Organic catalysts", "B) Inorganic catalysts", "C) Inhibitors", "D) All of these"],
-    correct: "A) Organic catalysts",
-    explanation: "Enzymes are organic catalysts made of proteins that speed up chemical reactions without being consumed."
-  }
-				]
-				},
-				{ title:"bio",
-				questions: [
-				  {
-        question: "Viruses range in size from 250 nm of poxviruses to the 20 nm of:",
-        options: ["A) Parvoviruses", "B) Proviruses", "C) Polioviruses", "D) Retroviruses"],
-        correct: "A) Parvoviruses",
-        explanation: "Parvoviruses are among the smallest viruses, typically around 20 nm in size."
-    },
-    {
-        question: "The retroviruses have a special enzyme called …………….. which can convert a single-stranded RNA genome into double-stranded viral DNA.",
-        options: ["A) Transcriptase", "B) RNA polymerase", "C) Reverse Transcriptase", "D) DNA polymerase"],
-       correct: "C) Reverse Transcriptase",
-        explanation: "Retroviruses use reverse transcriptase to reverse transcribe their RNA genome into DNA."
-    },
-    {
-        question: "Capsid is made up of protein subunits known as:",
-        options: ["A) Capsidomeres", "B) Capsomeres", "C) Capomeres", "D) Protomeres"],
-       correct: "B) Capsomeres",
-        explanation: "The capsid of a virus is made up of individual protein subunits called capsomeres."
-    },
-    {
-        question: "The capsomeres present in the capsid of adenoviruses are:",
-        options: ["A) 100", "B) 200", "C) 252", "D) 352"],
-       correct: "C) 252",
-        explanation: "Adenoviruses have 252 capsomeres in their capsid structure."
-    },
-    {
-        question: "Bacteriophages occur in two structural forms, having cubical or:",
-        options: ["A) Radial symmetry", "B) Asymmetry", "C) Bilateral symmetry", "D) Helical symmetry"],
-        correct: "D) Helical symmetry",
-        explanation: "Bacteriophages can have either icosahedral (cubical) or helical symmetry."
-    },
-    {
-        question: "The overall structure of T4 studied by electron microscopy resembles that of:",
-        options: ["A) Cub", "B) Calf", "C) Tadpole", "D) Eaglet"],
-        correct: "C) Tadpole",
-        explanation: "The T4 bacteriophage has a head-tail structure, which resembles a tadpole under electron microscopy."
-    },
-    {
-        question: "The first step in the replication of a bacteriophage is its attachment (adsorption) to host cell at:",
-        options: ["A) Receptor site", "B) Active site", "C) Binding site", "D) Adsorption site"],
-        correct: "A) Receptor site",
-        explanation: "The bacteriophage first attaches to the host cell at specific receptor sites on the surface."
-    },
-    {
-        question: "Immediately after entering the host cell, the viral nucleic acid takes control of the host’s:",
-        options: ["A) DNA", "B) Protein", "C) Synthetic area", "D) Biosynthetic machinery"],
-        correct: "D) Biosynthetic machinery",
-        explanation: "After entering the host cell, the viral nucleic acid hijacks the host's biosynthetic machinery to replicate itself."
-    },
-    {
-        question: "About 25 minutes after initial infection, new bacteriophages formed are approximately:",
-        options: ["A) 100", "B) 200", "C) 300", "D) 600"],
-        correct: "B) 200",
-        explanation: "Around 200 new bacteriophages are typically formed about 25 minutes after initial infection."
-    },
-    {
-        question: "Herpes virus is responsible for Herpes:",
-        options: ["A) Simplex", "B) Duplex", "C) Triplex", "D) Quadruple"],
-        correct: "A) Simplex",
-        explanation: "Herpes simplex virus (HSV) is responsible for causing herpes infections."
-    },
-    {
-        question: "Mumps and Measles viruses belong to group:",
-        options: ["A) Parvovirus", "B) Paramyxovirus", "C) Myxovirus", "D) Paravirus"],
-        correct: "B) Paramyxovirus",
-        explanation: "Mumps and Measles are caused by viruses in the paramyxovirus family."
-    },
-    {
-        question: "The poliovirus are the smallest known viruses and contain RNA in:",
-        options: ["A) Oval capsid", "B) Cubical capsid", "C) Helical capsid", "D) Spherical capsid"],
-        correct: "B) Cubical capsid",
-        explanation: "Poliovirus has a cubical (icosahedral) capsid that encloses its RNA genome."
-    },
-    {
-        question: "The major cell infected by HIV is the helper:",
-        options: ["A) A-monocyte", "B) T-monocyte", "C) B-lymphocyte", "D) T-lymphocyte"],
-        correct: "D) T-lymphocyte",
-        explanation: "HIV primarily infects helper T-lymphocytes, which play a critical role in the immune system."
-    },
-    {
-        question: "Bacteria cannot pass through …………… filters was found in 1884 by:",
-        options: ["A) Litmus", "B) Tissue", "C) Porcelain", "D) None"],
-        correct: "C) Porcelain",
-        explanation: "In 1884, it was discovered that bacteria cannot pass through porcelain filters."
-    },
-    {
-        question: "Lysozyme is also made by:",
-        options: ["A) Viral DNA", "B) Viral protein", "C) Viral RNA", "D) All"],
-        correct: "B) Viral protein",
-        explanation: "Lysozyme is an enzyme that breaks down bacterial cell walls and is produced by some viruses."
-    },
-    {
-        question: "Mumps and Measles viruses are:",
-        options: ["A) DNA viruses", "B) RNA viruses", "C) DNA-RNA viruses", "D) RNA-DNA viruses"],
-        correct: "B) RNA viruses",
-        explanation: "Both Mumps and Measles are RNA viruses, not DNA viruses."
-    },
-    {
-        question: "Viruses lack metabolic machinery for the synthesis of their own:",
-        options: ["A) Proteins", "B) RNA", "C) DNA", "D) All of these"],
-        correct: "A) Proteins",
-        explanation: "Viruses cannot synthesize proteins on their own and rely on the host cell's machinery for protein synthesis."
-    }
-	]
-				}
-				]
-				},
-            
-        
-		3: {
-            title: "11:Cemistry - Test Preparation",
-            chapters: [
-                {
-                    title: "2 : ATOMIC STRUCTURE",
-                    questions: [
-                        {
-                            question: 'In VIBGYOR, which color has the shortest wavelength?',
-                            options: ['Red', 'Green', 'Violet', 'Blue'],
-                            correct: 'Violet',
-                            explanation: 'Violet light has the shortest wavelength in the visible spectrum.'
-                        },
-                        {
-                            question: 'Of the following, the one that is not an elementary particle is:',
-                            options: ['Electron', 'Proton', 'Neutron', '∞– particle'],
-                            correct: '∞– particle',
-                            explanation: '“∞- particle” is not a recognized elementary particle.'
-                        },
-                        {
-                            question: 'Physical and chemical properties of atoms depend upon:',
-                            options: ['Electron, protons and mesons', 'Electron, neutron and Positron', 'Only electrons', 'Electron, protons and neutrons'],
-                            correct: 'Only electrons',
-                            explanation: 'The properties of atoms depend primarily on the arrangement of electrons.'
-                        },
-                        {
-                            question: 'An element is determined by the number of:',
-                            options: ['Neutrons', 'Electrons', 'Protons', 'Atoms'],
-                            correct: 'Protons',
-                            explanation: 'The number of protons (atomic number) defines an element.'
-                        },
-                        {
-                            question: 'mvr = nh/2π. This shows the ____ of the electron:',
-                            options: ['Velocity', 'K.E', 'Angular momentum', 'N.O.T'],
-                            correct: 'Angular momentum',
-                            explanation: 'This equation represents the angular momentum of an electron in an atom.'
-                        },
-                        {
-                            question: 'Which particles have approximately the same size and mass as each other?',
-                            options: ['Neutron and electrons', 'Protons and neutrons', 'Electrons and Protons', 'Non – they are all very different in size and mass'],
-                            correct: 'Protons and neutrons',
-                            explanation: 'Protons and neutrons have nearly the same mass and size.'
-                        },
-                        {
-                            question: 'Rutherford’s experiments ∞-particles showed for the first time that the atom has:',
-                            options: ['Electrons', 'Protons', 'Neutrons', 'Nucleus'],
-                            correct: 'Nucleus',
-                            explanation: 'Rutherford’s experiment revealed the existence of a central nucleus in the atom.'
-                        },
-                        {
-                            question: 'During a chemical reaction, atomic number:',
-                            options: ['Increases', 'Decreases', 'Remains same', 'Changes alternately'],
-                            correct: 'Remains same',
-                            explanation: 'Atomic number remains unchanged in a chemical reaction.'
-                        },
-                        {
-                            question: 'The correct equation is:',
-                            options: [' E2 – E1 = hv', 'E2 + E1 = hv', 'E2 x E1 = hv', 'E2 ÷ E1 = hv'],
-                            correct: ' E2 – E1 = hv',
-                            explanation: 'The equation E2 – E1 = hv describes the energy difference between two levels (E2 and E1) equal to the energy of a photon, where h is Planck`s constant and v is the frequency.'
-                        },
-                        {
-                            question: 'Neutron was discovered by:',
-                            options: ['Albert Einstein', 'Niels Bohr', 'James Chadwick', 'Marie Curie'],
-                            correct: 'James Chadwick',
-                            explanation: 'James Chadwick discovered the neutron in 1932.'
-                        },
-                        {
-                            question: 'When white light is allowed to pass through a prism, the light is:',
-                            options: ['Reflected', 'Absorbed', 'Deviated and breaks', 'Transmitted'],
-                            correct: 'Deviated and breaks',
-                            explanation: 'White light splits into its constituent colors when passed through a prism.'
-                        },
-                        {
-                            question: 'The shape of an orbital is determined by the quantum number:',
-                            options: ['n', 'l', 'm', 's'],
-                            correct: 'l',
-                            explanation: 'The azimuthal quantum number (l) determines the shape of orbitals.'
-                        },
-                        {
-                            question: 'For l = 1, the possible magnetic quantum number m values are:',
-                            options: ['-1, 0', '-1, 0, +1', '0, +1, +2', '1, 2, 3'],
-                            correct: '-1, 0, +1',
-                            explanation: 'For l = 1, the magnetic quantum number m can be -1, 0, or +1.'
-                        },
-                        {
-                            question: 'Which of the following particles has the greatest power of penetration?',
-                            options: ['Alpha particles', 'Beta particles', 'Gamma rays', 'X-rays'],
-                            correct: 'Gamma rays',
-                            explanation: 'Gamma rays (γ) have the greatest power of penetration.'
-                        },
-                        {
-                            question: 'Nitrogen has three unpaired electrons because of:',
-                            options: ['Pauli Exclusion Principle', 'Hund’s rule', 'Aufbau Principle', 'Heisenberg Principle'],
-                            correct: 'Hund’s rule',
-                            explanation: 'Hund’s rule states that electrons fill degenerate orbitals singly before pairing.'
-                        },
-                        {
-                            question: 'X-rays having short wavelength and high energy are ______ series:',
-                            options: ['L-series', 'M-series', 'K-series', 'N-series'],
-                            correct: 'K-series',
-                            explanation: 'The K-series corresponds to X-rays emitted with short wavelength and high energy.'
-                        },
-                        {
-                            question: 'Marie Curie & Pierre Curie isolated ______ element from pitchblende:',
-                            options: ['Radium', 'Uranium', 'Polonium', 'Thorium'],
-                            correct: 'Radium',
-                            explanation: 'They isolated radium (Ra) from pitchblende.'
-                        },
-                        {
-                            question: '2p orbitals have:',
-                            options: ['n=2, l=0', 'n=2, l=1', 'n=3, l=2', 'n=1, l=0'],
-                            correct: 'n=2, l=1',
-                            explanation: '2p orbitals correspond to n=2, l=1.'
-                        },
-                        {
-                            question: 'Which of the following atoms and ions are iso-electronic with the neon atom?',
-                            options: ['Na+', 'F-', 'O2-', 'All of the above'],
-                            correct: 'All of the above',
-                            explanation: 'Na+, F-, and O2- all have the same electron configuration as Neon.'
-                        },
-                        {
-                            question: 'The number of orbitals in a p-sub shell is:',
-                            options: ['1', '2', '3', '4'],
-                            correct: '3',
-                            explanation: 'A p-sub shell contains three orbitals.'
-                        },
-                        {
-                            question: 'Mass of proton is:',
-                            options: ['1.67 x 10^-24 g', '9.11 x 10^-31 kg', '2.65 x 10^-27 g', '5.32 x 10^-27 g'],
-                            correct: '1.67 x 10^-24 g',
-                            explanation: 'The mass of a proton is approximately 1.67 x 10^-24 g.'
-                        },
-                        {
-                            question: 'Which of the following is/are true about alpha particles?',
-                            options: ['They are positively charged', 'They can be stopped by paper', 'They were used in Rutherford’s experiment', 'All of the above'],
-                            correct: 'All of the above',
-                            explanation: 'Alpha particles are positively charged, can be stopped by paper, and were used in Rutherford’s experiment.'
-                        },
-                        {
-                            question: 'In the hydrogen spectrum, the Paschen series has the ground state:',
-                            options: ['n_1 = 1', 'n_1 = 2', 'n_1 = 3', 'n_1 = 4'],
-                            correct: 'n_1 = 3',
-                            explanation: 'The Paschen series corresponds to transitions to n=3.'
-                        },
-                        {
-                            question: '∞ particle resembles:',
-                            options: ['H', 'He', 'Li', 'Ne'],
-                            correct: 'He',
-                            explanation: 'An infinite particle resembles the He atom in terms of structure.'
-                        },
-                        {
-                            question: 'The radius of the third orbit of a H atom is:',
-                            options: ['0.529 Å', '1.5 Å', '2.5 Å', '3.870 Å'],
-                            correct: '3.870 Å',
-                            explanation: 'The radius of the third orbit in a hydrogen atom is approximately 3.870 Å.'
-                        }
-                    ]
-					},
-					{
-                    title: "4 : STATE OF MATTER(GAS)",
-           questions:[
-                        {
-                            question: 'According to Graham’s law of diffusion, the ratio of diffusion of CH₄ and SO₂ is respectively:',
-                            options: ['1:2', '2:1', '4:1', '1:4'],
-                            correct: '1:4',
-                            explanation: 'According to Graham’s law of diffusion, the rate of diffusion of a gas is inversely proportional to the square root of its molar mass. CH₄ has a lower molar mass than SO₂, so it diffuses faster.'
-                        },
-                        {
-                            question: 'Hydrogen diffuses three times faster than gas A. The molar mass of gas A is:',
-                            options: ['16', '32', '8', 'N.O.T'],
-                            correct: '32',
-                            explanation: 'According to Graham’s law, the rate of diffusion is inversely proportional to the square root of the molar mass. If hydrogen diffuses three times faster, then the molar mass of gas A is 32.'
-                        },
-                        {
-                            question: 'The last possible temperature at which no more gas exists is:',
-                            options: ['0 K', '273 K', '-273 K', '273°C'],
-                            correct: '-273 K',
-                            explanation: 'Absolute zero (0 K or -273°C) is the temperature at which all molecular motion ceases, and no gas can exist at this temperature.'
-                        },
-                        {
-                            question: 'Which of the following is directly proportional to volume?',
-                            options: ['Pressure', 'Temperature', 'No of moles', 'B&C'],
-                            correct: 'B&C',
-                            explanation: 'According to the ideal gas law, both temperature and the number of moles are directly proportional to volume at constant pressure.'
-                        },
-                        {
-                            question: 'At standard temperature and pressure (STP), 1.5 moles of any gas occupy a volume of:',
-                            options: ['5.6 dm³', '33.6 dm³', '11.2 dm³', '44.8 dm³'],
-                            correct: '33.6 dm³',
-                            explanation: 'At STP, 1 mole of gas occupies 22.4 dm³. So, 1.5 moles occupy 1.5 × 22.4 = 33.6 dm³.'
-                        },
-                        {
-                            question: 'When temperature changes from 25K to 50K, while pressure becomes half, the change in volume will be:',
-                            options: ['Increases 2 times', 'Increases 4 times', 'Decreases 2 times', 'Decreases 4 times'],
-                            correct: 'Increases 2 times',
-                            explanation: 'If temperature and pressure are changed simultaneously, the volume will increase according to the combined gas law. Since pressure is halved and temperature doubles, the volume increases 2 times.'
-                        },
-                        {
-                            question: 'Deep sea divers take O₂ according to:',
-                            options: ['Graham’s law', 'Charle’s law', 'Boyle’s law', 'Dalton’s law'],
-                            correct: 'Dalton’s law',
-                            explanation: 'Dalton’s law is applied in scuba diving because it describes the behavior of gas mixtures, including the partial pressures of individual gases in a mixture.'
-                        },
-                        {
-                            question: 'Which of the following contains the same number of atoms as 36g of Mg?',
-                            options: ['3g H', '20g Ca', '12g C', '12g Na'],
-                            correct: '20g Ca',
-                            explanation: 'The number of atoms in 36g of Mg (molar mass = 24) is the same as the number of atoms in 20g of Ca (molar mass = 40).'
-                        },
-                        {
-                            question: 'If temperature is halved & pressure is halved, then volume will be:',
-                            options: ['2 times decreased', '4 times increased', 'Decreased to half', 'Remains same'],
-                            correct: 'Remains same',
-                            explanation: 'According to the combined gas law, if both temperature and pressure are halved, the volume remains unchanged.'
-                        },
-                        {
-                            question: 'An ideal gas behaves like a real gas at:',
-                            options: ['Low T and Low P', 'High T and high P', 'Low T and high P', 'High T and low P'],
-                            correct: 'High T and low P',
-                            explanation: 'Ideal gas behavior is most closely approached at high temperature and low pressure, where intermolecular forces and volume effects are minimal.'
-                        },
-                        {
-                            question: 'A gas has a volume of 7.5 dm³ when the temperature is 27°C. What is the volume if temperature is doubled in Kelvin?:',
-                            options: ['3 dm³', '2.5 dm³', '5 dm³', '15 dm³'],
-                            correct: '15 dm³',
-                            explanation: 'The volume of the gas will be 15 dm³ because, according to Charles`s Law, the volume is directly proportional to the temperature in Kelvin, and doubling the temperature doubles the volume.'
-                        },
-                        {
-                            question: 'If pressure changes from 29.4psi to 0.5atm, find the change in volume, given initial volume is 12 dm³:',
-                            options: ['4 times increases', '2 times increases', '4 times decreases', 'Decreases to half'],
-                            correct: '4 times decreases',
-                            explanation: 'According to Boyle’s law, if pressure decreases, volume increases. Since pressure has decreased significantly, the volume has increased accordingly.'},
-                        {
-                            question: 'The rate of diffusion of a gas is inversely proportional to the square root of its density at a given temperature and pressure is called:',
-                            options: ['Dalton’s law', 'Graham’s law of diffusion', 'Boyle’s law', 'Charle’s law'],
-                            correct: 'Graham’s law of diffusion',
-                            explanation: 'Graham’s law describes the relationship between the rate of diffusion of a gas and its molar mass or density.'
-                        },
-                        {
-                            question: 'The deep sea divers contains SCUBA, it contains:',
-                            options: ['4% O₂ & 96% N₂', '4% O₂ & 96% He', '96% O₂ & 4% N₂', '96% O₂ & 4% He'],
-                            correct: '4% O₂ & 96% N₂',
-                            explanation: 'SCUBA tanks typically contain oxygen (O₂) and nitrogen (N₂) in the same ratio as found in air, with oxygen levels regulated for safe diving.'
-                        },
-                        {
-                            question: 'Equal volumes of all gases at the same temperature and pressure contain equal numbers of molecules is called:',
-                            options: ['Graham’s law', 'Charle’s law', 'Dalton’s law', 'Avogadro’s law'],
-                            correct: 'Avogadro’s law',
-                            explanation: 'Avogadro’s law states that equal volumes of all gases at the same temperature and pressure contain an equal number of molecules.'
-                        },
-                        {
-                            question: 'Mathematically, Charles’s law is represented by:',
-                            options: ['V = K', 'V/T = K', 'V₁/T₁ = V₂/T₂', 'A.O.T'],
-                            correct: 'V₁/T₁ = V₂/T₂',
-                            explanation: 'Charles’s law mathematically expresses the direct relationship between volume and temperature at constant pressure.'
-                        },
-                        {
-                            question: 'The SI unit of pressure is:',
-                            options: ['Atmosphere', 'Torr', 'N/m²', 'A.O.T'],
-                            correct: 'N/m²',
-                            explanation: 'The SI unit for pressure is the newton per square meter (N/m²), also known as the pascal (Pa).'
-                        },
-                        {
-                            question: 'Equal volume of all gases will contain the same:',
-                            options: ['Pressure', 'Mass', 'Number of molecules', 'A.O.T'],
-                            correct: 'Number of molecules',
-                            explanation: 'According to Avogadro’s law, equal volumes of gases at the same temperature and pressure contain the same number of molecules.'
-                        },
-                        {
-                            question: '2g of H₂ has what pressure at 546°C and 11.2 dm³ volume?',
-                            options: ['2 atm', '3 atm', '8 atm', '4 atm'],
-                            correct: '4 atm',
-                            explanation: 'Using the ideal gas law, the pressure can be calculated for 2g of H₂ at the given temperature and volume.'
-                        },
-                        {
-                            question: 'Calculate the pressure of dry gas while the pressure of moist gas is 649 torr and the pressure of water vapours is 39 torr.',
-                            options: ['988 torr', '610 torr', '39 torr', 'N.O.T'],
-                            correct: '610 torr',
-                            explanation: 'The pressure of dry gas is obtained by subtracting the pressure of water vapor from the pressure of the moist gas.'
-                        },
-                        {
-                            question: 'At what temperature and pressure will H₂ occupy 5.6 dm³ volume?',
-                            options: ['25°C & 1 atm', '4 atm & 0°C', '0°C & 0.25 atm', 'N.O.T'],
-                            correct: '0°C & 0.25 atm',
-                            explanation: 'At STP (standard temperature and pressure), hydrogen gas occupies 22.4 dm³. However, changing the pressure and temperature will affect the volume.'
-                        },
-                        {
-                            question: 'Which gas has lower pressure?',
-                            options: ['Ideal', 'Real', 'Both have same', 'N.O.T'],
-                            correct: 'Ideal',
-                            explanation: 'An ideal gas has no intermolecular forces, so it has lower pressure under similar conditions compared to real gases.'
-                        },
-                        {
-                            question: 'The equation PV = nRT is called:',
-                            options: ['General gas equation', 'Ideal gas equation', 'Equation of state', 'A.O.T'],
-                            correct: 'Ideal gas equation',
-                            explanation: 'The ideal gas equation describes the relationship between pressure, volume, temperature, and the number of moles of an ideal gas.'
-                        },
-                        {
-                            question: 'Gases have significant volume at:',
-                            options: ['Low temperature', 'High temperature', 'Low pressure', 'High pressure'],
-                            correct: 'High pressure',
-                            explanation: 'At high pressures, gases are compressed, and their volume becomes significant compared to the molecular size.'
-                        },
-                        {
-                            question: '200 ml of a gas is under pressure of 400 torr. What would the volume of the gas be at a pressure of 500 torr?',
-                            options: ['320 ml', '160 ml', '800 ml', '150 ml'],
-                            correct: '160 ml',
-                            explanation: 'Using Boyle’s law, the volume is inversely proportional to pressure. So, at a higher pressure, the volume decreases proportionally.'
-                        }
-                    ]
-                },
-				{
-                    title: "5 : STATE OF MATTER(II LIQUIDS)",
-                         questions:[
-				        { question: 'Liquids can form concave meniscus in a narrow glass tube when:', options: ['Cohesive forces stronger than Adhesive forces', 'Adhesive forces stronger than Cohesive forces', 'Cohesive forces and Adhesive forces are equal', 'N.O.T'], correct: 'Adhesive forces stronger than Cohesive forces', explanation: 'When adhesive forces between liquid and glass are stronger than cohesive forces between liquid molecules, a concave meniscus forms.' },
-                        { question: 'Hydrogen bond is not found in:', options: ['H₂O', 'NH₃', 'CH₄', 'H-F'], correct: 'CH₄', explanation: 'Methane (CH₄) does not have hydrogen bonding because it lacks highly electronegative atoms like O, N, or F.' },
-                        { question: 'Which of the following possess highest London dispersion forces:', options: ['Xe', 'Ne', 'Rn', 'Kr'], correct: 'Rn', explanation: 'Radon (Rn) has the largest atomic size, resulting in the strongest London dispersion forces.' },
-                        { question: 'A liquid can be boiled at any temperature by changing the:', options: ['Amount of liquid', 'External pressure', 'Surface area', 'Viscosities'], correct: 'External pressure', explanation: 'Boiling point can be lowered by reducing the external pressure, allowing the liquid to boil at a lower temperature.' },
-                        { question: 'Which statement is correct about evaporation?', options: ['It is an endothermic process', 'It causes hotness', 'It is reverse of Neutralization', 'It is an exothermic process'], correct: 'It is an endothermic process', explanation: 'Evaporation requires heat to overcome intermolecular forces, so it is an endothermic process.' },
-                        { question: 'Which of the following liquid shows maximum surface tension:', options: ['Chloroform', 'Benzene', 'Ethyl Alcohol', 'Gasoline'], correct: 'Chloroform', explanation: 'Chloroform has a higher surface tension than the other liquids due to stronger intermolecular forces.' },
-                        { question: 'Liquid crystal was first discovered by:', options: ['M. Faraday', 'J. J. Thomson', 'Henry Moseley', 'Fredrich Reintzer'], correct: 'Fredrich Reintzer', explanation: 'Fredrich Reintzer first discovered liquid crystals in 1888.' },
-                        { question: 'Which of the following have more surface tension:', options: ['Acetone', 'Benzene', 'Ethanol', 'Chloroform'], correct: 'Chloroform', explanation: 'Chloroform has the highest surface tension due to its strong molecular interactions.' },
-                        { question: 'The boiling of a liquid under reduced pressure is called __________ distillation:', options: ['Fractional', 'Vacuum', 'Destructive', 'Steam'], correct: 'Vacuum', explanation: 'Vacuum distillation is used to boil liquids at lower temperatures by reducing the surrounding pressure.' },
-                        { question: 'The vapor pressure of water at 100°C is ____ torr:', options: ['24', '760', '17.5', '13'], correct: '760', explanation: 'At 100°C, the vapor pressure of water equals 760 torr, which is equal to atmospheric pressure.' },
-                        { question: 'Which of the following have maximum viscosity at 20°C:', options: ['Acetone', 'Ethyl Alcohol', 'Water', 'N.O.T'], correct: 'Water', explanation: 'Water has the highest viscosity at 20°C due to its hydrogen bonding.' },
-                        { question: 'The density of water at 4°C is ___ g/cm³:', options: ['1', '0.998', '0.912', '0.515'], correct: '1', explanation: 'The density of water at 4°C is 1 g/cm³, which is its maximum density.' },
-                        { question: 'Which of the following molecule show London dispersion forces:', options: ['HCl', 'ICl', 'N₂', 'H₂O'], correct: 'N₂', explanation: 'N₂, a nonpolar molecule, experiences only London dispersion forces.' },
-                        { question: 'Which of the following molecule show strongest Hydrogen bond:', options: ['H......O', 'H..........F', 'H......... N', 'C ........H'], correct: 'H..........F', explanation: 'Hydrogen bonding is strongest between hydrogen and fluorine due to the high electronegativity of fluorine.' },
-                        { question: 'The S.I unit of Viscosity is:', options: ['N/m', 'N.s./m²', 'erg/cm²', 'centipoise'], correct: 'N.s./m²', explanation: 'The SI unit for viscosity is Newton-second per square meter (N.s/m²).' },
-                        { question: 'The S.I unit of Surface tension is:', options: ['N/m', 'N.s./m²', 'erg/cm²', 'centipoise'], correct: 'N/m', explanation: 'The SI unit for surface tension is Newton per meter (N/m).' },
-                        { question: '_____ is the heat required to convert 1 mole of solid completely into liquid at its melting point:', options: ['Molar Heat of vaporization', 'Molar Heat of fusion', 'Molar Heat of sublimation', 'Molar Heat of atomization'], correct: 'Molar Heat of fusion', explanation: 'The molar heat of fusion is the heat required to convert 1 mole of solid to liquid at its melting point.' },
-                        { question: 'The force acting at right angle on the unit length of surface of liquid is called:', options: ['Surface Tension', 'Viscosity', 'Boiling point', 'Evaporation'], correct: 'Surface Tension', explanation: 'Surface tension is the force acting per unit length at the surface of a liquid.' },
-                        { question: '_____ is the heat absorbed when one mole of solid directly changes into vapors without going through liquid state:', options: ['Molar Heat of vaporization', 'Molar Heat of fusion', 'Molar Heat of sublimation', 'Molar Heat of atomization'], correct: 'Molar Heat of sublimation', explanation: 'Molar heat of sublimation is the heat required for a substance to go directly from solid to gas.' },
-                        { question: '______ is the temperature at which vapor pressure of liquid becomes equal to atmospheric pressure:', options: ['Surface Tension', 'Viscosity', 'Boiling point', 'Evaporation'], correct: 'Boiling point', explanation: 'Boiling point is the temperature at which a liquid’s vapor pressure equals atmospheric pressure.' },
-                        { question: '______ is the internal resistance to flow of liquid:', options: ['Surface Tension', 'Viscosity', 'Boiling point', 'Evaporation'], correct: 'Viscosity', explanation: 'Viscosity is the internal resistance of a liquid to flow.' },
-                        { question: 'The escaping of high energetic molecules from the surface of liquid is called:', options: ['Surface Tension', 'Viscosity', 'Boiling point', 'Evaporation'], correct: 'Evaporation', explanation: 'Evaporation is the process where molecules at the surface of a liquid escape into the gas phase.' },
-                        { question: 'The liquid having high surface tension fall in capillary tube due to high:', options: ['Cohesive force', 'Adhesive force', 'London force', 'Hydrogen bond'], correct: 'Adhesive force', explanation: 'The liquid rises in a capillary tube due to adhesive forces between the liquid and tube.' },
-                        { question: 'The attractive force which develops between an instantaneous dipole and an induced dipole is known as:', options: ['Dipole-Dipole force', 'Dipole induced force', 'London dispersion force', 'Hydrogen bond'], correct: 'London dispersion force', explanation: 'London dispersion forces are weak forces that arise due to the temporary dipoles in molecules.' },
-                        { question: 'The force of attraction between the partial positive charged hydrogen atom of one molecule and lone pair of electron of a highly electronegative atom of another molecule is called:', options: ['Dipole-Dipole force', 'Dipole induced force', 'London dispersion force', 'Hydrogen bond'], correct: 'Hydrogen bond', explanation: 'Hydrogen bonding occurs when a hydrogen atom is attracted to highly electronegative atoms such as O, N, or F.' },
-                    ]
-					},
-					{
-                    title: "11 : THERMODYNAMIC",
-                    questions: [
-                        { question: 'The study of inter transformation of heat, work and other forms of energies is called:', options: ['Biochemistry', 'Thermodynamics', 'Electro chemistry', 'Chemical kinetics'], correct: 'Thermodynamics', explanation: 'Thermodynamics is the study of energy transformations between heat, work, and other forms of energy.' },
-                        { question: 'The properties can be measured if the system has large number of particles thus called:', options: ['Microscopic properties', 'Colligative properties', 'Macroscopic properties', 'All of these'], correct: 'Macroscopic properties', explanation: 'Macroscopic properties are measurable when the system has a large number of particles.' },
-                        { question: 'The sum of internal energy and algebraic product of its pressure and volume is called:', options: ['Heat', 'Enthalpy', 'Entropy', 'Gibb’s free energy'], correct: 'Enthalpy', explanation: 'Enthalpy is the sum of internal energy and the product of pressure and volume.' },
-                        { question: '∆H>0 reaction is ________', options: ['Endothermic', 'Exothermic', 'Isothermal', 'A.O.T'], correct: 'Endothermic', explanation: 'Endothermic reactions absorb heat, so ∆H is positive.' },
-                        { question: 'The thermodynamic parameter which is dependent on initial and final state of the system and is independent of how the change is occurred is called:', options: ['System', 'Surrounding', 'Boundary', 'State function'], correct: 'State function', explanation: 'State functions depend only on the initial and final states of a system.' },
-                        { question: 'The burning of coal is ________ process:', options: ['Endothermic', 'Exothermic', 'Isochoric', 'Isobaric'], correct: 'Exothermic', explanation: 'Burning of coal releases heat, so it is an exothermic process.' },
-                        { question: 'In endothermic process the value of ∆H is _____ product:', options: ['Less than', 'Greater than', 'Equal to', 'N.O.T'], correct: 'Greater than', explanation: 'In endothermic reactions, heat is absorbed, making ∆H greater than zero.' },
-                        { question: 'Breaking of chemical bond is ______ process:', options: ['Endothermic', 'Exothermic', 'Isochoric', 'Isobaric'], correct: 'Endothermic', explanation: 'Breaking chemical bonds requires energy input, hence it is endothermic.' },
-                        { question: 'In a physical or chemical process, the net energy of a system and its surrounding must remain constant is the statement of:', options: ['Hess’s law', 'First law of thermodynamics', '2nd law of thermodynamics', 'N.O.T'], correct: 'First law of thermodynamics', explanation: 'The First law of thermodynamics states energy is conserved in a system and its surroundings.' },
-                        { question: 'Oxidation of coal is a _______ process:', options: ['Endothermic', 'Exothermic', 'Isothermal', 'Isobaric'], correct: 'Exothermic', explanation: 'The oxidation of coal releases energy, making it an exothermic process.' },
-                        { question: 'Combustion of Hexane is a ______________ process:', options: ['Endothermic', 'Exothermic', 'Isochoric', 'Isothermal'], correct: 'Exothermic', explanation: 'Combustion of hexane releases energy, hence it is exothermic.' },
-                        { question: 'E= q + w is the mathematical expression of:', options: ['Hess’s law', 'First law of thermodynamics', 'Born Haber cycle', 'Law of mass action'], correct: 'First law of thermodynamics', explanation: 'The first law of thermodynamics relates energy change (E) to heat (q) and work (w).' },
-                        { question: 'The total energy content of a thermodynamic system under a given set of conditions is known as:', options: ['Heat energy', 'Gibb’s free energy', 'Internal energy', 'Potential energy'], correct: 'Internal energy', explanation: 'Internal energy is the total energy content of a thermodynamic system.' },
-                        { question: 'Burning of petrol in an automobile engine gives carbon dioxide and water vapours. If the gases do 675j work in pushing the piston outward and the system loses 435j heat to the surrounding, calculate the internal energy ∆E change in Kilo joule:', options: ['2.11 kj', '-1.11 kj', '3.21 kj', '4.5 kj'], correct: '-1.11 kj', explanation: '∆E = q + w = -435 + 675 = -1.11 kJ' },
-                        { question: 'The enthalpy change of a chemical reaction in which one mole of a pure substance is formed from its elements in their standard state is called:', options: ['Standard enthalpy of combustion', 'Standard enthalpy of formation', 'Standard enthalpy of solution', 'Standard enthalpy of atomization'], correct: 'Standard enthalpy of formation', explanation: 'This is the definition of standard enthalpy of formation.' },
-                        { question: 'The enthalpy absorbed or evolved when fixed number of moles of reactants as represented in a balance chemical equation are completely reacted to form product with the condition that all the reactants and products are in their standard states is called:', options: ['Standard enthalpy of combustion', 'Standard enthalpy of reaction', 'Standard enthalpy of neutralization', 'Standard enthalpy of atomization'], correct: 'Standard enthalpy of reaction', explanation: 'This is the enthalpy change for a balanced chemical reaction under standard conditions.' },
-                        { question: 'The standard molar enthalpy of formation of acetylene (C2H2) is ______ kj/mol:', options: ['-74.85', '-103.9', '+226.7', '+49.03'], correct: '-74.85', explanation: 'The standard enthalpy of formation of acetylene is -74.85 kJ/mol.' },
-                        { question: 'If a chemical reaction can be brought about in more than one pathway, the net enthalpy change is the same provided that the initial and final states are the same is the statement of ________ law:', options: ['Hess’s law', 'First law of thermodynamics', 'Charle’s law', 'Law of mass action'], correct: 'Hess’s law', explanation: 'Hess’s law states the enthalpy change is independent of the path taken.' },
-                        { question: 'In welding ________ gas is combusted with oxygen:', options: ['Methane', 'Acetylene', 'Benzene', 'N.O.T'], correct: 'Acetylene', explanation: 'Acetylene is commonly used in welding for its high heat production during combustion.' },
-                        { question: 'Least entropy is found in the state of water:', options: ['Liquid at 4°C', 'Steam at 1000°C', 'Liquid at 25°C', 'Ice at 0°C'], correct: 'Ice at 0°C', explanation: 'Entropy is lowest in a solid state, particularly in ice at 0°C.' },
-                        { question: 'When a solid directly changes into a gaseous state without changing into a liquid state, it is called:', options: ['Atomization', 'Neutralization', 'Sublimation', 'N.O.T'], correct: 'Sublimation', explanation: 'Sublimation is the process of direct phase transition from solid to gas.' },
-                        { question: 'Which of the following is not an endothermic reaction:', options: ['Photosynthesis', 'Cracking of alkanes', 'Combustion of butane', 'Decomposition of butane'], correct: 'Combustion of butane', explanation: 'Combustion is an exothermic reaction, as it releases heat.' },
-                        { question: 'Heat transfer cannot be feasible in ________ system:', options: ['Open', 'Closed', 'Isolated', 'Thermo-permeable'], correct: 'Isolated', explanation: 'In an isolated system, no heat transfer is possible.' },
-                        { question: 'What is the heat of formation of ethane at 25°C from the following data?', options: ['-185 kJ/mol', '-85.3 kJ/mol', '-285 kJ/mol', '-485.3 kJ/mol'], correct: '-185 kJ/mol', explanation: 'The heat of formation of ethane at 25°C is -185 kJ/mol.' }
-                    ]
-                }
-            ]
+              ],
+            },
+          ],
         },
-		
-           8: { title: "12:Chemistry - Test Preparation",
-            chapters: [
-                {
-                    title: "3 : ORGANIC COMPOUNDS",
-                    questions: [
-                        { 
-                            question: 'Who prepared the first organic compound?', 
-                            options: ['Bohar', 'Wohler', 'Kekule', 'N.O.T'], 
-                            correct: 'Wohler', 
-                            explanation: 'Friedrich Wöhler synthesized urea in the lab in 1828, proving that organic compounds could be synthesized from inorganic compounds.' 
-                        },
-                        { 
-                            question: 'Which one is the highest ranked coal?', 
-                            options: ['Bitumen', 'Peat', 'Lignite', 'Anthracite'], 
-                            correct: 'Anthracite', 
-                            explanation: 'Anthracite is the highest ranked coal with the highest carbon content and energy output.' 
-                        },
-                        { 
-                            question: 'CaC2 is an ___________ compound.', 
-                            options: ['Organic', 'Inorganic', 'Both', 'None of these'], 
-                            correct: 'Inorganic', 
-                            explanation: 'Calcium carbide (CaC2) is an inorganic compound used in acetylene production.' 
-                        },
-                        { 
-                            question: 'Coke is the purest form of _________.', 
-                            options: ['Steel', 'Iron', 'Carbon', 'All of these'], 
-                            correct: 'Carbon', 
-                            explanation: 'Coke is almost pure carbon, used in the production of iron and steel.' 
-                        },
-                        { 
-                            question: 'The major compound of natural gas is __________.', 
-                            options: ['Methane', 'Butane', 'Ethane', 'None of these'], 
-                            correct: 'Methane', 
-                            explanation: 'Methane (CH4) is the primary component of natural gas.' 
-                        },
-                        { 
-                            question: 'Anti-cancer drug is?', 
-                            options: ['Cumene', 'Ibuprofen', 'Taxol', 'N.O.T'], 
-                            correct: 'Taxol', 
-                            explanation: 'Taxol is an anti-cancer drug derived from the Pacific yew tree.' 
-                        },
-                        { 
-                            question: 'Which compound is used for anesthesia?', 
-                            options: ['Phenol', 'Di ethyl ether', 'Acetone', 'Ethane'], 
-                            correct: 'Di ethyl ether', 
-                            explanation: 'Diethyl ether is commonly used as an anesthetic.' 
-                        },
-                        { 
-                            question: 'Which technology enables the development of vaccines?', 
-                            options: ['Bio chemistry', 'Nucleic acid chemistry', 'Biotechnology', 'Pharmacology'], 
-                            correct: 'Biotechnology', 
-                            explanation: 'Biotechnology is instrumental in the development of vaccines through genetic engineering and other technologies.' 
-                        },
-						{
-                            question: 'The ability of an element to bind itself with its own atom is called________________.',
-                            options: ['Catenation', 'Polymerization', 'Condensation', 'None of these'],
-                            correct: 'Catenation',
-                            explanation: 'Catenation is the ability of an element, especially carbon, to form chains with its own atoms.'
-                        },
-                        {
-                            question: 'Now a days _________ catalyst is used as an anti-knocking agent.',
-                            options: ['Pt', 'Pb(C2H5)4', 'Both', 'N.O.T'],
-                            correct: 'Pb(C2H5)4',
-                            explanation: 'Tetraethyllead (Pb(C2H5)4) is used as an anti-knocking agent in gasoline engines.'
-                        },
-                        {
-                            question: 'Homologous differ from each other by an integral number of ________________ groups.',
-                            options: ['–CH2', '–CH3', '–C2H5', 'None of above'],
-                            correct: '–CH2',
-                            explanation: 'Homologous compounds differ by a repeating –CH2 group, which represents a simple methylene group.'
-                        },
-                        {
-                            question: 'Mostly Homologous are represented by the ______________ general formula?',
-                            options: ['Same', 'Different', 'Both', 'None of these'],
-                            correct: 'Same',
-                            explanation: 'Homologous series are represented by a general formula which is consistent across the series, differing only by the –CH2 unit.'
-                        },
-                        {
-                            question: 'Bromelain compound is obtained from _________',
-                            options: ['Lemon', 'Tea', 'Manure & seaweed', 'A.O.T'],
-                            correct: 'A.O.T',
-                            explanation: 'Bromelain is an enzyme derived from pineapple, not lemon or tea.'
-                        },
-                        {
-                            question: '____________ gas is used in welding.',
-                            options: ['Ethane', 'Ethyne', 'Ethane', 'N.O.T'],
-                            correct: 'Ethyne',
-                            explanation: 'Ethyne (acetylene) is commonly used in welding due to its high-temperature flame.'
-                        },
-                        {
-                            question: 'Which is not a character of organic compounds?',
-                            options: ['Isomerization', 'Catenation', 'Polymerization', 'Ionic bond'],
-                            correct: 'Ionic bond',
-                            explanation: 'Organic compounds typically involve covalent bonds, not ionic bonds.'
-                        },
-                        {
-                            question: 'Which one is target molecule?',
-                            options: ['Cumene', 'Ibuprofen', 'Both', 'N.O.T'],
-                            correct: 'Ibuprofen',
-                            explanation: 'Ibuprofen is a target molecule in pharmaceutical research, whereas cumene is used in industrial applications.'
-                        },
-                        {
-                            question: 'Thar coal contains approximately 175 billion tons of ______ coal.',
-                            options: ['Bitumen', 'Peat', 'Lignite', 'Anthracite'],
-                            correct: 'Lignite',
-                            explanation: 'Thar coal reserves are primarily lignite, a low-grade coal.'
-                        },
-                        {
-                            question: 'Which compound is used as food component?',
-                            options: ['Carbohydrates', 'Proteins', 'Fats', 'A.O.T'],
-                            correct: 'A.O.T',
-                            explanation: 'Carbohydrates, proteins, and fats are all used as food components to provide energy and nutrients.'
-                        },
-                        {
-                            question: 'Which functional group contains -SH atoms?',
-                            options: ['Thiole', 'Alcohol', 'Ketone', 'Ester'],
-                            correct: 'Thiole',
-                            explanation: 'Thiols contain the –SH group, which is characteristic of their chemical structure.'
-                        },
-                        {
-                            question: 'C ≡ N is a __________ functional group.',
-                            options: ['Thiole', 'Alcohol', 'Nitrile', 'Ester'],
-                            correct: 'Nitrile',
-                            explanation: 'The C≡N group is known as a nitrile functional group.'
-                        },
-                        {
-                            question: 'A process in which different molecules form a polymer is called __________ polymerization.',
-                            options: ['Addition', 'Condensation', 'Both', 'None of them'],
-                            correct: 'Both',
-                            explanation: 'Both addition and condensation reactions can form polymers.'
-                        },
-                        {
-                            question: 'Which compound is used for ripening of fruits?',
-                            options: ['Ethene', 'Ethyne', 'H2 gas', 'A.O.T'],
-                            correct: 'Ethene',
-                            explanation: 'Ethene (ethylene) is a gas used to ripen fruits by acting as a plant hormone.'
-                        },
-                        
-       { question: '-O- is __________ functional group',
-        options: ['Alcohol', 'Ketone', 'Aldehyde', 'Ester'],
-        correct: 'Alcohol',
-        explanation: 'The -OH group is called a hydroxyl group, which is characteristic of alcohols.'
-    },
-    {
-        question: 'In bucky ball hollow cage-like structure, a ...-membered ring is surrounded by a ...-membered ring.',
-        options: ['5, 6', '6, 5', '3, 5', 'N.O.T'],
-        correct: '5, 6',
-        explanation: 'In a buckyball (fullerene), the carbon atoms form a spherical structure with alternating 5-membered and 6-membered rings.'
-    },
-    {
-        question: 'New allotropic form of carbon is',
-        options: ['Diamond', 'Graphite', 'Bucky ball', 'A.O.T'],
-        correct: 'Bucky ball',
-        explanation: 'Bucky ball (C60) is a new allotropic form of carbon, discovered as a spherical molecule of 60 carbon atoms.'
-    },
-    {
-        question: 'An atom or group of atoms which describe the chemical properties of a compound is ______',
-        options: ['Functional group', 'Catalyst', 'Chain', 'None of them'],
-        correct: 'Functional group',
-        explanation: 'A functional group is a specific group of atoms within a molecule that determines its chemical properties.'
-    },
-    {
-        question: 'Which functional group contains a nitrogen atom?',
-        options: ['Amide', 'Amine', 'Both', 'Ester'],
-        correct: 'Both',
-        explanation: 'Both amides and amines contain nitrogen atoms as part of their functional groups.'
-    },
-    {
-        question: 'CONH2 is _____ functional group',
-        options: ['Amine', 'Amide', 'Nitrile', 'N.O.T'],
-        correct: 'Amide',
-        explanation: 'The functional group CONH2 is called an amide, which consists of a carbonyl group (C=O) attached to a nitrogen atom.'
-    },
-    {
-        question: 'Which organic compound is soluble in water?',
-        options: ['Benzene', 'Toluene', 'Ethyl alcohol', 'A.O.T'],
-        correct: 'Ethyl alcohol',
-        explanation: 'Ethyl alcohol (ethanol) is soluble in water due to the formation of hydrogen bonds with water molecules.' }
-          ]
-                },
-				{
-                    title: "5 : HYDROCARBAN",
-                    questions: [
-                        {
-                            question: 'Gasoline consists of _____ carbon?',
-                            options: ['5 to 8', '8 to 15', '3 to 4', 'N.O.T'],
-                            correct: '5 to 8',
-                            explanation: 'Gasoline consists primarily of hydrocarbons with 5 to 8 carbon atoms.'
-                        },
-                        {
-                            question: 'Identify the hydrocarbon that is unsaturated.',
-                            options: ['C7H12', 'C2H4', 'C5H8', 'A.O.T'],
-                            correct: 'C2H4',
-                            explanation: 'C2H4 (Ethene) is an unsaturated hydrocarbon because it contains a double bond.'
-                        },
-                        {
-                            question: 'The compound formed by the action of water on ethene is.',
-                            options: ['Ethanol', 'Ethyl hydrogen sulphate', 'Acetylene', 'Ethylene'],
-                            correct: 'Ethanol',
-                            explanation: 'Ethene reacts with water in the presence of an acid catalyst to form ethanol.'
-                        },
-                        {
-                            question: '______ is an example of _________________ reaction.',
-                            options: ['Oxidation', 'Addition', 'Substitution', 'Reduction'],
-                            correct: 'Addition',
-                            explanation: 'Addition reactions involve the addition of atoms or groups to a molecule, like the reaction of ethene with H2.'
-                        },
-                        {
-                            question: 'Which of the following is/are dehydrating agents?',
-                            options: ['H2SO4', 'K2O', 'H2O2', 'All of these'],
-                            correct: 'All of these',
-                            explanation: 'Sulfuric acid (H2SO4), potassium oxide (K2O), and hydrogen peroxide (H2O2) can act as dehydrating agents.'
-                        },
-                        {
-                            question: 'Bond angle in cyclopropane is ______.',
-                            options: ['60°', '90°', '109.5°', 'A.O.T'],
-                            correct: '60°',
-                            explanation: 'The bond angles in cyclopropane are 60°, making it highly strained.'
-                        },
-                        {
-                            question: 'A+ + B- is a _________ fission.',
-                            options: ['Hemolytic', 'Hetrolytic', 'Both', 'N.O.T'],
-                            correct: 'Hetrolytic',
-                            explanation: 'In heterolytic fission, bonds break in such a way that one atom gets both electrons.'
-                        },
-                        {
-                            question: 'Ozonolysis of ethene forms.',
-                            options: ['Acetaldehyde', 'Formaldehyde', 'Acetic acid', 'N.O.T'],
-                            correct: 'Acetaldehyde',
-                            explanation: 'Ozonolysis of ethene leads to the formation of acetaldehyde.'
-                        },
-                        {
-                            question: 'Which compound is not oxidized by KMnO4?',
-                            options: ['Alkene', 'Alkyne', 'Alkane', 'A.O.T'],
-                            correct: 'Alkane',
-                            explanation: 'Alkanes are generally resistant to oxidation by potassium permanganate.'
-                        },
-                        {
-                            question: 'Hexane has ___ number of isomers.',
-                            options: ['6', '7', '5', 'N.O.T'],
-                            correct: '5',
-                            explanation: 'Hexane has 5 structural isomers.'
-                        },
-                        {
-                            question: 'Carbon has different groups is called ______.',
-                            options: ['Chiral', 'A chiral', 'Enantiomer', 'A.O.T'],
-                            correct: 'Chiral',
-                            explanation: 'A chiral molecule has a carbon atom bonded to four different groups, making it optically active.'
-                        },
-                        {
-                            question: 'Benzene is insoluble in _______.',
-                            options: ['Water', 'Acetone', 'Ether', 'Chloroform', 'A.O.T'],
-                            correct: 'Water',
-                            explanation: 'Benzene is non-polar and does not dissolve in polar solvents like water.'
-                        },
-                        {
-                            question: 'Which one is more reactive?',
-                            options: ['H-Cl', 'H-Br', 'H-I', 'N.O.T'],
-                            correct: 'H-I',
-                            explanation: 'H-I is more reactive due to the weaker bond between hydrogen and iodine.'
-                        },
-                        {
-                            question: 'Equimolar mixture of dextro and levo is called.',
-                            options: ['Cis', 'Mesomeric', 'Trans', 'Racemic'],
-                            correct: 'Racemic',
-                            explanation: 'A racemic mixture contains equal amounts of both enantiomers, making it optically inactive.'
-                        },
-                        {
-                            question: 'Which of the following is optical inactive?',
-                            options: ['Dextro', 'Levo', 'Racemic', 'All of these'],
-                            correct: 'Racemic',
-                            explanation: 'A racemic mixture is optically inactive because it contains equal amounts of enantiomers.'
-                        },
-                        {
-                            question: 'Ethene is prepared from alkyl-halide through which process?',
-                            options: ['Hydrogenation', 'Halogenation', 'De-hydrohalogenation', 'Reduction'],
-                            correct: 'De-hydrohalogenation',
-                            explanation: 'Ethene is prepared by dehydrohalogenation of alkyl halides, typically using a strong base.'
-                        },
-                        {
-                            question: 'In Friedel-Craft’s alkylation, besides AlCl3, the other reactants are:',
-                            options: ['C6H6 + CH3Cl', 'C6H6 + CH4', 'C6H6 + NH3', 'C6H6 + CH3COCl'],
-                            correct: 'C6H6 + CH3Cl',
-                            explanation: 'Friedel-Craft’s alkylation involves the reaction of benzene with an alkyl chloride (e.g., CH3Cl) in the presence of AlCl3.'
-                        },
-                        {
-                            question: 'Arenium ion is __________ hybridized.',
-                            options: ['Sp', 'Sp3', 'Sp2', 'N.O.T'],
-                            correct: 'Sp2',
-                            explanation: 'The arenium ion in aromatic electrophilic substitution is sp2 hybridized.'
-                        },
-                        {
-                            question: 'From the following groups, which is not m-directing?',
-                            options: ['–SO3H', '–NO2', '–COOH', 'NH2'],
-                            correct: 'NH2',
-                            explanation: 'The –NH2 group is an electron-donating group and is ortho/para-directing, not meta-directing.'
-                        },
-                        {
-                            question: 'Cis and trans are _____ isomers.',
-                            options: ['Optical', 'Geometrical', 'Structural', 'N.O.T'],
-                            correct: 'Geometrical',
-                            explanation: 'Cis and trans refer to geometrical isomers, differing in the spatial arrangement of atoms or groups around a double bond.'
-                        },
-                        {
-                            question: 'Which compound has the lowest pKa value?',
-                            options: ['Ethanol', 'Acetic acid', 'Phenol', 'A.O.T'],
-                            correct: 'Phenol',
-                            explanation: 'Phenol has the lowest pKa because it is more acidic than ethanol or acetic acid.'
-                        },
-                        {
-                            question: 'A type of isomerism in which a compound exists simultaneously in two forms in equilibrium with one another. This is called:',
-                            options: ['Cis', 'Trans', 'Tautomerism', 'Metamerism'],
-                            correct: 'Tautomerism',
-                            explanation: 'Tautomerism is a type of isomerism where compounds exist in dynamic equilibrium, such as the keto-enol tautomerism.'
-                        },
-                        {
-                            question: 'The electrophile in aromatic nitration is:',
-                            options: ['Nitrite ion', 'Nitrate ion', 'Nitronium ion', 'NOT'],
-                            correct: 'Nitronium ion',
-                            explanation: 'The nitronium ion (NO2+) is the electrophile in the nitration of aromatic compounds.'
-                        },
-                        {
-                            question: 'The formula of chloroform is.',
-                            options: ['CH3Cl', 'CH2Cl2', 'CCl4', 'CHCl3'],
-                            correct: 'CHCl3',
-                            explanation: 'The chemical formula of chloroform is CHCl3.'
-                        },
-                        {
-                            question: 'Which of the following is a characteristic of an aromatic compound?',
-                            options: ['Cyclic', 'Planar', '(4n+2) pi electrons', 'All of the above'],
-                            correct: 'All of the above',
-                            explanation: 'Aromatic compounds are cyclic, planar, and follow the (4n+2) pi-electron rule (Hückel’s rule).' }
-                    ]
-            },            {
-                    title: "6 : name",
-                    questions: [
-			            { question: 'When Grignard reagent reacts with primary amine, it will form:', options: ['Alkene', 'Alkyne', 'Alkane', 'Alcohols'], correct: 'Alkane', explanation: 'Grignard reagents typically form alkanes when they react with primary amines.' },
-                        { question: 'When CO22 reacts with Grignard reagents, it will produce:', options: ['Primary alcohols', 'Carboxylic acids', 'Tertiary alcohols', 'Formic acids'], correct: 'Carboxylic acids', explanation: 'Grignard reagents react with CO2 to form carboxylic acids.' },
-                        { question: 'Which one is the leaving nucleophile in CH3-CH2-Cl + OH:', options: ['OH', 'Cl', 'CH3-CH2', 'All of these'], correct: 'Cl', explanation: 'Chlorine (Cl) is the leaving group in this substitution reaction.' },
-                        { question: 'Sec: alkyl halide can give SN2 mechanism when solvent is:', options: ['Polar', 'Non-polar', 'Both', 'None of these'], correct: 'Polar', explanation: 'SN2 reactions favor polar aprotic solvents.' },
-                        { question: 'Ter: alkyl halide during elimination reaction prefers which mechanism:', options: ['SN2', 'SN1', 'E2', 'E1', 'Both A & C'], correct: 'E2', explanation: 'Ter: alkyl halides undergo E2 elimination mechanisms due to their stable nature.' },
-                        { question: 'Which of the following is the most stable carbonium ion?', options: ['R3C+', 'R2C+H', 'RCH2', '+CH3'], correct: 'R3C+', explanation: 'A tertiary carbonium ion is the most stable due to hyperconjugation and inductive effects.' },
-                        { question: 'Which one is a one-step mechanism?', options: ['SN1', 'SN2', 'E1', 'SN1 & E1'], correct: 'SN2', explanation: 'SN2 reactions are a single-step mechanism involving both nucleophile attack and leaving group departure.' },
-                        { question: 'Alkyl-halide is formed from:', options: ['Alkane', 'Alkene', 'Both', 'N.O.T'], correct: 'Both', explanation: 'Alkyl halides can be formed from both alkanes and alkenes via various halogenation reactions.' },
-                        { question: 'Grignard reacts with ester to give:', options: ['Aldehyde', 'Acetone', 'Ether', 'A.O.T'], correct: 'Aldehyde', explanation: 'Grignard reagents react with esters to produce aldehydes as intermediate products.' },
-                        { question: 'If Nu- attacks on β-Hydrogen, the reaction will be:', options: ['Elimination', 'Substitution', 'Both', 'N.O.T'], correct: 'Elimination', explanation: 'Attack on β-Hydrogen leads to elimination reactions, forming alkenes.' },
-                        { question: 'Sec: alkyl-halide can give which mechanisms:', options: ['E2', 'E1', 'Both', 'N.O.T'], correct: 'Both', explanation: 'Secondary alkyl halides can undergo both E2 and E1 elimination mechanisms.' },
-                        { question: 'Dimethyl Zn is used as:', options: ['Insecticide', 'Vitamin B-12', 'Petroleum industry', 'N.O.T'], correct: 'Insecticide', explanation: 'Dimethyl zinc is used as an insecticide in various agricultural applications.' },
-                        { question: 'Substrate effect in tert-alkyl halides favors:', options: ['Substitution', 'Elimination', 'Both', 'N.O.T'], correct: 'Elimination', explanation: 'Tertiary alkyl halides favor elimination (E2) reactions.' },
-                        { question: 'CH3-CH=CH2 + H-Cl reacts to form:', options: ['1-chloro butane', '2-chloro butane', '2-chloro propane', '1-chloro propane'], correct: '2-chloro butane', explanation: 'The reaction of an alkene with H-Cl produces a chloroalkane, specifically 2-chloro butane.' },
-                        { question: 'Methyl alcohol favors which type of reaction due to absence of β-H:', options: ['Substitution', 'Elimination', 'Both', 'N.O.T'], correct: 'Substitution', explanation: 'Methyl alcohol favors substitution due to the absence of β-H for elimination.' },
-                        { question: 'Which of these is/are called amines?', options: ['R-NH2', 'R-NH-R', 'R3NH', 'A.O.T'], correct: 'All of these', explanation: 'Amines are characterized by the presence of nitrogen atoms bonded to alkyl or aryl groups.' },
-                        { question: 'Formation of Grignard reagent depends easily upon:', options: ['CH3I', 'C2H5I', 'C2H5Cl', 'CH3Cl'], correct: 'C2H5I', explanation: 'C2H5I (ethyl iodide) is commonly used in the formation of Grignard reagents.' },
-                        { question: 'Ethyl diazonium salt is formed when amine reacts with HNO2 in presence of HCl:', options: ['Primary', 'Secondary', 'Tertiary', 'All of these'], correct: 'Primary', explanation: 'Primary amines react with nitrous acid to form diazonium salts.' },
-                        { question: 'Chlorophyll is responsible for:', options: ['O2', 'hv', 'Both', 'N.O.T'], correct: 'Both', explanation: 'Chlorophyll absorbs light energy (hv) during photosynthesis, leading to the release of O2.' },
-                        { question: 'Which amine has a fishy odor?', options: ['R-NH2', 'R-NH-R', 'R3NH', 'A.O.T'], correct: 'R-NH2', explanation: 'Primary amines are known for their characteristic fishy odor.' },
-                        { question: 'When sec-amine reacts with alkyl halide, it will form:', options: ['R-NH2', 'R-NH-R', 'R3NH', 'A.O.T'], correct: 'R-NH-R', explanation: 'Secondary amines react with alkyl halides to form tertiary amines.' },
-                        { question: 'SN2 reaction occurs most easily if substrate is:', options: ['CH3I', 'C2H5I', 'CH3-CH2-CH-CH3', 'CH3-CH-CH3'], correct: 'CH3I', explanation: 'CH3I (methyl iodide) is the most suitable substrate for SN2 reactions.' },
-                        { question: 'Methyl cyanide on catalytic hydrogenation produces:', options: ['CH3NH2', 'C2H5NH2', 'C2H5CN', 'N.O.T'], correct: 'CH3NH2', explanation: 'Catalytic hydrogenation of methyl cyanide produces methylamine.' },
-                        { question: 'Which one has greater boiling point?', options: ['R-NH2', 'R-NH-R', 'Both', 'N.O.T'], correct: 'R-NH2', explanation: 'Primary amines have higher boiling points due to hydrogen bonding.' },
-                        { question: 'Which amine is more soluble?', options: ['R-NH2', 'R-NH-R', 'R3NH', 'A.O.T'], correct: 'R-NH2', explanation: 'Primary amines are more soluble in water due to hydrogen bonding.' }
-                    ]
-                },
-			{
-                    title: "7 : name",
-                    questions: [
-                        {
-                            question: 'Chloro benzene reacts with NaOH to form________:',
-                            options: ['Phenol', 'Sodium phenoxide', 'Both', 'N.O.T'],
-                            correct: 'Sodium phenoxide',
-                            explanation: 'Chloro benzene reacts with NaOH in a nucleophilic substitution reaction to form sodium phenoxide.'
-                        },
-                        {
-                            question: 'Which one is greater bond angle?',
-                            options: ['Water', 'Alcohol', 'Ether', 'N.O.T'],
-                            correct: 'Ether',
-                            explanation: 'Ether has a larger bond angle compared to water and alcohol due to its less polar structure.'
-                        },
-                        {
-                            question: 'O-H bond breaking order of reactivity of alcohols is :',
-                            options: ['1°≤2°≤3°', '1°≥2°≤3°', '1°≥2°≥3°', 'N.O.T'],
-                            correct: '1°≥2°≥3°',
-                            explanation: 'The reactivity of alcohols increases as we move from primary 1° to secondary 2° to tertiary 3° alcohols.'
-                        },
-                        {
-                            question: 'Which compound has greater boiling point?',
-                            options: ['n-butanol', 'iso-butanol', 'iso-propanol', 'ethanol'],
-                            correct: 'n-butanol',
-                            explanation: 'n-Butanol has a greater boiling point due to its higher molecular weight and ability to form hydrogen bonds.'
-                        },
-                        {
-                            question: 'Ethyl alcohol on dehydration gives :',
-                            options: ['Ether', 'Ethene', 'Both', 'Ethane'],
-                            correct: 'Ethene',
-                            explanation: 'Dehydration of ethyl alcohol typically forms ethene as a product.'
-                        },
-                        {
-                            question: 'Oxidizing agents are ________.',
-                            options: ['K2CrO4', 'KMnO4', 'PCC', 'A.O.T'],
-                            correct: 'KMnO4',
-                            explanation: 'Potassium permanganate (KMnO4) is a strong oxidizing agent used in various organic reactions.'
-                        },
-                        {
-                            question: 'When sec:propyl is oxidized, it will give:',
-                            options: ['Alcohol', 'Acetic acid', 'Ketone', 'N.O.T'],
-                            correct: 'Ketone',
-                            explanation: 'Oxidation of sec-propyl (secondary alcohol) gives a ketone.'
-                        },
-                        {
-                            question: 'Ester reacts with Grignard reagent to produce ______.',
-                            options: ['Ketone', '1° Alcohol', '2° Alcohol', '3° Alcohol'],
-                            correct: '3° Alcohol',
-                            explanation: 'Grignard reagents add to esters to form tertiary alcohols after hydrolysis.'
-                        },
-                        {
-                            question: 'Ketone on reduction gives ______.',
-                            options: ['Ester', '1° Alcohol', '2° Alcohol', '3° Alcohol'],
-                            correct: '2° Alcohol',
-                            explanation: 'Reduction of ketones gives secondary alcohols.'
-                        },
-                        {
-                            question: 'When propylene glycol is treated with periodic acid, it produces __________.',
-                            options: ['Formaldehyde', 'Acetaldehyde', 'Both', 'N.O.T'],
-                            correct: 'Formaldehyde',
-                            explanation: 'Propylene glycol undergoes cleavage with periodic acid to form formaldehyde.'
-                        },
-                        {
-                            question: 'Rubbing alcohol is a mixture of__________.',
-                            options: ['Isopropyl alcohol in water', 'Ethanol + Methanol', 'Methanol + Water', 'Ethanol+Water'],
-                            correct: 'Isopropyl alcohol in water',
-                            explanation: 'Rubbing alcohol commonly contains isopropyl alcohol mixed with water.'
-                        },
-                        {
-                            question: 'Conversion of ethanol to ethene in presence of _________ reagent:',
-                            options: ['HIO4', 'KMnO4', 'H2SO4', 'A.O.T'],
-                            correct: 'H2SO4',
-                            explanation: 'Ethanol is converted to ethene upon dehydration using concentrated sulfuric acid (H2SO4).'
-                        },
-                        {
-                            question: 'Formula of thionyl chloride is _________',
-                            options: ['ZnCl2', 'SOCl2', 'HIO4', 'N.O.T'],
-                            correct: 'SOCl2',
-                            explanation: 'The formula of thionyl chloride is SOCl2, often used for chlorination reactions.'
-                        },
-                        {
-                            question: 'Ethyl alcohol reacts with an excess of conc: H2SO4 to form:',
-                            options: ['Ethylene', 'Di ethyl ether', 'Ethyl chloride', 'N.O.T'],
-                            correct: 'Ethylene',
-                            explanation: 'Concentrated sulfuric acid induces dehydration of ethanol to form ethylene (ethene).'
-                        },
-                        {
-                            question: 'When Nu- attacked on alcohol______ is broken.',
-                            options: ['C-O bond', 'O-H bond', 'Both', 'N.O.T'],
-                            correct: 'C-O bond',
-                            explanation: 'During nucleophilic substitution reactions, the C-O bond of alcohols breaks to form the product.'
-                        },
-                        {
-                            question: 'Reducing agents are ________?',
-                            options: ['LiAlH4', 'NaBH4', 'Both', 'N.O.T'],
-                            correct: 'Both',
-                            explanation: 'Both LiAlH4 and NaBH4 are commonly used reducing agents in organic chemistry.'
-                        },
-                        {
-                            question: 'Carboxylic acid & ester on reduction give________ alcohol.',
-                            options: ['Primary', 'Secondary', 'Tertiary', 'Methyl'],
-                            correct: 'Primary',
-                            explanation: 'Reduction of carboxylic acids and esters typically forms primary alcohols.'
-                        },
-                        {
-                            question: 'Which one has strong hydrogen bonding?',
-                            options: ['Alcohol', 'Ether', 'Ketone', 'Phenol'],
-                            correct: 'Phenol',
-                            explanation: 'Phenol exhibits strong hydrogen bonding due to the presence of both an alcohol group and an aromatic ring.'
-                        },
-                        {
-                            question: 'Aldehyde & ketones produce alcohols when__________.',
-                            options: ['Hydrogenation takes place', 'React with reducing agent', 'Both', 'N.O.T'],
-                            correct: 'Both',
-                            explanation: 'Both hydrogenation and reaction with reducing agents can convert aldehydes and ketones into alcohols.'
-                        },
-                        {
-                            question: 'Ethyl chloride reacts with NaOH to produce ?',
-                            options: ['Ethyl alcohol', 'Aldehyde', 'Ester', 'A.O.T'],
-                            correct: 'Ethyl alcohol',
-                            explanation: 'Ethyl chloride reacts with NaOH in a nucleophilic substitution to produce ethyl alcohol.'
-                        },
-                        {
-                            question: 'When phenol is oxidized it will give __________.',
-                            options: ['Benzene', 'Benzoquinone', 'Toluene', 'Benzoic acid'],
-                            correct: 'Benzoquinone',
-                            explanation: 'Oxidation of phenol forms benzoquinone.'
-                        },
-                        {
-                            question: 'Formaldehyde reacts with Grignard reagent to produce ______.',
-                            options: ['Acetic Acid', 'Ester', 'Primary alcohol', 'Secondary alcohol'],
-                            correct: 'Primary alcohol',
-                            explanation: 'Formaldehyde reacts with Grignard reagents to form primary alcohols after hydrolysis.'
-                        },
-                        {
-                            question: 'Acetone oxidized to give ___________?',
-                            options: ['Ethanoic acid', 'Dimethyl ether', 'Secondary propyl alcohol', 'N.O.T'],
-                            correct: 'Ethanoic acid',
-                            explanation: 'Acetone oxidation leads to the formation of ethanoic acid.'
-                        },
-                        {
-                            question: 'Which of the following is a dihydric phenol.',
-                            options: ['Resorcinol', 'Catechol', 'Hydroquinone', 'A.O.T'],
-                            correct: 'Catechol',
-                            explanation: 'Catechol is a dihydric phenol, containing two hydroxyl groups on the benzene ring.'
-                        },
-                        {
-                            question: 'Oxonium ion is stable in _________',
-                            options: ['Dilute acid', 'Concentrated acid', 'Both', 'N.O.T'],
-                            correct: 'Concentrated acid',
-                            explanation: 'Oxonium ions are typically more stable in concentrated acid, where protonation is more favorable.'
-                        }
-                    ]
-                }
-            
-            ]
-        }
-    };
-    
- 
+      };
+
       function showSubjectSelection() {
         document.getElementById("subject-selection").style.display = "block";
         document.getElementById("chapter-selection").style.display = "none";
@@ -1974,7 +370,7 @@
         document.getElementById("quiz-container").style.display = "none";
         document.getElementById("score-container").style.display = "none";
       }
-
+ 
       function selectChapter(subject) {
         currentSubject = subject;
         let chapterButtons = quizData[subject].chapters
@@ -2043,6 +439,8 @@
               return `<button class="btn" onclick="selectOption('${option}')">${option}</button>`;
             })
             .join("");
+           MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+        
 
         document.getElementById("current-question-number").innerText =
           currentQuestionIndex + 1;
