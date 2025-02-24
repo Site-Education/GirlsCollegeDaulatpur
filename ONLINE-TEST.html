@@ -1,62 +1,56 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ONLINE</title>
-    
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ONLINE QUIZ</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Include MathJax for proper fraction display -->
-    <script type="text/javascript" async
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-    </script>
+    <script
+      type="text/javascript"
+      async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"
+    ></script>
     <style>
-      
-             body {
-            font-size: 1rem; /* 1rem is equal to 16px (default) */
-            line-height: 1.5;
-			background: linear-gradient(to top right, #80cbc4, #e1bee7, #80ddea, #d1c4e9);
-            text-align: center;
-			 margin: 0;
-            padding: 0;
-        }
-		.navbar {
-    padding: 1rem; 
-}
-
-
-
-		.container {
-    width: 60%; /* The width of the container */
-    margin: 0 auto; /* Centers the container horizontally */
-    background-color: #fae8e4;
-    padding: 0.4em;
-    border-radius: 0.5em;
-    box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.1);
-}
-
-
+      body {
+        font-size: 1rem;
+        line-height: 1.5;
+        background: linear-gradient(
+          to top right,
+          #80cbc4,
+          #e1bee7,
+          #80ddea,
+          #d1c4e9
+        );
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+      .navbar {
+        padding: 1rem;
+      }
+      .container {
+        width: 60%;
+        margin: 0 auto;
+        background-color: #fae8e4;
+        padding: 0.4em;
+        border-radius: 0.5em;
+        box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.1);
+      }
       #chapter-title {
         margin-top: 0.1em;
         margin-bottom: 0.1em;
         font-size: 1.25rem;
       }
-
       h2 {
         color: #4caf50;
-        font-size: 1.25rem; /* Using rem for font size */
-        margin: 0; /* Relative unit for margin */
+        font-size: 1.25rem;
+        margin: 0;
       }
-
       h1 {
         color: #4caf50;
-        font-size: 1.5rem; /* Using rem for font size */
-
+        font-size: 1.5rem;
         margin: 0.1em;
       }
-
       .btn {
         padding: 0.5em 1.5em;
         font-size: 1rem;
@@ -66,72 +60,55 @@
         border: none;
         transition: background-color 0.2s;
       }
-
-      
-
       .start-btn {
         background-color: #4caf50;
         color: white;
       }
-
       .next-btn,
       .prev-btn {
         background-color: #ff5722;
         color: white;
       }
-
       .close-btn {
         background-color: #f44336;
         color: white;
       }
-
       .back-btn {
         background-color: #2196f3;
         color: white;
       }
-
       .timer {
         font-size: 1.3rem;
         margin-bottom: 0.1em;
         color: #ff5722;
       }
-
       .question {
         font-size: 1.1rem;
         margin: 0em 1em 1em 1em;
         padding: 0.1em;
         line-height: 1.3;
       }
-
       .options {
         margin: 0.5em 0;
       }
-
-      .options button {
+      .options label {
         display: block;
-        margin: 0.1em auto;
-        width: 40%;
+        margin: 0.5em 0;
+        padding: 0.5em;
+        border-radius: 0.5em;
+        cursor: pointer;
       }
-
       .question-number {
         font-size: 1.3rem;
         color: #2196f3;
         margin: 0;
       }
-
-      .chapter-navigation {
+      .question-navigation {
         margin-top: 0.5em;
-        font-size: 1rem;
       }
-
-      .chapter-navigation button {
-        margin: 0.3em;
-      }
-
       .section {
         display: none;
       }
-
       .detailed-explanation {
         margin: 0;
         padding: 0.8em;
@@ -139,72 +116,34 @@
         border-radius: 0.4em;
         font-size: 1rem;
       }
-
       .score-container {
         font-size: 1.2rem;
         color: #4caf50;
         margin-top: 1.5em;
       }
-
       .score-container span {
         font-weight: bold;
       }
-
-      .selected-option {
-        background-color: #fff8dc;
-        color: #ffd700;
-      }
-
       .correct-option {
         background-color: #4caf50;
         color: white;
       }
-
       .incorrect-option {
         background-color: #f44336;
         color: white;
       }
-		 .bottom-heading {
-            text-align: left;
-            font-size: 16px;
-            font-weight: bold;
-            margin-top: 50px;
-            color: #2c3e50;
-        }
     </style>
   </head>
-
-<body>
-   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-         
-                        <a class="nav-link text-white active" aria-current="page" href="../index.html" aria-label="Go to Home Page">HOME</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-                    
-                        <a class="nav-link text-white" href="./onlineTest.html" aria-label="Online Test">ONLINE TEST</a>
-                    
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-                        <a class="nav-link text-white" href="./TEST-PDF.html" aria-label="Download Test PDFs">TEST PDF</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-                    
-                        <a class="nav-link text-white" href="./CONTACT.html" aria-label="Contact Us">CONTACT</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-                    
-                        <a class="nav-link text-white" href="./ABOUT.html" aria-label="About Us">ABOUT</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-	     <a class="navbar-brand text-white" href="./ChemistryWithMe.html">ChemistryWithMe</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="nav-link text-white active" href="../index.html">HOME</a>
+      <a class="nav-link text-white" href="./onlineTest.html">ONLINE TEST</a>
+      <a class="nav-link text-white" href="./TEST-PDF.html">TEST PDF</a>
+      <a class="nav-link text-white" href="./CONTACT.html">CONTACT</a>
+      <a class="nav-link text-white" href="./ABOUT.html">ABOUT</a>
+      <a class="navbar-brand text-white" href="./ChemistryWithMe.html"
+        >ChemistryWithMe</a
+      >
     </nav>
 
     <div class="container">
@@ -212,13 +151,14 @@
       <div id="subject-selection" class="section">
         <h1>Select a Subject</h1>
         <button class="btn start-btn" onclick="selectChapter(1)">
-          9th:Chemistry
+          9th: Chemistry
         </button>
         <button class="btn start-btn" onclick="selectChapter(2)">
-          10th:Chemistry
+          10th: Chemistry
         </button>
-        
-		<h2 style="text-align: center; color: blue; font-size: 18px">Dear students: More MCQs will be provided to you as soon as possible</h2>
+        <h2 style="text-align: center; color: blue; font-size: 18px">
+          Dear students: More MCQs will be provided to you as soon as possible
+        </h2>
       </div>
 
       <div id="chapter-selection" class="section">
@@ -239,7 +179,6 @@
       <div id="quiz-container" class="section">
         <h2 id="quiz-title"></h2>
         <h3 id="chapter-title"></h3>
-        <!-- Chapter Title -->
         <div class="timer">
           Time Remaining: <span id="timer">300</span> seconds
         </div>
@@ -257,7 +196,6 @@
           class="detailed-explanation"
           style="display: none"
         ></div>
-
         <div class="question-navigation">
           <button
             class="btn prev-btn"
@@ -276,7 +214,6 @@
             Next Question
           </button>
         </div>
-
         <button class="btn close-btn" onclick="closeQuestion()">
           Close Question
         </button>
@@ -292,6 +229,7 @@
         </button>
       </div>
     </div>
+
     <script>
       let currentSubject = null;
       let currentChapter = 0;
@@ -299,62 +237,75 @@
       let score = 0;
       let timer = 300;
       let totalQuestions = 0;
+      let answeredQuestions = [];
       let timerInterval = null;
 
       let quizData = {
         1: {
-          title: "9:Chemistry -Test Preparation",
+          title: "9: Chemistry - Test Preparation",
           chapters: [
             {
-              title: "1...",
+              title: "Chapter 1: Fractions",
               questions: [
-			  {
-  question: "Which of the following represents a fraction?",
-  options: [
-    "A. <span>\\( \\frac{n}{d} \\)</span>",  // Inline fraction
-    "B. <span>\\( \\dfrac{n}{d} \\)</span>",  // Display-style fraction
-    "C. <span>\\( \\tfrac{n}{d} \\)</span>",  // Tiny fraction
-    "D. None of the above"
-  ],
-  correct: "B",
-  explanation: "Option B uses the \\( \\dfrac \\) command, which renders the fraction in display-style math for a more prominent fraction."
-},
-
                 {
-  question: "What is the equation for a fraction?",
-  options: [
-    "A. <span>\\( z = \\frac{\\sum_{i=1}^N{x_i}}{\\sum_{i=1}^N{y_i}} \\)</span>",
-    "B. <span>\\( z = \\dfrac{\\sum_{i=1}^N{x_i}}{\\sum_{i=1}^N{y_i}} \\)</span>",
-    "C. <span>\\( z = \\tfrac{\\sum_{i=1}^N{x_i}}{\\sum_{i=1}^N{y_i}} \\)</span>",
-    "D. <span>\\( \\int_{0}^{1} x^2 \, dx \\)</span>"
-  ],
-  correct: "B",
-  explanation: "Option B uses the \\( \\dfrac \\) command, which is a larger fraction suitable for display-style math."
-},
-
-				
-				       {
-    question: "What is the equation for a fraction?",
-    options: [
-        "A. \[ z = \frac{\sum_{i=1}^N{x_i}}{\sum_{i=1}^N{y_i}} \]",
-        "B. \( z = \dfrac{\sum_{i=1}^N{x_i}}{\sum_{i=1}^N{y_i}} \)",
-        "C. \( z = \tfrac{\sum_{i=1}^N{x_i}}{\sum_{i=1}^N{y_i}} \)",
-        "D. \[\int_{0}^{1} x^2 \, dx\]"
-    ],
-    correct: "B",
-    explanation: "Option B uses the \\( \\dfrac \\) command, which is a larger fraction suitable for display-style math."
-},
-				{
+                  question: "Which of the following represents a fraction?",
+                  options: [
+                    "A. <span>\\( \\frac{n}{d} \\)</span>",
+                    "B. <span>\\( \\dfrac{n}{d} \\)</span>", // Correct answer
+                    "C. <span>\\( \\tfrac{n}{d} \\)</span>",
+                    "D. None of the above",
+                  ],
+                  correct: "B",
+                  explanation:
+                    "Option B uses the \\( \\dfrac \\) command, which renders the fraction in display-style math for a more prominent fraction.",
+                },
+                {
+                  question: "What is the equation for a fraction?",
+                  options: [
+                    "A. <span>\\( z = \\frac{\\sum_{i=1}^N{x_i}}{\\sum_{i=1}^N{y_i}} \\)</span>",
+                    "B. <span>\\( z = \\dfrac{\\sum_{i=1}^N{x_i}}{\\sum_{i=1}^N{y_i}} \\)</span>", // Correct answer
+                    "C. <span>\\( z = \\tfrac{\\sum_{i=1}^N{x_i}}{\\sum_{i=1}^N{y_i}} \\)</span>",
+                    "D. <span>\\( \\int_{0}^{1} x^2 \, dx \\)</span>",
+                  ],
+                  correct: "B",
+                  explanation:
+                    "Option B uses the \\( \\dfrac \\) command, which is a larger fraction suitable for display-style math.",
+                },
+                {
                   question: "Antiprotozoal drug is also known as ________?",
                   options: [
                     "Anti-allergic",
                     "Antibiotic",
                     "Antimalarial",
                     "Antivirus",
-                  ],
+                  ], // Correct answer: Antimalarial
                   correct: "Antimalarial",
                   explanation:
                     "Antiprotozoal drugs are used to treat infections caused by protozoa, such as malaria.",
+                },
+                {
+                  question: "Antiprotozoal drug is also known as ________?",
+                  options: [
+                    "Anti-allergic",
+                    "Antibiotic",
+                    "Antimalarial",
+                    "Antivirus",
+                  ], // Correct answer: Antimalarial
+                  correct: "Antimalarial",
+                  explanation:
+                    "Antiprotozoal drugs are used to treat infections caused by protozoa, such as malaria.",
+                },
+                {
+                  question: "What is the equation for a fraction?",
+                  options: [
+                    "A. <span>\\( z = \\frac{\\sum_{i=1}^N{x_i}}{\\sum_{i=1}^N{y_i}} \\)</span>",
+                    "B. <span>\\( z = \\dfrac{\\sum_{i=1}^N{x_i}}{\\sum_{i=1}^N{y_i}} \\)</span>", // Correct answer
+                    "C. <span>\\( z = \\tfrac{\\sum_{i=1}^N{x_i}}{\\sum_{i=1}^N{y_i}} \\)</span>",
+                    "D. <span>\\( \\int_{0}^{1} x^2 \, dx \\)</span>",
+                  ],
+                  correct: "B",
+                  explanation:
+                    "Option B uses the \\( \\dfrac \\) command, which is a larger fraction suitable for display-style math.",
                 },
               ],
             },
@@ -370,7 +321,7 @@
         document.getElementById("quiz-container").style.display = "none";
         document.getElementById("score-container").style.display = "none";
       }
- 
+
       function selectChapter(subject) {
         currentSubject = subject;
         let chapterButtons = quizData[subject].chapters
@@ -387,10 +338,10 @@
         currentChapter = chapterIndex;
         let chapter = quizData[subject].chapters[chapterIndex];
         let questionCount = chapter.questions.length;
-        // Update the chapter title (Lesson Heading)
+
         document.getElementById(
           "chapter-title"
-        ).innerText = `chapter: ${chapter.title}`;
+        ).innerText = `Chapter: ${chapter.title}`;
 
         document.getElementById("question-number-selection").style.display =
           "block";
@@ -431,54 +382,53 @@
           quizData[currentSubject].chapters[currentChapter];
         let questionData = currentChapterData.questions[currentQuestionIndex];
 
-        document.getElementById("question-container").innerText =
+        document.getElementById("question-container").innerHTML =
           questionData.question;
         document.getElementById("options-container").innerHTML =
           questionData.options
-            .map((option) => {
-              return `<button class="btn" onclick="selectOption('${option}')">${option}</button>`;
+            .map((option, index) => {
+              return `<label><input type="radio" name="option" value="${option}" onclick="selectOption('${option}')"> ${option}</label><br>`;
             })
             .join("");
-           MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-        
+
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
 
         document.getElementById("current-question-number").innerText =
           currentQuestionIndex + 1;
         document.getElementById("total-questions").innerText = totalQuestions;
 
-        // Hide explanation if it's visible
         document.getElementById("detailed-explanation").style.display = "none";
-
-        // Enable/Disable buttons based on question index
         document.getElementById("prev-btn").disabled =
           currentQuestionIndex === 0;
         document.getElementById("next-btn").disabled =
           currentQuestionIndex === totalQuestions - 1;
       }
+
       function selectOption(option) {
-        if (answeredQuestions.includes(currentQuestionIndex)) return; // Prevent changing answer after already selecting
+        if (answeredQuestions.includes(currentQuestionIndex)) return;
+
         let currentChapterData =
           quizData[currentSubject].chapters[currentChapter];
         let questionData = currentChapterData.questions[currentQuestionIndex];
 
-        if (option === questionData.correct) {
+        document.querySelectorAll(".options label").forEach((label) => {
+          if (label.textContent.includes(option)) {
+            label.classList.add(
+              option.includes(questionData.correct)
+                ? "correct-option"
+                : "incorrect-option"
+            );
+          }
+          if (label.textContent.includes(questionData.correct)) {
+            label.classList.add("correct-option");
+          }
+        });
+
+        if (option.includes(questionData.correct)) {
           score++;
-          document.querySelectorAll(".options button").forEach((button) => {
-            if (button.textContent === questionData.correct) {
-              button.classList.add("correct-option");
-            }
-          });
-        } else {
-          document.querySelectorAll(".options button").forEach((button) => {
-            if (button.textContent === option) {
-              button.classList.add("incorrect-option");
-            }
-            if (button.textContent === questionData.correct) {
-              button.classList.add("correct-option");
-            }
-          });
         }
-        answeredQuestions.push(currentQuestionIndex); // Mark this question as answered
+
+        answeredQuestions.push(currentQuestionIndex);
         document.getElementById("next-btn").disabled = false;
       }
 
@@ -486,8 +436,6 @@
         if (currentQuestionIndex < totalQuestions - 1) {
           currentQuestionIndex++;
           loadQuestion();
-          document.getElementById("detailed-explanation").style.display =
-            "none"; // Hide explanation
         }
       }
 
@@ -495,8 +443,6 @@
         if (currentQuestionIndex > 0) {
           currentQuestionIndex--;
           loadQuestion();
-          document.getElementById("detailed-explanation").style.display =
-            "none"; // Hide explanation
         }
       }
 
