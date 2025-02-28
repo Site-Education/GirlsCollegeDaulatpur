@@ -16,106 +16,98 @@
 			 margin: 0;
             padding: 0;
         }
-		   		  /* Navbar */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background-color: #FFF8DC; /* Dark background */
-}
+     nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background-color: #FFF8DC;
+            position: relative;
+        }
 
-/* Navbar Brand (Logo) */
-.navbar-brand {
-    font-size: 1.3rem;
-    color: #000000;
-    text-decoration: none;
-}
+        /* Navbar Brand (Logo) */
+        .navbar-brand {
+            font-size: 1.3rem;
+            color: #000;
+            text-decoration: none;
+        }
 
-/* Navbar Links */
-ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
+        /* Navbar Links */
+        ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
 
-li {
-    margin-left: 2rem; /* Spacing between nav items */
-}
+        li {
+            margin-left: 2rem; /* Spacing between nav items */
+        }
 
-a {
-    font-size: 1.2rem;
-    color: #FFFFFF;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
+        a {
+            font-size: 1.2rem;
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
 
-a:hover {
-    color: #FFC0CB; /* Change color on hover */
-}
+        a:hover {
+            color: #FFC0CB; /* Change color on hover */
+        }
 
-/* Navbar Toggler (Mobile View) */
-.navbar-toggler {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
+        /* Navbar Toggler (Hamburger Icon) */
+        .navbar-toggler {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
 
-.navbar-toggler span {
-    width: 2rem;
-    height: 0.3rem;
-    background-color: #FFFAFA;
-    margin: 0.4rem 0;
-}
+        .navbar-toggler span {
+            width: 2rem;
+            height: 0.3rem;
+            background-color: #FFFAFA;
+            margin: 0.4rem 0;
+        }
 
-/* Mobile View (Screen width less than 768px) */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column; /* Stack navbar items vertically */
-        align-items: flex-start;
-    }
+        /* Mobile View (Screen width less than 768px) */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
 
-    .navbar-toggler {
-        display: flex;
-    }
+            .navbar-toggler {
+                display: flex;
+            }
 
-    ul {
-        display: none;
-        width: 100%;
-        flex-direction: column;
-        background-color: #ff0000;
-        position: absolute;
-        top: 40px;
-        left: 0;
-        margin: 0;
-        padding: 0;
-    }
+            ul {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                background-color: #333;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                margin: 0;
+                padding: 0;
+                z-index: 1;
+            }
 
-    ul.show {
-        display: flex;
-    }
+            ul.show {
+                display: flex;
+            }
 
-    li {
-        margin-left: 0;
-        padding: 0.1rem;
-        text-align: left;
-    }
+            li {
+                margin-left: 0;
+                padding: 1rem;
+                text-align: left;
+            }
 
-    a {
-        font-size: 1.0rem; /* Adjust font size for mobile */
-    }
-}
-
-/* Bottom Heading */
-.bottom-heading {
-    text-align: left;
-    font-size: 1rem;
-    font-weight: bold;
-    margin-top: 3rem;
-    color: #2c3e50;
-}
-
+            a {
+                font-size: 1.1rem;
+                color: #fff;
+            }
+        }
 		.container {
     width: 85%; /* The width of the container */
     margin: 0 auto; /* Centers the container horizontally */
