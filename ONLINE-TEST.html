@@ -22,13 +22,13 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    background-color: #ff0000; /* Dark background */
+    background-color: #FFF8DC; /* Dark background */
 }
 
 /* Navbar Brand (Logo) */
 .navbar-brand {
     font-size: 1.3rem;
-    color: #FFFFFF;
+    color: #000000;
     text-decoration: none;
 }
 
@@ -2043,7 +2043,11 @@ a:hover {
             ]
         }
     };
-    
+     // Toggle the navigation menu in mobile view
+        function toggleNavbar() {
+            const navbarNav = document.getElementById("navbarNav");
+            navbarNav.classList.toggle("show");
+        }
  
       function showSubjectSelection() {
         document.getElementById("subject-selection").style.display = "block";
