@@ -133,12 +133,24 @@
             background-color: #f1f1f1; /* Light grey on hover */
             color: #000; /* Change text color on hover */
         }
-	    .right-sidebar {
-    display: flex;
-    flex-direction: row; /* Align buttons in a row */
-    justify-content: flex-start; /* Align the buttons to the left */
-    padding: 1rem;
-    background-color: #f8f9fa; /* Light background */
+/* Remove space at the top of the dropdown button */
+.dropdown .dropdown-toggle {
+    margin-top: 0 !important; /* Removes any top margin */
+    padding-top: 0 !important; /* Removes any top padding */
+}
+
+/* Custom styling for the heading */
+h5 {
+    margin-bottom: 0; /* Remove margin below the heading */
+}
+
+/* Optional: You can adjust the size of the dropdown button if needed */
+.dropdown .dropdown-toggle {
+    padding: 10px 20px;
+    background-color: LightCyan; /* LightCyan color for the button */
+    border: none;
+    color: black;
+    text-decoration: none;
 }
         /* Footer */
         footer {
@@ -157,27 +169,26 @@
     </style>
   </head>
   <body>
-	  
-	   <div class="container mt-1">
-		   <h5 style=" color: red; padding-left: 0.8em; ">GOVERNMENT GIRLS COLLEGE<br> DAULATPUR</h5>
-        <div class="row">
-            <!-- Column 1 - Universities Dropdown -->
-            <div class="col-6 col-md-3 mb-31">
-                <!-- Dropdown Menu for UNIVERSITIES -->
-                <div class="dropdown">
-                    <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        UNIVERSITIES
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="https://www.sbbusba.edu.pk/" target="_self">Shaheed Benazir Bhutto University</a></li>
-                        <li><a class="dropdown-item" href="https://www.usindh.edu.pk/" target="_self">University of Sindh JAMSHORO</a></li>
-                    </ul>
-                </div>
-            </div>
+<div class="container mt-0 pt-0"> <!-- Remove top margin and padding -->
+    <div class="row d-flex justify-content-between align-items-center"> <!-- Flex layout for left-right alignment -->
+        <!-- Left Side - College Heading -->
+        <div class="col-auto">
+            <h5 style="color: red; padding-left: 0.8em;">GOVERNMENT GIRLS COLLEGE<br> DAULATPUR</h5>
+        </div>
 
-            <!-- Column 2 - About Dropdown -->
-            <div class="col-6 col-md-3 mb-3">
-                <!-- Dropdown Menu for ABOUT -->
+        <!-- Right Side - Dropdown Button -->
+        <div class="col-auto">
+            <div class="dropdown">
+                <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    UNIVERSITIES
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://www.sbbusba.edu.pk/" target="_self">Shaheed Benazir Bhutto University</a></li>
+                    <li><a class="dropdown-item" href="https://www.usindh.edu.pk/" target="_self">University of Sindh JAMSHORO</a></li>
+                </ul>
+            </div>
+        </div>
+		 <div class="col-auto">
                 <div class="dropdown">
                     <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         ABOUT
@@ -187,7 +198,10 @@
                         <li><a class="dropdown-item" href="COLLEGE.html" target="_self">College</a></li>
                     </ul>
                 </div>
-            </div>
+            
+        </div>
+    </div>
+</div>
 		
         <p style="text-align: center; color: black; padding-left: 2em; padding-right: 2em;">Education is a daily journey, where both your commitment and your teachers' hard work shape your future. Embrace every class, stay focused, and together we’ll unlock your full potential.</p>
     </div>
