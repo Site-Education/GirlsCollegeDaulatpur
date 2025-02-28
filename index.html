@@ -102,7 +102,35 @@
         .text-center p {
             margin-bottom: 1rem;
         }
-		
+	        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* Set the left side button color to LightCyan */
+        .dropdown .dropdown-toggle {
+            background-color: LightCyan; /* LightCyan color */
+            border: none; /* Optional: Removes border */
+            color: #000; /* Text color */
+            padding: 10px 20px; /* Optional: Adjust padding */
+            text-decoration: none; /* Remove underline from button */
+        }
+
+        /* Optional: Change text color on hover */
+        .dropdown .dropdown-toggle:hover {
+            background-color: #00FFFF; /* Darker cyan on hover */
+            color: black; /* Change text color on hover */
+        }
+
+        /* Remove underline from dropdown links */
+        .dropdown-menu .dropdown-item {
+            text-decoration: none; /* Remove underline from links */
+        }
+
+        /* Optional: Add a hover effect for dropdown items */
+        .dropdown-menu .dropdown-item:hover {
+            background-color: #f1f1f1; /* Light grey on hover */
+            color: #000; /* Change text color on hover */
+        }	
         /* Footer */
         footer {
             background-color: #1d4ed8;
