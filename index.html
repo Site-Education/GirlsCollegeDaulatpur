@@ -17,6 +17,11 @@
             padding: 0;
             background:  #E0FFFF;
         }
+	      .navbar-custom {
+         background-color: #FFF8DC;
+            padding-left: 2vw; /* Relative padding based on viewport width */
+            padding-right: 2vw; /* Relative padding based on viewport width */
+        }
 	    .slider-container {
       width: 90%;  /* Use relative unit for width */
       max-width: 100vw; /* Max width to prevent overflow */
@@ -66,7 +71,7 @@
       position: absolute;
       top: 0;
       left: 100%;
-      animation: slide 20s linear infinite;
+      animation: slide 10s linear infinite;
     }
 
     .slider img + .slider img {
@@ -98,11 +103,7 @@
       }
     }
  /* Custom Navbar Color and Padding */
-        .navbar-custom {
-         background-color: #FFF8DC;
-            padding-left: 2vw; /* Relative padding based on viewport width */
-            padding-right: 2vw; /* Relative padding based on viewport width */
-        }
+      
 
 	.second-image {
             width: 40%; /* 90% of the container width */
@@ -127,7 +128,7 @@
         /* Responsive adjustments */
         @media (max-width: 767px) {
             .second-image {
-                width: 100%; /* Image takes full width on smaller screens */
+                width: 80%; /* Image takes full width on smaller screens */
                 padding-left: 0; /* Remove left padding on small screens */
                 padding-right: 0; /* Remove right padding on small screens */
             }
@@ -266,7 +267,7 @@ h5 {
       <img src="./gallery/exam form.jpg" alt="Image 3">
       <img src="./gallery/exam form.jpg" alt="Image 4">
       <!-- Duplicate the images for continuous loop -->
-      <img src="C:/Users/hp/Desktop/college/gallery/aa.jpg" alt="Image 1">
+      <img src="./gallery/exam form.jpg" alt="Image 4">
       <img src="./gallery/aa.jpg" alt="Image 2">
       
     </div>
