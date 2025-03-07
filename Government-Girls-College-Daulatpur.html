@@ -20,7 +20,7 @@
 
         /* Custom Navbar Color and Padding */
         .navbar-custom {
-             background-color: #FFF8DC;
+            background-color: #FFF8DC;
             padding-left: 2vw;
             padding-right: 2vw;
         }
@@ -38,22 +38,22 @@
         /* Image styling */
         .gallery img {
             width: 100%;
-            height: 15vw;
+            height: auto;
+            max-height: 15vw; /* This ensures the images are responsive */
             object-fit: cover;
             transition: all 0.3s ease;
         }
-       .row {
+
+        .row {
             margin-right: 0;
             margin-left: 0;
-			
         }
 
         .col-12, .col-md-4, .col-lg-3 {
             padding-right: 0;
             padding-left: 0;
-             
-            
         }
+
         /* Hover effect on gallery item */
         .gallery:hover {
             border: 1px solid #333;
@@ -65,7 +65,6 @@
             position: fixed;
             z-index: 1;
             left: 0;
-             margin-bottom: 0; 
             top: 0;
             width: 100%;
             height: 100%;
@@ -121,11 +120,20 @@
             }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 576px) {
             .gallery {
-                width: 90%;
+                width: 90%; /* Take up more space on small screens */
             }
         }
+
+        /* Ensure modal is responsive */
+        @media (max-width: 576px) {
+            .modal img {
+                width: 90%;
+                max-width: none;
+            }
+        }
+
     </style>
 </head>
 
@@ -167,7 +175,6 @@
                 <div class="gallery">
                     <a href="#" onclick="openModal(0)">
                         <img src="./gallery/aa.jpg" alt="aa" class="img-fluid">
-                        
                     </a>
                 </div>
             </div>
@@ -177,7 +184,6 @@
                 <div class="gallery">
                     <a href="#" onclick="openModal(1)">
                         <img src="./gallery/jj.jpg" alt="jj" class="img-fluid">
-                        
                     </a>
                 </div>
             </div>
@@ -187,70 +193,24 @@
                 <div class="gallery">
                     <a href="#" onclick="openModal(2)">
                         <img src="./gallery/ii.jpg" alt="ii" class="img-fluid">
-                        
                     </a>
                 </div>
             </div>
-  <!-- Gallery Item 3 -->
+
+            <!-- Gallery Item 4 -->
             <div class="col-12 col-md-4 col-lg-3">
                 <div class="gallery">
-                    <a href="#" onclick="openModal(2)">
+                    <a href="#" onclick="openModal(3)">
                         <img src="./gallery/hh.jpg" alt="hh" class="img-fluid">
-                       
                     </a>
                 </div>
             </div>
-              <!-- Gallery Item 3 -->
+
+            <!-- Gallery Item 5 -->
             <div class="col-12 col-md-4 col-lg-3">
                 <div class="gallery">
-                    <a href="#" onclick="openModal(2)">
+                    <a href="#" onclick="openModal(4)">
                         <img src="./gallery/gg.jpg" alt="gg" class="img-fluid">
-                        
-                    </a>
-                </div>
-            </div>
-              <!-- Gallery Item 3 -->
-            <div class="col-12 col-md-4 col-lg-3">
-                <div class="gallery">
-                    <a href="#" onclick="openModal(2)">
-                        <img src="./gallery/ff.jpg" alt="ff" class="img-fluid">
-                       
-                    </a>
-                </div>
-            </div>
-              <!-- Gallery Item 3 -->
-            <div class="col-12 col-md-4 col-lg-3">
-                <div class="gallery">
-                    <a href="#" onclick="openModal(2)">
-                        <img src="./gallery/ee.jpg" alt="ee" class="img-fluid">
-                       
-                    </a>
-                </div>
-            </div>
-              <!-- Gallery Item 3 -->
-            <div class="col-12 col-md-4 col-lg-3">
-                <div class="gallery">
-                    <a href="#" onclick="openModal(2)">
-                        <img src="./gallery/dd.jpg" alt="dd" class="img-fluid">
-                       
-                    </a>
-                </div>
-            </div>
-              <!-- Gallery Item 3 -->
-            <div class="col-12 col-md-4 col-lg-3">
-                <div class="gallery">
-                    <a href="#" onclick="openModal(2)">
-                        <img src="./gallery/cc.jpg" alt="cc" class="img-fluid">
-                        
-                    </a>
-                </div>
-            </div>
-              <!-- Gallery Item 3 -->
-            <div class="col-12 col-md-4 col-lg-3">
-                <div class="gallery">
-                    <a href="#" onclick="openModal(2)">
-                        <img src="./gallery/bb.jpg" alt="bb" class="img-fluid">
-                        
                     </a>
                 </div>
             </div>
