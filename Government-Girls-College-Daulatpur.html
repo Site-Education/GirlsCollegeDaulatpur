@@ -268,44 +268,46 @@
     <!-- JavaScript -->
     <script>
         // Array of image paths
-        const images = [
-            './gallery/aa.jpg',
-            './gallery/jj.jpg',
-            './gallery/ii.jpg',
-            './gallery/hh.jpg',
-            './gallery/gg.jpg',
-            './gallery/ff.jpg',
-            './gallery/ee.jpg',
-            './gallery/dd.jpg',
-            './gallery/cc.jpg',
-            './gallery/bb.jpg'
-        ];
+       // Array of image paths
+const images = [
+    './gallery/aa.jpg',
+    './gallery/jj.jpg',
+    './gallery/ii.jpg',
+    './gallery/hh.jpg',
+    './gallery/gg.jpg',
+    './gallery/ff.jpg',
+    './gallery/ee.jpg',
+    './gallery/dd.jpg',
+    './gallery/cc.jpg',
+    './gallery/bb.jpg'
+];
 
-        let currentImageIndex = -1;
+let currentImageIndex = -1;
 
-        // Function to open the modal with the clicked image
-        function openModal(index) {
-            currentImageIndex = index;
-            document.getElementById('imageModal').style.display = 'flex';
-            document.getElementById('modalImage').src = images[currentImageIndex];
-        }
+// Function to open the modal with the clicked image
+function openModal(index) {
+    currentImageIndex = index;
+    document.getElementById('imageModal').style.display = 'flex';
+    document.getElementById('modalImage').src = images[currentImageIndex]; // Set the clicked image
+}
 
-        // Function to close the modal
-        function closeModal() {
-            document.getElementById('imageModal').style.display = 'none';
-        }
+// Function to close the modal
+function closeModal() {
+    document.getElementById('imageModal').style.display = 'none';
+}
 
-        // Function to change images (Next/Previous)
-        function changeImage(direction) {
-            currentImageIndex += direction;
+// Function to change images (Next/Previous)
+function changeImage(direction) {
+    currentImageIndex += direction;
 
-            // If current index is out of bounds, wrap around
-            if (currentImageIndex < 0) currentImageIndex = images.length - 1;
-            if (currentImageIndex >= images.length) currentImageIndex = 0;
+    // If current index is out of bounds, wrap around
+    if (currentImageIndex < 0) currentImageIndex = images.length - 1;
+    if (currentImageIndex >= images.length) currentImageIndex = 0;
 
-            // Update the image source in the modal
-            document.getElementById('modalImage').src = images[currentImageIndex];
-        }
+    // Update the image source in the modal
+    document.getElementById('modalImage').src = images[currentImageIndex];
+}
+        
     </script>
 
     <!-- Bootstrap JavaScript (Optional) -->
