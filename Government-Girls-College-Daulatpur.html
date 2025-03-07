@@ -36,8 +36,8 @@
         /* Image styling for gallery */
         .gallery img {
             width: 100%;
-            height: auto;
-            object-fit: cover;
+            height: 250px; /* Fixed height to ensure all images have equal size */
+            object-fit: cover; /* Ensures images cover the container without distortion */
             transition: all 0.3s ease;
         }
 
@@ -116,7 +116,7 @@
         @media (max-width: 768px) {
             .gallery img {
                 width: 100%; /* Full width for images on mobile screens */
-                height: auto; /* Maintain aspect ratio */
+                height: 200px; /* Adjusted height for mobile screens */
                 object-fit: cover; /* Ensure the image covers the container */
             }
         }
@@ -124,7 +124,7 @@
         @media (max-width: 576px) {
             .gallery img {
                 width: 100%;  /* Full width for mobile screens */
-                height: auto; /* Maintain aspect ratio */
+                height: 150px; /* Adjusted height for smaller screens */
                 object-fit: cover;  /* Maintain the cover effect */
             }
         }
@@ -136,7 +136,6 @@
                 height: auto; /* Maintain aspect ratio */
             }
         }
-
     </style>
 </head>
 <body class="bg-gradient-to-br from-teal-300 via-indigo-200 to-blue-300">
