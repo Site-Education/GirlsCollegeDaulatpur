@@ -31,13 +31,14 @@
             text-align: center;
             transition: all 0.3s ease;
             width: 100%;
+            height: 100%;
         }
 
         /* Image styling for gallery */
         .gallery img {
             width: 100%;
-            height: 250px; /* Fixed height to ensure all images have equal size */
-            object-fit: cover; /* Ensures images cover the container without distortion */
+            height: 100%;
+            object-fit: cover; /* Ensures images maintain their aspect ratio */
             transition: all 0.3s ease;
         }
 
@@ -47,7 +48,6 @@
             margin-left: 0;
         }
 
-        /* Gallery item padding */
         .col-12, .col-md-4, .col-lg-3 {
             padding-right: 0;
             padding-left: 0;
@@ -113,19 +113,25 @@
         }
 
         /* Responsive adjustments */
+        @media (max-width: 1200px) {
+            .col-lg-3 {
+                width: 25%; /* 4 items in a row on larger screens like laptops */
+            }
+        }
+
         @media (max-width: 768px) {
-            .gallery img {
-                width: 100%; /* Full width for images on mobile screens */
-                height: 200px; /* Adjusted height for mobile screens */
-                object-fit: cover; /* Ensure the image covers the container */
+            .col-md-4 {
+                width: 33.33%; /* 3 items in a row on tablets */
             }
         }
 
         @media (max-width: 576px) {
+            .col-12 {
+                width: 100%; /* Single column layout on mobile */
+            }
+
             .gallery img {
-                width: 100%;  /* Full width for mobile screens */
-                height: 150px; /* Adjusted height for smaller screens */
-                object-fit: cover;  /* Maintain the cover effect */
+                height: auto; /* Maintain aspect ratio for mobile */
             }
         }
 
@@ -194,6 +200,15 @@
                 <div class="gallery">
                     <a href="#" onclick="openModal(2)">
                         <img src="./gallery/ii.jpg" alt="ii" class="img-fluid">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Gallery Item 4 -->
+            <div class="col-12 col-md-4 col-lg-3">
+                <div class="gallery">
+                    <a href="#" onclick="openModal(3)">
+                        <img src="./gallery/hh.jpg" alt="hh" class="img-fluid">
                     </a>
                 </div>
             </div>
