@@ -6,7 +6,11 @@
     <title>Government Girls College</title>
    
 	 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    
+      <script
+      type="text/javascript"
+      async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"
+    ></script>
     <style>
       
              body {
@@ -1966,7 +1970,7 @@
             ]
         }
     };
-      function showSubjectSelection() {
+        function showSubjectSelection() {
         document.getElementById("subject-selection").style.display = "block";
         document.getElementById("chapter-selection").style.display = "none";
         document.getElementById("question-number-selection").style.display =
@@ -1991,10 +1995,10 @@
         currentChapter = chapterIndex;
         let chapter = quizData[subject].chapters[chapterIndex];
         let questionCount = chapter.questions.length;
-        // Update the chapter title (Lesson Heading)
+
         document.getElementById(
           "chapter-title"
-        ).innerText = `chapter: ${chapter.title}`;
+        ).innerText = `Chapter: ${chapter.title}`;
 
         document.getElementById("question-number-selection").style.display =
           "block";
@@ -2035,52 +2039,55 @@
           quizData[currentSubject].chapters[currentChapter];
         let questionData = currentChapterData.questions[currentQuestionIndex];
 
-        document.getElementById("question-container").innerText =
+        document.getElementById("question-container").innerHTML =
           questionData.question;
         document.getElementById("options-container").innerHTML =
           questionData.options
-            .map((option) => {
-              return `<button class="btn" onclick="selectOption('${option}')">${option}</button>`;
+            .map((option, index) => {
+              return `<label><input type="radio" name="option" value="${option}" onclick="selectOption('${option}')"> ${option}</label><br>`;
             })
             .join("");
+
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
 
         document.getElementById("current-question-number").innerText =
           currentQuestionIndex + 1;
         document.getElementById("total-questions").innerText = totalQuestions;
 
-        // Hide explanation if it's visible
         document.getElementById("detailed-explanation").style.display = "none";
-
-        // Enable/Disable buttons based on question index
         document.getElementById("prev-btn").disabled =
           currentQuestionIndex === 0;
         document.getElementById("next-btn").disabled =
           currentQuestionIndex === totalQuestions - 1;
       }
+
       function selectOption(option) {
-        if (answeredQuestions.includes(currentQuestionIndex)) return; // Prevent changing answer after already selecting
+        if (answeredQuestions.includes(currentQuestionIndex)) return;
+
         let currentChapterData =
           quizData[currentSubject].chapters[currentChapter];
         let questionData = currentChapterData.questions[currentQuestionIndex];
 
-        if (option === questionData.correct) {
+        document.querySelectorAll(".options label").forEach((label) => {
+          if (label.textContent.includes(option)) {
+            label.classList.add(
+              option.includes(questionData.correct)
+                ? "correct-option"
+                : "incorrect-option"
+            );
+          }
+		   
+		  
+		  
+          if (label.textContent.includes(questionData.correct)) {
+            label.classList.add("correct-option");
+          }
+        });
+        if (option.includes(questionData.correct)) {
           score++;
-          document.querySelectorAll(".options button").forEach((button) => {
-            if (button.textContent === questionData.correct) {
-              button.classList.add("correct-option");
-            }
-          });
-        } else {
-          document.querySelectorAll(".options button").forEach((button) => {
-            if (button.textContent === option) {
-              button.classList.add("incorrect-option");
-            }
-            if (button.textContent === questionData.correct) {
-              button.classList.add("correct-option");
-            }
-          });
         }
-        answeredQuestions.push(currentQuestionIndex); // Mark this question as answered
+
+        answeredQuestions.push(currentQuestionIndex);
         document.getElementById("next-btn").disabled = false;
       }
 
@@ -2088,8 +2095,6 @@
         if (currentQuestionIndex < totalQuestions - 1) {
           currentQuestionIndex++;
           loadQuestion();
-          document.getElementById("detailed-explanation").style.display =
-            "none"; // Hide explanation
         }
       }
 
@@ -2097,8 +2102,6 @@
         if (currentQuestionIndex > 0) {
           currentQuestionIndex--;
           loadQuestion();
-          document.getElementById("detailed-explanation").style.display =
-            "none"; // Hide explanation
         }
       }
 
