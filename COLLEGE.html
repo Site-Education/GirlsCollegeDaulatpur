@@ -26,17 +26,25 @@
         }
 .image-container {
   position: relative;
-  width: 100vw; /* Set the container width to the full viewport width */
-  height: 100vh; /* Set the container height to the full viewport height */
-  overflow: hidden; /* Ensures the image is contained and prevents any overflow */
+  width: 100%; /* Relative to the container width */
+  height: 100vh; /* Height relative to the viewport height */
+  overflow: hidden; /* Prevents any overflow */
 }
 
 /* Image styling */
 .image-container img {
-  width: 100%; /* Make the image fill the container width */
-  height: 100%; /* Make the image fill the container height */
-  object-fit: cover; /* Ensures the image maintains its aspect ratio while filling the container */
-  object-position: center; /* Centers the image if it gets cropped */
+  width: 100%; /* Makes the image responsive and scale to the full container width */
+  height: auto; /* Keeps the aspect ratio intact */
+  max-height: 100vh; /* Limits the height of the image to 100% of the viewport height */
+  object-fit: cover; /* Ensures the image fills the container while maintaining its aspect ratio */
+  object-position: center; /* Keeps the image centered if cropping occurs */
+}
+
+/* Media Queries for further responsiveness */
+@media (min-width: 1024px) {
+  .image-container {
+    height: 80vh; /* Reduce height to 80% of the viewport height for laptop screens */
+  }
 }
 	
     footer {
