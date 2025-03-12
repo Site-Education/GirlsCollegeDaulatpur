@@ -116,6 +116,15 @@
             background-color: rgba(0, 0, 0, 0.7);
         }
 
+        /* CSS for image blur effect on hover */
+        .gallery img {
+            transition: filter 0.3s ease;
+        }
+
+        .gallery:hover img {
+            filter: blur(5px);
+        }
+
         /* Responsive adjustments */
         @media (max-width: 1200px) {
             .col-lg-3 {
@@ -194,8 +203,7 @@
             <div class="col-12 col-md-4 col-lg-3">
                 <div class="gallery">
                     <a href="#" onclick="openModal(1)">
-                       <img src="./gallery/jj.jpg" alt="jj" class="img-fluid" style="filter: blur(0); transition: filter 0.3s;" onmouseover="this.style.filter='blur(5px)';" onmouseout="this.style.filter='blur(0)';">
-
+                       <img src="./gallery/jj.jpg" alt="jj" class="img-fluid">
                     </a>
                 </div>
             </div>
@@ -209,79 +217,15 @@
                 </div>
             </div>
 
-            <!-- Gallery Item 4 -->
-            <div class="col-12 col-md-4 col-lg-3">
-                <div class="gallery">
-                    <a href="#" onclick="openModal(3)">
-                        <img src="./gallery/hh.jpg" alt="hh" class="img-fluid">
-                    </a>
-                </div>
-            </div>
-            
             <!-- New Gallery Items (Add new ones here) -->
             <div class="col-12 col-md-4 col-lg-3">
                 <div class="gallery">
-                    <a href="#" onclick="openModal(4)">
+                    <a href="#" onclick="openModal(3)">
                         <img src="./gallery/gg.jpg" alt="gg" class="img-fluid">
                     </a>
                 </div>
             </div>
-
-            <div class="col-12 col-md-4 col-lg-3">
-                <div class="gallery">
-                    <a href="#" onclick="openModal(5)">
-                        <img src="./gallery/ff.jpg" alt="ff" class="img-fluid">
-                    </a>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-4 col-lg-3">
-                <div class="gallery">
-                    <a href="#" onclick="openModal(6)">
-                        <img src="./gallery/ee.jpg" alt="ee" class="img-fluid">
-                    </a>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-4 col-lg-3">
-                <div class="gallery">
-                    <a href="#" onclick="openModal(7)">
-                        <img src="./gallery/dd.jpg" alt="dd" class="img-fluid">
-                    </a>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-4 col-lg-3">
-                <div class="gallery">
-                    <a href="#" onclick="openModal(8)">
-                        <img src="./gallery/cc.jpg" alt="cc" class="img-fluid">
-                    </a>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-4 col-lg-3">
-                <div class="gallery">
-                    <a href="#" onclick="openModal(9)">
-                        <img src="./gallery/bb.jpg" alt="bb" class="img-fluid">
-                    </a>
-                </div>
-            </div>
-            
-            <div class="col-12 col-md-4 col-lg-3">
-                <div class="gallery">
-                    <a href="#" onclick="openModal(10)">
-                        <img src="./gallery/jj.jpg" alt="jj" class="img-fluid">
-                    </a>
-                </div>
-            </div>
-            
-            <div class="col-12 col-md-4 col-lg-3">
-                <div class="gallery">
-                    <a href="#" onclick="openModal(11)">
-                        <img src="./gallery/kk.jpg" alt="kk" class="img-fluid">
-                    </a>
-                </div>
-            </div>
+            <!-- Add your new gallery items as needed -->
         </div>
     </div>
 
@@ -300,14 +244,12 @@
             './gallery/aa.jpg',
             './gallery/jj.jpg',
             './gallery/ii.jpg',
-            './gallery/hh.jpg',
             './gallery/gg.jpg',
             './gallery/ff.jpg',
             './gallery/ee.jpg',
             './gallery/dd.jpg',
             './gallery/cc.jpg',
             './gallery/bb.jpg',
-            './gallery/jj.jpg',
             './gallery/kk.jpg'
         ];
 
@@ -336,19 +278,20 @@
             // Update the image source in the modal
             document.getElementById('modalImage').src = images[currentImageIndex];
         }
-        document.addEventListener('keydown', function(e) {
-    if (e.key === 'PrintScreen' || (e.ctrlKey && e.key === 'p')) {
-        alert('Screenshots are disabled!');
-        e.preventDefault();
-    }
-});
-
 
         // Disable right-click on images
         document.querySelectorAll('.gallery img').forEach(img => {
             img.addEventListener('contextmenu', function(event) {
                 event.preventDefault();
             });
+        });
+
+        // Prevent PrintScreen (to disable screenshot)
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'PrintScreen' || (e.ctrlKey && e.key === 'p')) {
+                alert('Screenshots are disabled!');
+                e.preventDefault();
+            }
         });
     </script>
 
