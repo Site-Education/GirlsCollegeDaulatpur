@@ -268,7 +268,7 @@
             
             <div class="col-12 col-md-4 col-lg-3">
                 <div class="gallery">
-                    <a href="#" onclick="openModal(9)">
+                    <a href="#" onclick="openModal(10)">
                         <img src="./gallery/jj.jpg" alt="jj" class="img-fluid">
                     </a>
                 </div>
@@ -276,7 +276,7 @@
             
             <div class="col-12 col-md-4 col-lg-3">
                 <div class="gallery">
-                    <a href="#" onclick="openModal(9)">
+                    <a href="#" onclick="openModal(11)">
                         <img src="./gallery/kk.jpg" alt="kk" class="img-fluid">
                     </a>
                 </div>
@@ -297,7 +297,6 @@
         // Array of image paths
         const images = [
             './gallery/aa.jpg',
-            
             './gallery/ii.jpg',
             './gallery/hh.jpg',
             './gallery/gg.jpg',
@@ -306,8 +305,8 @@
             './gallery/dd.jpg',
             './gallery/cc.jpg',
             './gallery/bb.jpg',
-               './gallery/jj.jpg',
-             './gallery/kk.jpg'
+            './gallery/jj.jpg',
+            './gallery/kk.jpg'
         ];
 
         let currentImageIndex = -1;
@@ -335,6 +334,13 @@
             // Update the image source in the modal
             document.getElementById('modalImage').src = images[currentImageIndex];
         }
+
+        // Disable right-click on images
+        document.querySelectorAll('.gallery img').forEach(img => {
+            img.addEventListener('contextmenu', function(event) {
+                event.preventDefault();
+            });
+        });
     </script>
 
     <!-- Bootstrap JavaScript (Optional) -->
