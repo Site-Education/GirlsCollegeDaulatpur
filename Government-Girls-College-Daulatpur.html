@@ -336,6 +336,13 @@
             // Update the image source in the modal
             document.getElementById('modalImage').src = images[currentImageIndex];
         }
+        document.addEventListener('keydown', function(e) {
+    if (e.key === 'PrintScreen' || (e.ctrlKey && e.key === 'p')) {
+        alert('Screenshots are disabled!');
+        e.preventDefault();
+    }
+});
+
 
         // Disable right-click on images
         document.querySelectorAll('.gallery img').forEach(img => {
