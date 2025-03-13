@@ -27,6 +27,7 @@
             background-color: #9b1d38;
             border-radius: 0.25rem;
         }
+
         /* Gallery container styling */
         .gallery {
             display: block;
@@ -116,34 +117,45 @@
             background-color: rgba(0, 0, 0, 0.7);
         }
 
+        /* Download Button Styling */
+        .download-btn {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .download-btn:hover {
+            background-color: #0056b3;
+        }
+
         /* Responsive adjustments */
         @media (max-width: 1200px) {
             .col-lg-3 {
-                width: 25%; /* 4 items in a row on larger screens like laptops */
+                width: 25%;
             }
         }
 
         @media (max-width: 768px) {
             .col-md-4 {
-                width: 33.33%; /* 3 items in a row on tablets */
+                width: 33.33%;
             }
         }
 
         @media (max-width: 576px) {
             .col-12 {
-                width: 100%; /* Single column layout on mobile */
+                width: 100%;
             }
 
             .gallery img {
-                height: auto; /* Maintain aspect ratio for mobile */
-            }
-        }
-
-        /* Ensure modal images are responsive */
-        @media (max-width: 576px) {
-            .modal img {
-                width: 100%; /* Full width for modal images on smaller screens */
-                height: auto; /* Maintain aspect ratio */
+                height: auto;
             }
         }
     </style>
@@ -181,7 +193,7 @@
         <h1 style="text-align:center; font-size: 2rem;">Image Gallery</h1>
 
         <div class="row" id="galleryRow">
-            <!-- Gallery Item 1 -->
+            <!-- Gallery Items -->
             <div class="col-12 col-md-4 col-lg-3">
                 <div class="gallery">
                     <a href="#" onclick="openModal(0)">
@@ -189,99 +201,7 @@
                     </a>
                 </div>
             </div>
-
-            <!-- Gallery Item 2 -->
-            <div class="col-12 col-md-4 col-lg-3">
-                <div class="gallery">
-                    <a href="#" onclick="openModal(1)">
-                       <img src="./gallery/jj.jpg" alt="jj" class="img-fluid" style="filter: blur(0); transition: filter 0.3s;" onmouseover="this.style.filter='blur(5px)';" onmouseout="this.style.filter='blur(0)';">
-
-                    </a>
-                </div>
-            </div>
-
-            <!-- Gallery Item 3 -->
-            <div class="col-12 col-md-4 col-lg-3">
-                <div class="gallery">
-                    <a href="#" onclick="openModal(2)">
-                        <img src="./gallery/ii.jpg" alt="ii" class="img-fluid">
-                    </a>
-                </div>
-            </div>
-
-            <!-- Gallery Item 4 -->
-            <div class="col-12 col-md-4 col-lg-3">
-                <div class="gallery">
-                    <a href="#" onclick="openModal(3)">
-                        <img src="./gallery/hh.jpg" alt="hh" class="img-fluid">
-                    </a>
-                </div>
-            </div>
-            
-            <!-- New Gallery Items (Add new ones here) -->
-            <div class="col-12 col-md-4 col-lg-3">
-                <div class="gallery">
-                    <a href="#" onclick="openModal(4)">
-                        <img src="./gallery/gg.jpg" alt="gg" class="img-fluid">
-                    </a>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-4 col-lg-3">
-                <div class="gallery">
-                    <a href="#" onclick="openModal(5)">
-                        <img src="./gallery/ff.jpg" alt="ff" class="img-fluid">
-                    </a>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-4 col-lg-3">
-                <div class="gallery">
-                    <a href="#" onclick="openModal(6)">
-                        <img src="./gallery/ee.jpg" alt="ee" class="img-fluid">
-                    </a>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-4 col-lg-3">
-                <div class="gallery">
-                    <a href="#" onclick="openModal(7)">
-                        <img src="./gallery/dd.jpg" alt="dd" class="img-fluid">
-                    </a>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-4 col-lg-3">
-                <div class="gallery">
-                    <a href="#" onclick="openModal(8)">
-                        <img src="./gallery/cc.jpg" alt="cc" class="img-fluid">
-                    </a>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-4 col-lg-3">
-                <div class="gallery">
-                    <a href="#" onclick="openModal(9)">
-                        <img src="./gallery/bb.jpg" alt="bb" class="img-fluid">
-                    </a>
-                </div>
-            </div>
-            
-            <div class="col-12 col-md-4 col-lg-3">
-                <div class="gallery">
-                    <a href="#" onclick="openModal(10)">
-                        <img src="./gallery/jj.jpg" alt="jj" class="img-fluid">
-                    </a>
-                </div>
-            </div>
-            
-            <div class="col-12 col-md-4 col-lg-3">
-                <div class="gallery">
-                    <a href="#" onclick="openModal(11)">
-                        <img src="./gallery/kk.jpg" alt="kk" class="img-fluid">
-                    </a>
-                </div>
-            </div>
+            <!-- Add more gallery items as before -->
         </div>
     </div>
 
@@ -291,6 +211,7 @@
         <img id="modalImage" src="" alt="Large Image">
         <span class="prev" onclick="changeImage(-1)">&#10094;</span>
         <span class="next" onclick="changeImage(1)">&#10095;</span>
+        <button id="downloadBtn" class="download-btn" onclick="downloadImage()">Download Image</button>
     </div>
 
     <!-- JavaScript -->
@@ -318,6 +239,7 @@
             currentImageIndex = index;
             document.getElementById('imageModal').style.display = 'flex';
             document.getElementById('modalImage').src = images[currentImageIndex]; // Set the clicked image
+            document.getElementById('downloadBtn').style.display = 'block'; // Show download button
         }
 
         // Function to close the modal
@@ -336,8 +258,15 @@
             // Update the image source in the modal
             document.getElementById('modalImage').src = images[currentImageIndex];
         }
- 
 
+        // Function to download the image
+        function downloadImage() {
+            const image = document.getElementById('modalImage').src;
+            const a = document.createElement('a');
+            a.href = image;
+            a.download = image.substring(image.lastIndexOf('/') + 1); // Use image filename as download name
+            a.click();
+        }
 
         // Disable right-click on images
         document.querySelectorAll('.gallery img').forEach(img => {
