@@ -28,19 +28,15 @@
             border-radius: 0.25rem;
         }
 
-        /* Container for Image Gallery */
-        .gallery-container {
-            width: 80%; /* Controls the width of the gallery container */
-            max-width: 1200px; /* Maximum width to keep the gallery from stretching too much on large screens */
-            margin: 20px auto; /* Centers the container with some space at the top and bottom */
-            padding: 20px; /* Padding around the gallery */
-            background-color: #fff; /* Light background color for the container */
-            border-radius: 10px; /* Slight rounding of corners */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow around the container */
+        /* Image Gallery */
+        .image-gallery-container {
+            max-width: 80%; /* Limit the width of the gallery container */
+            margin: 0 auto; /* Center the gallery */
+            padding: 20px;
         }
 
-        /* Image Gallery */
         .image-gallery {
+            width: 100%;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -180,9 +176,9 @@
 
     <h1 style="text-align:center; font-size: 2rem;">Image Gallery</h1>
 
-    <!-- Container for Image Gallery -->
-    <div class="gallery-container">
+    <div class="image-gallery-container">
         <div class="image-gallery">
+            <!-- Each image is now placed in the image-item container -->
             <div class="image-item" onclick="openModal(0)">
                 <img src="./gallery/aa.jpg" alt="Image 1">
             </div>
@@ -194,6 +190,13 @@
             </div>
             <div class="image-item" onclick="openModal(3)">
                 <img src="./gallery/kk.jpg" alt="Image 4">
+            </div>
+            <!-- Additional Images -->
+            <div class="image-item" onclick="openModal(4)">
+                <img src="./gallery/zz.jpg" alt="Image 5">
+            </div>
+            <div class="image-item" onclick="openModal(5)">
+                <img src="./gallery/xx.jpg" alt="Image 6">
             </div>
         </div>
     </div>
@@ -214,7 +217,9 @@
             { src: "./gallery/aa.jpg", caption: "Caption for Image 1" },
             { src: "./gallery/ff.jpg", caption: "Caption for Image 2" },
             { src: "./gallery/jj.jpg", caption: "Caption for Image 3" },
-            { src: "./gallery/kk.jpg", caption: "Caption for Image 4" }
+            { src: "./gallery/kk.jpg", caption: "Caption for Image 4" },
+            { src: "./gallery/zz.jpg", caption: "Caption for Image 5" },
+            { src: "./gallery/xx.jpg", caption: "Caption for Image 6" }
         ];
 
         function openModal(index) {
@@ -265,7 +270,6 @@
             });
         });
     </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
