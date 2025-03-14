@@ -45,8 +45,8 @@
             overflow: hidden;
             width: 20vw; /* Width based on the viewport width */
             height: 20vw; /* Equal height to width */
-            max-width: 200px; /* Maximum size to avoid images growing too large */
-            max-height: 200px; /* Maximum height */
+            max-width: 100px; /* Maximum size to avoid images growing too large */
+            max-height: 100px; /* Maximum height */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -229,7 +229,7 @@
 
         // Adjust image size dynamically based on viewport width
         imageItems.forEach(item => {
-            if (windowWidth > 1200) {
+            if (windowWidth > 800) {
                 // Large screens (desktops)
                 item.style.width = '15vw';
                 item.style.height = '15vw';
