@@ -27,128 +27,134 @@
             background-color: #9b1d38;
             border-radius: 0.25rem;
         }
-   /* Image Gallery */
-    .image-gallery {
-      width: 100%;
-      padding: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-    }
 
-    .image-item {
-      position: relative;
-      cursor: pointer;
-      border-radius: 8px;
-      overflow: hidden;
-      width: 100px; /* Fixed width for all images */
-      height: 100px; /* Fixed height for all images */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow to create a card effect */
-    }
+        /* Image Gallery */
+        .image-gallery {
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2vw; /* Using vw for better responsiveness */
+        }
 
-    .image-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* Ensures that the image covers the entire container without distortion */
-      border-radius: 8px;
-      transition: transform 0.3s ease;
-    }
+        .image-item {
+            position: relative;
+            cursor: pointer;
+            border-radius: 8px;
+            overflow: hidden;
+            width: 20vw; /* Width based on the viewport width */
+            height: 20vw; /* Equal height to width */
+            max-width: 200px; /* Maximum size to avoid images growing too large */
+            max-height: 200px; /* Maximum height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow to create a card effect */
+        }
 
-    /* Image scaling on hover */
-    .image-item img:hover {
-      transform: scale(1.1);
-    }
+        .image-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures that the image covers the entire container without distortion */
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
 
-    /* Position caption at the bottom */
-    .caption {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      text-align: center;
-      color: white;
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 5px;
-      border-radius: 5px;
-      margin: 0;
-    }
+        /* Image scaling on hover */
+        .image-item img:hover {
+            transform: scale(1.1);
+        }
 
-    /* Modal (Full-Screen View) */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.9);
-      justify-content: center;
-      align-items: center;
-      z-index: 100;
-    }
+        /* Position caption at the bottom */
+        .caption {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 5px;
+            border-radius: 5px;
+            margin: 0;
+        }
 
-    .modal-content {
-      position: relative;
-      max-width: 90%;
-      max-height: 90%;
-    }
+        /* Modal (Full-Screen View) */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
 
-    .modal-content img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
 
-    .modal-close {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      color: white;
-      font-size: 30px;
-      cursor: pointer;
-    }
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
 
-    .modal-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 30px;
-      color: white;
-      cursor: pointer;
-      z-index: 1000;
-    }
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
 
-    .modal-prev {
-      left: 20px;
-    }
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            z-index: 1000;
+        }
 
-    .modal-next {
-      right: 20px;
-    }
+        .modal-prev {
+            left: 20px;
+        }
 
-    /* Mobile Responsiveness */
-    @media (max-width: 768px) {
-      .image-item {
-        width: 150px; /* Adjusted for tablet or medium-sized screens */
-        height: 150px; /* Same height */
-      }
-    }
+        .modal-next {
+            right: 20px;
+        }
 
-    @media (max-width: 480px) {
-      .image-item {
-        width: 120px; /* Adjusted for smaller mobile screens */
-        height: 120px; /* Same height */
-      }
-    }
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .image-item {
+                width: 30vw; /* Adjusted for tablet or medium-sized screens */
+                height: 30vw; /* Same height */
+                max-width: 150px;
+                max-height: 150px;
+            }
+        }
 
-    /* Prevent image drag */
-    img {
-      user-drag: none;
-    }
-       
+        @media (max-width: 480px) {
+            .image-item {
+                width: 40vw; /* Adjusted for smaller mobile screens */
+                height: 40vw; /* Same height */
+                max-width: 120px;
+                max-height: 120px;
+            }
+        }
+
+        /* Prevent image drag */
+        img {
+            user-drag: none;
+        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-teal-300 via-indigo-200 to-blue-300">
@@ -179,152 +185,94 @@
         </div>
     </nav>
     <h1 style="text-align:center; font-size: 2rem;">Image Gallery</h1>
- <div class="image-gallery">
-      
-    <div class="./gallery/aa.jpg" onclick="openModal(0)">
-      <img src="./gallery/aa.jpg" alt="Image 1">
-      <div class="caption">Caption for Image 1</div>
+    <div class="image-gallery">
+        <div class="image-item" onclick="openModal(0)">
+            <img src="./gallery/aa.jpg" alt="Image 1">
+            <div class="caption">Caption for Image 1</div>
+        </div>
+        <div class="image-item" onclick="openModal(1)">
+            <img src="./gallery/ff.jpg" alt="Image 2">
+            <div class="caption">Caption for Image 2</div>
+        </div>
+        <div class="image-item" onclick="openModal(2)">
+            <img src="./gallery/kk.jpg" alt="Image 3">
+            <div class="caption">Caption for Image 3</div>
+        </div>
+        <div class="image-item" onclick="openModal(3)">
+            <img src="./gallery/jj.jpg" alt="Image 4">
+            <div class="caption">Caption for Image 4</div>
+        </div>
     </div>
-    <div class="./gallery/aa.jpg" onclick="openModal(1)">
-      <img src="./gallery/aa.jpg" alt="Image 2">
-      <div class="caption">Caption for Image 2</div>
-    </div>
-    <div class="image-item" onclick="openModal(2)">
-      <img src="./gallery/jj.jpg" alt="Image 3">
-      <div class="caption">Caption for Image 3</div>
-    </div>
-    <div class="image-item" onclick="openModal(3)">
-      <img src="./gallery/kk.jpg" alt="Image 4">
-      <div class="caption">Caption for Image 4</div>
-    </div>
-    <div class="image-item" onclick="openModal(4)">
-      <img src="images/jj.jpg" alt="Image 5">
-      <div class="caption">Caption for Image 5</div>
-    </div>
-     <div class="image-item" onclick="openModal(1)">
-      <img src="./gallery/ii.jpg" alt="Image 2">
-      <div class="caption">Caption for Image 2</div>
-    </div>
-     <div class="image-item" onclick="openModal(1)">
-      <img src="./gallery/hh.jpg" alt="Image 2">
-      <div class="caption">Caption for Image 2</div>
-    </div>
-     <div class="image-item" onclick="openModal(1)">
-      <img src="./gallery/gg.jpg" alt="Image 2">
-      <div class="caption">Caption for Image 2</div>
-    </div>
-     <div class="image-item" onclick="openModal(1)">
-      <img src="./gallery/ff.jpg" alt="Image 2">
-      <div class="caption">Caption for Image 2</div>
-    </div>
-     <div class="image-item" onclick="openModal(1)">
-      <img src="./gallery/ee.jpg" alt="Image 2">
-      <div class="caption">Caption for Image 2</div>
-    </div>
-     <div class="image-item" onclick="openModal(1)">
-      <img src="./gallery/dd.jpg" alt="Image 2">
-      <div class="caption">Caption for Image 2</div>
-    </div>
-     <div class="image-item" onclick="openModal(1)">
-      <img src="./gallery/cc.jpg" alt="Image 2">
-      <div class="caption">Caption for Image 2</div>
-    </div>
-     <div class="image-item" onclick="openModal(1)">
-      <img src="./gallery/bb.jpg" alt="Image 2">
-      <div class="caption">Caption for Image 2</div>
-    </div>
-  </div>
 
-  <!-- Modal for Full Image View -->
-  <div class="modal" id="imageModal">
-    <span class="modal-close" onclick="closeModal()">&times;</span>
-    <span class="modal-nav modal-prev" onclick="changeImage(-1)">&#10094;</span>
-    <span class="modal-nav modal-next" onclick="changeImage(1)">&#10095;</span>
-    <div class="modal-content">
-      <img id="fullImage" src="" alt="Full Image">
-      <div id="modalCaption" class="caption"></div>
+    <!-- Modal for Full Image View -->
+    <div class="modal" id="imageModal">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <span class="modal-nav modal-prev" onclick="changeImage(-1)">&#10094;</span>
+        <span class="modal-nav modal-next" onclick="changeImage(1)">&#10095;</span>
+        <div class="modal-content">
+            <img id="fullImage" src="" alt="Full Image">
+            <div id="modalCaption" class="caption"></div>
+        </div>
     </div>
-  </div>
 
-  <script>
-    let currentImageIndex = 0;
-    const images = [
-         { src: "./gallery/aa.jpg", caption: "Caption for Image 1" },
+    <script>
+        let currentImageIndex = 0;
+        const images = [
+            { src: "./gallery/aa.jpg", caption: "Caption for Image 1" },
+            { src: "./gallery/ff.jpg", caption: "Caption for Image 2" },
+            { src: "./gallery/kk.jpg", caption: "Caption for Image 3" },
+            { src: "./gallery/jj.jpg", caption: "Caption for Image 4" }
+        ];
 
-        
-         { src: "./gallery/ff.jpg", caption: "Caption for Image 1" },
-         { src: "./gallery/.jpg", caption: "Caption for Image 1" },
-         { src: "./gallery/kk.jpg", caption: "Caption for Image 1" },
-         { src: "./gallery/jj.jpg", caption: "Caption for Image 1" },
-         { src: "./gallery/ii.jpg", caption: "Caption for Image 1" },
-         { src: "./gallery/hh.jpg", caption: "Caption for Image 1" },
-         { src: "./gallery/gg.jpg", caption: "Caption for Image 1" },
-      { src: "./gallery/ff.jpg", caption: "Caption for Image 1" },
-      { src: "./gallery/ee.jpg", caption: "Caption for Image 2" },
-      { src: "./gallery/dd.jpg", caption: "Caption for Image 3" },
-      { src: "./gallery/cc.jpg", caption: "Caption for Image 4" },
-      { src: "./gallery/bb.jpg", caption: "Caption for Image 5" }
-    ];
+        function openModal(index) {
+            currentImageIndex = index;
+            const { src, caption } = images[currentImageIndex];
+            updateModalContent(src, caption);
+            const modal = document.getElementById("imageModal");
+            modal.style.display = "flex";
+            modal.classList.add('show');
+        }
 
-    // Function to open the modal with full-size image and caption
-    function openModal(index) {
-      currentImageIndex = index;
-      const { src, caption } = images[currentImageIndex];
-      updateModalContent(src, caption);
-      const modal = document.getElementById("imageModal");
-      modal.style.display = "flex";
-      modal.classList.add('show');
-    }
+        function changeImage(direction) {
+            currentImageIndex += direction;
+            if (currentImageIndex < 0) {
+                currentImageIndex = images.length - 1;
+            } else if (currentImageIndex >= images.length) {
+                currentImageIndex = 0;
+            }
+            const { src, caption } = images[currentImageIndex];
+            updateModalContent(src, caption);
+        }
 
-    // Function to change the image (Previous / Next)
-    function changeImage(direction) {
-      currentImageIndex += direction;
+        function updateModalContent(imageSrc, captionText) {
+            document.getElementById("fullImage").src = imageSrc;
+            document.getElementById("modalCaption").innerText = captionText;
+        }
 
-      // Ensure the index is within bounds
-      if (currentImageIndex < 0) {
-        currentImageIndex = images.length - 1;
-      } else if (currentImageIndex >= images.length) {
-        currentImageIndex = 0;
-      }
+        function closeModal() {
+            const modal = document.getElementById("imageModal");
+            modal.style.display = "none";
+            modal.classList.remove('show');
+        }
 
-      const { src, caption } = images[currentImageIndex];
-      updateModalContent(src, caption);
-    }
+        document.getElementById("imageModal").addEventListener("click", function (e) {
+            if (e.target === document.getElementById("imageModal")) {
+                closeModal();
+            }
+        });
 
-    // Function to update the modal content
-    function updateModalContent(imageSrc, captionText) {
-      document.getElementById("fullImage").src = imageSrc;
-      document.getElementById("modalCaption").innerText = captionText;
-    }
+        // Prevent right-click to stop downloading images
+        document.querySelectorAll('img').forEach(image => {
+            image.addEventListener('contextmenu', (event) => {
+                event.preventDefault();
+                alert('Right-click is disabled. Image download is not allowed.');
+            });
 
-    // Function to close the modal
-    function closeModal() {
-      const modal = document.getElementById("imageModal");
-      modal.style.display = "none";
-      modal.classList.remove('show');
-    }
-
-    // Close the modal when clicking outside the modal content
-    document.getElementById("imageModal").addEventListener("click", function (e) {
-      if (e.target === document.getElementById("imageModal")) {
-        closeModal();
-      }
-    });
-
-    // Prevent right-click to stop downloading images
-    document.querySelectorAll('img').forEach(image => {
-      image.addEventListener('contextmenu', (event) => {
-        event.preventDefault();
-        alert('Right-click is disabled. Image download is not allowed.');
-      });
-
-      // Prevent image dragging
-      image.addEventListener('dragstart', (event) => {
-        event.preventDefault();
-      });
-    });
-  </script>
+            image.addEventListener('dragstart', (event) => {
+                event.preventDefault();
+            });
+        });
+    </script>
 
 </body>
-
 </html>
