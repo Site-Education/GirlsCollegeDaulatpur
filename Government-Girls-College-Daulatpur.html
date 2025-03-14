@@ -44,7 +44,7 @@
             border-radius: 8px;
             overflow: hidden;
             width: 200px; /* Fixed width for all images */
-            height: auto; /* Let the height adjust based on image aspect ratio */
+            height: 300px; /* Set height to maintain aspect ratio */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -53,8 +53,8 @@
 
         .image-item img {
             width: 100%;
-            height: auto; /* Keep aspect ratio intact */
-            object-fit: cover; /* Ensures that the image covers the entire container without distortion */
+            height: 100%;
+            object-fit: contain; /* Ensure images fit without distortion */
             border-radius: 8px;
         }
 
@@ -89,6 +89,12 @@
             justify-content: center;
             align-items: center;
             z-index: 100;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.show {
+            opacity: 1;
         }
 
         .modal-content {
@@ -185,52 +191,20 @@
     <!-- Image Gallery -->
     <div class="image-gallery">
         <div class="image-item" onclick="openModal(0)">
-            <img src="./gallery/aa.jpg" alt="Image 1">
+            <img src="./gallery/aa.jpg" alt="Image 1" onerror="this.src='./fallback.jpg';">
             <div class="caption">Caption for Image 1</div>
         </div>
-         <div class="image-item" onclick="openModal(1)">
-            <img src="./gallery/kk.jpg" alt="Image 2">
+        <div class="image-item" onclick="openModal(1)">
+            <img src="./gallery/kk.jpg" alt="Image 2" onerror="this.src='./fallback.jpg';">
             <div class="caption">Caption for Image 2</div>
         </div>
-         <div class="image-item" onclick="openModal(2)">
-            <img src="./gallery/jj.jpg" alt="Image 3">
+        <div class="image-item" onclick="openModal(2)">
+            <img src="./gallery/jj.jpg" alt="Image 3" onerror="this.src='./fallback.jpg';">
             <div class="caption">Caption for Image 3</div>
         </div>
-         <div class="image-item" onclick="openModal(3)">
-            <img src="./gallery/ii.jpg" alt="Image 4">
+        <div class="image-item" onclick="openModal(3)">
+            <img src="./gallery/ii.jpg" alt="Image 4" onerror="this.src='./fallback.jpg';">
             <div class="caption">Caption for Image 4</div>
-        </div>
-         <div class="image-item" onclick="openModal(4)">
-            <img src="./gallery/hh.jpg" alt="Image 5">
-            <div class="caption">Caption for Image 5</div>
-        </div>
-         <div class="image-item" onclick="openModal(5)">
-            <img src="./gallery/gg.jpg" alt="Image 6">
-            <div class="caption">Caption for Image 6</div>
-        </div>
-         <div class="image-item" onclick="openModal(6)">
-            <img src="./gallery/ff.jpg" alt="Image 7">
-            <div class="caption">Caption for Image 7</div>
-        </div>
-         <div class="image-item" onclick="openModal(7)">
-            <img src="./gallery/ee.jpg" alt="Image 8">
-            <div class="caption">Caption for Image 8</div>
-        </div>
-        <div class="image-item" onclick="openModal(8)">
-            <img src="./gallery/ee.jpg" alt="Image 9">
-            <div class="caption">Caption for Image 9</div>
-        </div>
-        <div class="image-item" onclick="openModal(9)">
-            <img src="./gallery/dd.jpg" alt="Image 10">
-            <div class="caption">Caption for Image 10</div>
-        </div>
-        <div class="image-item" onclick="openModal(10)">
-            <img src="./gallery/cc.jpg" alt="Image 11">
-            <div class="caption">Caption for Image 11</div>
-        </div>
-        <div class="image-item" onclick="openModal(11)">
-            <img src="images/bb.jpg" alt="Image 12">
-            <div class="caption">Caption for Image 12</div>
         </div>
         <!-- More Images... -->
     </div>
@@ -250,17 +224,10 @@
         let currentImageIndex = 0;
         const images = [
             { src: "./gallery/aa.jpg", caption: "Caption for Image 1" },
-            { src: "./gallery/bb.jpg", caption: "Caption for Image 2" },
-            { src: "./gallery/cc.jpg", caption: "Caption for Image 3" },
-            { src: "./gallery/dd.jpg", caption: "Caption for Image 4" },
-            { src: "./gallery/ee.jpg", caption: "Caption for Image 5" },
-            { src: "./gallery/ff.jpg", caption: "Caption for Image 6" },
-            { src: "./gallery/gg.jpg", caption: "Caption for Image 7" },
-            { src: "./gallery/hh.jpg", caption: "Caption for Image 8" },
-            { src: "./gallery/ii.jpg", caption: "Caption for Image 9" },
-            { src: "./gallery/jj.jpg", caption: "Caption for Image 10" },
-            { src: "./gallery/kk.jpg", caption: "Caption for Image 11" }
-            
+            { src: "./gallery/kk.jpg", caption: "Caption for Image 2" },
+            { src: "./gallery/jj.jpg", caption: "Caption for Image 3" },
+            { src: "./gallery/ii.jpg", caption: "Caption for Image 4" },
+            // Add more images as necessary
         ];
 
         // Function to open the modal with full-size image and caption
@@ -308,18 +275,15 @@
             }
         });
 
-        // Prevent right-click to stop downloading images
-        document.querySelectorAll('img').forEach(image => {
-            image.addEventListener('contextmenu', (event) => {
-                event.preventDefault();
-                alert('Right-click is disabled. Image download is not allowed.');
+        // Preload images
+        const preloadImages = () => {
+            images.forEach(image => {
+                const img = new Image();
+                img.src = image.src;
             });
+        };
 
-            // Prevent image dragging
-            image.addEventListener('dragstart', (event) => {
-                event.preventDefault();
-            });
-        });
+        preloadImages();
     </script>
 
 </body>
