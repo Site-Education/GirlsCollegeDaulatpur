@@ -121,6 +121,16 @@
             right: 20px;
         }
 
+        .modal-caption {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 18px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .image-item {
@@ -191,48 +201,6 @@
             <div class="image-item" onclick="openModal(3)">
                 <img src="./gallery/kk.jpg" alt="Image 4">
             </div>
-            
-        </div>
-    </div>
-     <div class="image-gallery-container">
-        <div class="image-gallery">
-            <!-- Each image is now placed in the image-item container -->
-            <div class="image-item" onclick="openModal(4)">
-                <img src="./gallery/aa.jpg" alt="Image 5">
-            </div>
-               <div class="image-item" onclick="openModal(5)">
-                <img src="./gallery/bb.jpg" alt="Image 6">
-            </div>
-            <div class="image-item" onclick="openModal(6)">
-                <img src="./gallery/cc.jpg" alt="Image 7">
-            </div>
-            <div class="image-item" onclick="openModal(7)">
-                <img src="./gallery/dd.jpg" alt="Image 8">
-            </div>
-               <div class="image-item" onclick="openModal(8)">
-                <img src="./gallery/ee.jpg" alt="Image 9">
-            </div>
-            <div class="image-item" onclick="openModal(9)">
-                <img src="./gallery/ff.jpg" alt="Image 10">
-            </div>
-            <div class="image-item" onclick="openModal(19)">
-                <img src="./gallery/gg.jpg" alt="Image 11">
-            </div>
-            <div class="image-item" onclick="openModal(11)">
-                <img src="./gallery/hh.jpg" alt="Image 12">
-            </div>
-            <div class="image-item" onclick="openModal(12)">
-                <img src="./gallery/ii.jpg" alt="Image 13">
-            </div>
-            <div class="image-item" onclick="openModal(13)">
-                <img src="./gallery/jj.jpg" alt="Image 14">
-            </div>
-            <div class="image-item" onclick="openModal(14)">
-                <img src="./gallery/zz.jpg" alt="Image 15">
-            </div>
-            <div class="image-item" onclick="openModal(15)">
-                <img src="./gallery/xx.jpg" alt="Image 16">
-            </div>
         </div>
     </div>
 
@@ -243,6 +211,7 @@
         <span class="modal-nav modal-next" onclick="changeImage(1)">&#10095;</span>
         <div class="modal-content">
             <img id="fullImage" src="" alt="Full Image">
+            <div id="modalCaption" class="modal-caption"></div>
         </div>
     </div>
 
@@ -250,22 +219,27 @@
         let currentImageIndex = 0;
         const images = [
             { src: "./gallery/aa.jpg", caption: "Caption for Image 1" },
-            { src: "./gallery/bb.jpg", caption: "Caption for Image 2" },
-            { src: "./gallery/cc.jpg", caption: "Caption for Image 3" },
-            { src: "./gallery/dd.jpg", caption: "Caption for Image 4" },
-            { src: "./gallery/ee.jpg", caption: "Caption for Image 5" },
-            { src: "./gallery/ff.jpg", caption: "Caption for Image 6" },
-             { src: "./gallery/gg.jpg", caption: "Caption for Image 7" },
-             { src: "./gallery/hh.jpg", caption: "Caption for Image 8" },
-             { src: "./gallery/ii.jpg", caption: "Caption for Image 9" },
-           { src: "./gallery/jj.jpg", caption: "Caption for Image 10" },
-           { src: "./gallery/kk.jpg", caption: "Caption for Image 11" }
+            { src: "./gallery/ff.jpg", caption: "Caption for Image 2" },
+            { src: "./gallery/jj.jpg", caption: "Caption for Image 3" },
+            { src: "./gallery/kk.jpg", caption: "Caption for Image 4" },
+            { src: "./gallery/aa.jpg", caption: "Caption for Image 5" },
+            { src: "./gallery/bb.jpg", caption: "Caption for Image 6" },
+            { src: "./gallery/cc.jpg", caption: "Caption for Image 7" },
+            { src: "./gallery/dd.jpg", caption: "Caption for Image 8" },
+            { src: "./gallery/ee.jpg", caption: "Caption for Image 9" },
+            { src: "./gallery/ff.jpg", caption: "Caption for Image 10" },
+            { src: "./gallery/gg.jpg", caption: "Caption for Image 11" },
+            { src: "./gallery/hh.jpg", caption: "Caption for Image 12" },
+            { src: "./gallery/ii.jpg", caption: "Caption for Image 13" },
+            { src: "./gallery/jj.jpg", caption: "Caption for Image 14" },
+            { src: "./gallery/zz.jpg", caption: "Caption for Image 15" },
+            { src: "./gallery/xx.jpg", caption: "Caption for Image 16" }
         ];
 
         function openModal(index) {
             currentImageIndex = index;
-            const { src } = images[currentImageIndex];
-            updateModalContent(src);
+            const { src, caption } = images[currentImageIndex];
+            updateModalContent(src, caption);
             const modal = document.getElementById("imageModal");
             modal.style.display = "flex";
             modal.classList.add('show');
@@ -278,12 +252,13 @@
             } else if (currentImageIndex >= images.length) {
                 currentImageIndex = 0;
             }
-            const { src } = images[currentImageIndex];
-            updateModalContent(src);
+            const { src, caption } = images[currentImageIndex];
+            updateModalContent(src, caption);
         }
 
-        function updateModalContent(imageSrc) {
+        function updateModalContent(imageSrc, caption) {
             document.getElementById("fullImage").src = imageSrc;
+            document.getElementById("modalCaption").textContent = caption;
         }
 
         function closeModal() {
@@ -297,19 +272,8 @@
                 closeModal();
             }
         });
-
-        // Prevent right-click to stop downloading images
-        document.querySelectorAll('img').forEach(image => {
-            image.addEventListener('contextmenu', (event) => {
-                event.preventDefault();
-                alert('Right-click is disabled. Image download is not allowed.');
-            });
-
-            image.addEventListener('dragstart', (event) => {
-                event.preventDefault();
-            });
-        });
     </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
