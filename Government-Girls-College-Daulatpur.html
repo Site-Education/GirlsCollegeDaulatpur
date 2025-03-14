@@ -31,7 +31,7 @@
         /* Image Gallery */
         .image-gallery {
             width: 100%;
-            
+            padding: 20px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -41,12 +41,8 @@
         .image-item {
             position: relative;
             cursor: pointer;
-            border-radius: 8px;
-            overflow: hidden;
-            width: 20vw; /* Width based on the viewport width */
-            height: 10vw; /* Equal height to width */
-            max-width: 200px; /* Maximum size to avoid images growing too large */
-            max-height: 200px; /* Maximum height */
+            width: 200px; /* Set fixed width */
+            height: 200px; /* Set fixed height */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -54,16 +50,15 @@
         }
 
         .image-item img {
-            width: 100%;
-            height: 100%;
+            width: 100%; /* Fill the container width */
+            height: 100%; /* Fill the container height */
             object-fit: cover; /* Ensures that the image covers the entire container without distortion */
-            border-radius: 4px;
             transition: transform 0.3s ease;
         }
 
         /* Image scaling on hover */
         .image-item img:hover {
-            transform: scale(1.1);
+            transform: scale(1.05); /* Slight zoom effect */
         }
 
         /* Position caption at the bottom */
@@ -116,12 +111,12 @@
 
         .modal-nav {
             position: absolute;
-           
+            top: 50%;
             transform: translateY(-50%);
             font-size: 30px;
             color: white;
             cursor: pointer;
-            z-index: 100;
+            z-index: 1000;
         }
 
         .modal-prev {
@@ -135,19 +130,15 @@
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .image-item {
-                width: 30vw; /* Adjusted for tablet or medium-sized screens */
-                height: 30vw; /* Same height */
-                max-width: 150px;
-                max-height: 150px;
+                width: 150px; /* Adjusted for tablet or medium-sized screens */
+                height: 150px; /* Same height */
             }
         }
 
         @media (max-width: 480px) {
             .image-item {
-                width: 40vw; /* Adjusted for smaller mobile screens */
-                height: 40vw; /* Same height */
-                max-width: 120px;
-                max-height: 120px;
+                width: 120px; /* Adjusted for smaller mobile screens */
+                height: 120px; /* Same height */
             }
         }
 
