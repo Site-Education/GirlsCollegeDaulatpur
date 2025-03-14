@@ -35,7 +35,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 2vw; /* Using vw for better responsiveness */
+            gap: 10px;
         }
 
         .image-item {
@@ -43,10 +43,8 @@
             cursor: pointer;
             border-radius: 8px;
             overflow: hidden;
-            width: 20vw; /* Width based on the viewport width */
-            height: 20vw; /* Equal height to width */
-            max-width: 100px; /* Maximum size to avoid images growing too large */
-            max-height: 100px; /* Maximum height */
+            width: 200px;  /* Fixed width for all images */
+            height: 200px; /* Fixed height for all images */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -58,12 +56,12 @@
             height: 100%;
             object-fit: cover; /* Ensures that the image covers the entire container without distortion */
             border-radius: 8px;
-            transition: transform 0.3s ease;
         }
 
         /* Image scaling on hover */
         .image-item img:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
         }
 
         /* Position caption at the bottom */
@@ -135,19 +133,15 @@
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .image-item {
-                width: 30vw; /* Adjusted for tablet or medium-sized screens */
-                height: 30vw; /* Same height */
-                max-width: 150px;
-                max-height: 150px;
+                width: 150px; /* Adjusted for tablet or medium-sized screens */
+                height: 150px; /* Same height */
             }
         }
 
         @media (max-width: 480px) {
             .image-item {
-                width: 40vw; /* Adjusted for smaller mobile screens */
-                height: 40vw; /* Same height */
-                max-width: 120px;
-                max-height: 120px;
+                width: 120px; /* Adjusted for smaller mobile screens */
+                height: 120px; /* Same height */
             }
         }
 
@@ -184,24 +178,32 @@
             </div>
         </div>
     </nav>
+
     <h1 style="text-align:center; font-size: 2rem;">Image Gallery</h1>
+
+    <!-- Image Gallery -->
     <div class="image-gallery">
         <div class="image-item" onclick="openModal(0)">
             <img src="./gallery/aa.jpg" alt="Image 1">
             <div class="caption">Caption for Image 1</div>
         </div>
         <div class="image-item" onclick="openModal(1)">
-            <img src="./gallery/ff.jpg" alt="Image 2">
+            <img src="./gallery/aa.jpg" alt="Image 2">
             <div class="caption">Caption for Image 2</div>
         </div>
         <div class="image-item" onclick="openModal(2)">
-            <img src="./gallery/kk.jpg" alt="Image 3">
+            <img src="./gallery/jj.jpg" alt="Image 3">
             <div class="caption">Caption for Image 3</div>
         </div>
         <div class="image-item" onclick="openModal(3)">
-            <img src="./gallery/jj.jpg" alt="Image 4">
+            <img src="./gallery/kk.jpg" alt="Image 4">
             <div class="caption">Caption for Image 4</div>
         </div>
+        <div class="image-item" onclick="openModal(4)">
+            <img src="images/jj.jpg" alt="Image 5">
+            <div class="caption">Caption for Image 5</div>
+        </div>
+        <!-- More Images... -->
     </div>
 
     <!-- Modal for Full Image View -->
@@ -214,106 +216,75 @@
             <div id="modalCaption" class="caption"></div>
         </div>
     </div>
-<script>
-    let currentImageIndex = 0;
-    const images = [
-        { src: "./gallery/aa.jpg", caption: "Caption for Image 1" },
-        { src: "./gallery/ff.jpg", caption: "Caption for Image 2" },
-        { src: "./gallery/kk.jpg", caption: "Caption for Image 3" },
-        { src: "./gallery/jj.jpg", caption: "Caption for Image 4" }
-    ];
 
-    function adjustImageSize() {
-        const imageItems = document.querySelectorAll('.image-item img');
-        const windowWidth = window.innerWidth;
+    <script>
+        let currentImageIndex = 0;
+        const images = [
+            { src: "./gallery/aa.jpg", caption: "Caption for Image 1" },
+            { src: "./gallery/aa.jpg", caption: "Caption for Image 2" },
+            { src: "./gallery/jj.jpg", caption: "Caption for Image 3" },
+            { src: "./gallery/kk.jpg", caption: "Caption for Image 4" },
+            { src: "./gallery/jj.jpg", caption: "Caption for Image 5" }
+        ];
 
-        // Adjust image size dynamically based on viewport width
-        imageItems.forEach(item => {
-            if (windowWidth > 800) {
-                // Large screens (desktops)
-                item.style.width = '15vw';
-                item.style.height = '15vw';
-            } else if (windowWidth > 768) {
-                // Medium screens (tablets)
-                item.style.width = '20vw';
-                item.style.height = '20vw';
-            } else if (windowWidth > 480) {
-                // Smaller screens (large phones)
-                item.style.width = '30vw';
-                item.style.height = '30vw';
-            } else {
-                // Extra small screens (small phones)
-                item.style.width = '40vw';
-                item.style.height = '40vw';
+        // Function to open the modal with full-size image and caption
+        function openModal(index) {
+            currentImageIndex = index;
+            const { src, caption } = images[currentImageIndex];
+            updateModalContent(src, caption);
+            const modal = document.getElementById("imageModal");
+            modal.style.display = "flex";
+            modal.classList.add('show');
+        }
+
+        // Function to change the image (Previous / Next)
+        function changeImage(direction) {
+            currentImageIndex += direction;
+
+            // Ensure the index is within bounds
+            if (currentImageIndex < 0) {
+                currentImageIndex = images.length - 1;
+            } else if (currentImageIndex >= images.length) {
+                currentImageIndex = 0;
+            }
+
+            const { src, caption } = images[currentImageIndex];
+            updateModalContent(src, caption);
+        }
+
+        // Function to update the modal content
+        function updateModalContent(imageSrc, captionText) {
+            document.getElementById("fullImage").src = imageSrc;
+            document.getElementById("modalCaption").innerText = captionText;
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            const modal = document.getElementById("imageModal");
+            modal.style.display = "none";
+            modal.classList.remove('show');
+        }
+
+        // Close the modal when clicking outside the modal content
+        document.getElementById("imageModal").addEventListener("click", function (e) {
+            if (e.target === document.getElementById("imageModal")) {
+                closeModal();
             }
         });
-    }
 
-    // Listen for window resize events and adjust image sizes
-    window.addEventListener('resize', adjustImageSize);
+        // Prevent right-click to stop downloading images
+        document.querySelectorAll('img').forEach(image => {
+            image.addEventListener('contextmenu', (event) => {
+                event.preventDefault();
+                alert('Right-click is disabled. Image download is not allowed.');
+            });
 
-    // Initial adjustment of image sizes when the page loads
-    adjustImageSize();
-
-    // Function to open the modal with full-size image and caption
-    function openModal(index) {
-        currentImageIndex = index;
-        const { src, caption } = images[currentImageIndex];
-        updateModalContent(src, caption);
-        const modal = document.getElementById("imageModal");
-        modal.style.display = "flex";
-        modal.classList.add('show');
-    }
-
-    // Function to change the image (Previous / Next)
-    function changeImage(direction) {
-        currentImageIndex += direction;
-
-        // Ensure the index is within bounds
-        if (currentImageIndex < 0) {
-            currentImageIndex = images.length - 1;
-        } else if (currentImageIndex >= images.length) {
-            currentImageIndex = 0;
-        }
-
-        const { src, caption } = images[currentImageIndex];
-        updateModalContent(src, caption);
-    }
-
-    // Function to update the modal content
-    function updateModalContent(imageSrc, captionText) {
-        document.getElementById("fullImage").src = imageSrc;
-        document.getElementById("modalCaption").innerText = captionText;
-    }
-
-    // Function to close the modal
-    function closeModal() {
-        const modal = document.getElementById("imageModal");
-        modal.style.display = "none";
-        modal.classList.remove('show');
-    }
-
-    // Close the modal when clicking outside the modal content
-    document.getElementById("imageModal").addEventListener("click", function (e) {
-        if (e.target === document.getElementById("imageModal")) {
-            closeModal();
-        }
-    });
-
-    // Prevent right-click to stop downloading images
-    document.querySelectorAll('img').forEach(image => {
-        image.addEventListener('contextmenu', (event) => {
-            event.preventDefault();
-            alert('Right-click is disabled. Image download is not allowed.');
+            // Prevent image dragging
+            image.addEventListener('dragstart', (event) => {
+                event.preventDefault();
+            });
         });
-
-        // Prevent image dragging
-        image.addEventListener('dragstart', (event) => {
-            event.preventDefault();
-        });
-    });
-</script>
-
+    </script>
 
 </body>
 </html>
