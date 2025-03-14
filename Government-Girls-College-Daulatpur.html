@@ -43,18 +43,18 @@
             cursor: pointer;
             border-radius: 8px;
             overflow: hidden;
-            width: 200px; /* Fixed width for all images */
-            height: 300px; /* Set height to maintain aspect ratio */
+            width: 200px;
+            height: 200px;
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow to create a card effect */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .image-item img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Ensure images fit without distortion */
+            object-fit: cover; /* Ensures image covers the container while maintaining its aspect ratio */
             border-radius: 8px;
         }
 
@@ -105,6 +105,7 @@
 
         .modal-content img {
             width: 100%;
+            height: auto; /* Keep aspect ratio */
             max-height: 80vh; /* Ensures image does not exceed the viewport height */
             object-fit: contain; /* Ensure the image maintains its aspect ratio */
             border-radius: 8px;
@@ -140,15 +141,15 @@
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .image-item {
-                width: 150px; /* Adjusted for tablet or medium-sized screens */
-                height: auto; /* Let height adjust based on image aspect ratio */
+                width: 150px;
+                height: 150px;
             }
         }
 
         @media (max-width: 480px) {
             .image-item {
-                width: 120px; /* Adjusted for smaller mobile screens */
-                height: auto; /* Let height adjust based on image aspect ratio */
+                width: 120px;
+                height: 120px;
             }
         }
 
@@ -206,7 +207,6 @@
             <img src="./gallery/ii.jpg" alt="Image 4" onerror="this.src='./fallback.jpg';">
             <div class="caption">Caption for Image 4</div>
         </div>
-        <!-- More Images... -->
     </div>
 
     <!-- Modal for Full Image View -->
@@ -226,8 +226,7 @@
             { src: "./gallery/aa.jpg", caption: "Caption for Image 1" },
             { src: "./gallery/kk.jpg", caption: "Caption for Image 2" },
             { src: "./gallery/jj.jpg", caption: "Caption for Image 3" },
-            { src: "./gallery/ii.jpg", caption: "Caption for Image 4" },
-            // Add more images as necessary
+            { src: "./gallery/ii.jpg", caption: "Caption for Image 4" }
         ];
 
         // Function to open the modal with full-size image and caption
@@ -274,16 +273,6 @@
                 closeModal();
             }
         });
-
-        // Preload images
-        const preloadImages = () => {
-            images.forEach(image => {
-                const img = new Image();
-                img.src = image.src;
-            });
-        };
-
-        preloadImages();
     </script>
 
 </body>
