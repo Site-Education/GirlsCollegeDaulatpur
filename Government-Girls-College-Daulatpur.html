@@ -40,16 +40,16 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px; /* Gap between images */
+            gap: 0.1vw;
         }
 
         .image-item {
             position: relative;
             cursor: pointer;
-            width: 22vw;  /* Adjust this value to ensure images are not too large or small */
-            height: 22vw; /* Equal width and height for square images */
-            max-width: 250px;
-            max-height: 250px;
+            width: 25vw; /* Equal width */
+            height: 25vw; /* Equal height (to make square images) */
+            max-width: 250px; /* Max size */
+            max-height: 250px; /* Max size */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -59,7 +59,7 @@
         .image-item img {
             width: 100%;
             height: 100%;
-            object-fit: cover;  /* Ensures the image fits without stretching */
+            object-fit: cover; /* Ensures the image covers the entire container without stretching */
             border-radius: 4px;
         }
 
@@ -124,8 +124,8 @@
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .image-item {
-                width: 40vw;  /* Adjust width for medium screens */
-                height: 40vw; /* Maintain aspect ratio */
+                width: 40vw; /* Adjusted width for medium screens */
+                height: 40vw; /* Same height */
                 max-width: 200px;
                 max-height: 200px;
             }
@@ -133,8 +133,8 @@
 
         @media (max-width: 480px) {
             .image-item {
-                width: 50vw;  /* Adjust width for smaller screens */
-                height: 50vw; /* Maintain aspect ratio */
+                width: 50vw; /* Adjusted width for smaller screens */
+                height: 50vw; /* Same height */
                 max-width: 150px;
                 max-height: 150px;
             }
@@ -176,10 +176,9 @@
 
     <h1 style="text-align:center; font-size: 2rem;">Image Gallery</h1>
 
-    <!-- Image Gallery -->
     <div class="image-gallery-container">
         <div class="image-gallery">
-            <!-- Image items with click event to open modal -->
+            <!-- First set of images -->
             <div class="image-item" onclick="openModal(0)">
                 <img src="./gallery/aa.jpg" alt="Image 1">
             </div>
@@ -192,6 +191,12 @@
             <div class="image-item" onclick="openModal(3)">
                 <img src="./gallery/kk.jpg" alt="Image 4">
             </div>
+        </div>
+    </div>
+
+    <div class="image-gallery-container">
+        <div class="image-gallery">
+            <!-- Second set of images -->
             <div class="image-item" onclick="openModal(4)">
                 <img src="./gallery/aa.jpg" alt="Image 5">
             </div>
@@ -209,6 +214,24 @@
             </div>
             <div class="image-item" onclick="openModal(9)">
                 <img src="./gallery/ff.jpg" alt="Image 10">
+            </div>
+            <div class="image-item" onclick="openModal(10)">
+                <img src="./gallery/gg.jpg" alt="Image 11">
+            </div>
+            <div class="image-item" onclick="openModal(11)">
+                <img src="./gallery/hh.jpg" alt="Image 12">
+            </div>
+            <div class="image-item" onclick="openModal(12)">
+                <img src="./gallery/ii.jpg" alt="Image 13">
+            </div>
+            <div class="image-item" onclick="openModal(13)">
+                <img src="./gallery/jj.jpg" alt="Image 14">
+            </div>
+            <div class="image-item" onclick="openModal(14)">
+                <img src="./gallery/zz.jpg" alt="Image 15">
+            </div>
+            <div class="image-item" onclick="openModal(15)">
+                <img src="./gallery/xx.jpg" alt="Image 16">
             </div>
         </div>
     </div>
@@ -235,7 +258,13 @@
             { src: "./gallery/cc.jpg", caption: "Caption for Image 7" },
             { src: "./gallery/dd.jpg", caption: "Caption for Image 8" },
             { src: "./gallery/ee.jpg", caption: "Caption for Image 9" },
-            { src: "./gallery/ff.jpg", caption: "Caption for Image 10" }
+            { src: "./gallery/ff.jpg", caption: "Caption for Image 10" },
+            { src: "./gallery/gg.jpg", caption: "Caption for Image 11" },
+            { src: "./gallery/hh.jpg", caption: "Caption for Image 12" },
+            { src: "./gallery/ii.jpg", caption: "Caption for Image 13" },
+            { src: "./gallery/jj.jpg", caption: "Caption for Image 14" },
+            { src: "./gallery/zz.jpg", caption: "Caption for Image 15" },
+            { src: "./gallery/xx.jpg", caption: "Caption for Image 16" }
         ];
 
         function openModal(index) {
@@ -243,7 +272,7 @@
             const { src } = images[currentImageIndex];
             updateModalContent(src);
             const modal = document.getElementById("imageModal");
-            modal.style.display = "flex"; // Ensure modal is shown
+            modal.style.display = "flex";
             modal.classList.add('show');
         }
 
@@ -273,8 +302,19 @@
                 closeModal();
             }
         });
-    </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        // Prevent right-click to stop downloading images
+        document.querySelectorAll('img').forEach(image => {
+            image.addEventListener('contextmenu', (event) => {
+                event.preventDefault();
+                alert('Right-click is disabled. Image download is not allowed.');
+            });
+
+            image.addEventListener('dragstart', (event) => {
+                event.preventDefault();
+            });
+        });
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
