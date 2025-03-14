@@ -27,137 +27,128 @@
             background-color: #9b1d38;
             border-radius: 0.25rem;
         }
+   /* Image Gallery */
+    .image-gallery {
+      width: 100%;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
 
-        /* Gallery container styling */
-        .gallery {
-            display: block;
-            border: 1px solid gray;
-            box-sizing: border-box;
-            text-align: center;
-            transition: all 0.3s ease;
-            width: 100%;
-            height: 100%;
-        }
+    .image-item {
+      position: relative;
+      cursor: pointer;
+      border-radius: 8px;
+      overflow: hidden;
+      width: 200px; /* Fixed width for all images */
+      height: 200px; /* Fixed height for all images */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow to create a card effect */
+    }
 
-        /* Image styling for gallery */
-        .gallery img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Ensures images maintain their aspect ratio */
-            transition: all 0.3s ease;
-        }
+    .image-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures that the image covers the entire container without distortion */
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
 
-        /* Row styling */
-        .row {
-            margin-right: 0;
-            margin-left: 0;
-        }
+    /* Image scaling on hover */
+    .image-item img:hover {
+      transform: scale(1.1);
+    }
 
-        .col-12, .col-md-4, .col-lg-3 {
-            padding-right: 0;
-            padding-left: 0;
-        }
+    /* Position caption at the bottom */
+    .caption {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 5px;
+      border-radius: 5px;
+      margin: 0;
+    }
 
-        /* Hover effect on gallery item */
-        .gallery:hover {
-            border: 1px solid #333;
-        }
+    /* Modal (Full-Screen View) */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
 
-        /* Modal styling */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            align-items: center;
-            justify-content: center;
-        }
+    .modal-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 90%;
+    }
 
-        .modal img {
-            width: 80%;
-            max-width: 50rem;
-            height: auto;
-        }
+    .modal-content img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
 
-        .close {
-            position: absolute;
-            top: 2%;
-            right: 2%;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-        }
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
+    }
 
-        /* Next/Previous buttons */
-        .prev, .next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 2rem;
-            color: white;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 1em;
-            cursor: pointer;
-        }
+    .modal-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+      z-index: 2000;
+    }
 
-        .prev {
-            left: 5%;
-        }
+    .modal-prev {
+      left: 20px;
+    }
 
-        .next {
-            right: 5%;
-        }
+    .modal-next {
+      right: 20px;
+    }
 
-        /* Hover effect for the buttons */
-        .prev:hover, .next:hover {
-            background-color: rgba(0, 0, 0, 0.7);
-        }
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .image-item {
+        width: 150px; /* Adjusted for tablet or medium-sized screens */
+        height: 150px; /* Same height */
+      }
+    }
 
-        /* Download Button Styling */
-        .download-btn {
-            position: absolute;
-            bottom: 10%;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            font-size: 1.2rem;
-            border-radius: 5px;
-            cursor: pointer;
-            display: none;
-        }
+    @media (max-width: 480px) {
+      .image-item {
+        width: 120px; /* Adjusted for smaller mobile screens */
+        height: 120px; /* Same height */
+      }
+    }
 
-        .download-btn:hover {
-            background-color: #0056b3;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 1200px) {
-            .col-lg-3 {
-                width: 25%;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .col-md-4 {
-                width: 33.33%;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .col-12 {
-                width: 100%;
-            }
-
-            .gallery img {
-                height: auto;
-            }
-        }
+    /* Prevent image drag */
+    img {
+      user-drag: none;
+    }
+       
     </style>
 </head>
 <body class="bg-gradient-to-br from-teal-300 via-indigo-200 to-blue-300">
@@ -187,96 +178,109 @@
             </div>
         </div>
     </nav>
-
-    <!-- Image Gallery -->
-    <div class="container py-3">
-        <h1 style="text-align:center; font-size: 2rem;">Image Gallery</h1>
-
-        <div class="row" id="galleryRow">
-            <!-- Gallery Items -->
-            <div class="col-12 col-md-4 col-lg-3">
-                <div class="gallery">
-                    <a href="#" onclick="openModal(0)">
-                        <img src="./gallery/aa.jpg" alt="aa" class="img-fluid">
-                    </a>
-                </div>
-            </div>
-            <!-- Add more gallery items as before -->
-        </div>
+ <div class="image-gallery">
+    <div class="image-item" onclick="openModal(0)">
+      <img src="./gallery/jj.jpg" alt="Image 1">
+      <div class="caption">Caption for Image 1</div>
     </div>
-
-    <!-- Modal for viewing larger image -->
-    <div id="imageModal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img id="modalImage" src="" alt="Large Image">
-        <span class="prev" onclick="changeImage(-1)">&#10094;</span>
-        <span class="next" onclick="changeImage(1)">&#10095;</span>
-        <button id="downloadBtn" class="download-btn" onclick="downloadImage()">Download Image</button>
+    <div class="image-item" onclick="openModal(1)">
+      <img src="./gallery/aa.jpg" alt="Image 2">
+      <div class="caption">Caption for Image 2</div>
     </div>
+    <div class="image-item" onclick="openModal(2)">
+      <img src="./gallery/jj.jpg" alt="Image 3">
+      <div class="caption">Caption for Image 3</div>
+    </div>
+    <div class="image-item" onclick="openModal(3)">
+      <img src="C:/Users/hp/Desktop/college/gallery/aa.jpg" alt="Image 4">
+      <div class="caption">Caption for Image 4</div>
+    </div>
+    <div class="image-item" onclick="openModal(4)">
+      <img src="images/jj.jpg" alt="Image 5">
+      <div class="caption">Caption for Image 5</div>
+    </div>
+  </div>
 
-    <!-- JavaScript -->
-    <script>
-        // Array of image paths
-        const images = [
-            './gallery/aa.jpg',
-            './gallery/jj.jpg',
-            './gallery/ii.jpg',
-            './gallery/hh.jpg',
-            './gallery/gg.jpg',
-            './gallery/ff.jpg',
-            './gallery/ee.jpg',
-            './gallery/dd.jpg',
-            './gallery/cc.jpg',
-            './gallery/bb.jpg',
-            './gallery/jj.jpg',
-            './gallery/kk.jpg'
-        ];
+  <!-- Modal for Full Image View -->
+  <div class="modal" id="imageModal">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+    <span class="modal-nav modal-prev" onclick="changeImage(-1)">&#10094;</span>
+    <span class="modal-nav modal-next" onclick="changeImage(1)">&#10095;</span>
+    <div class="modal-content">
+      <img id="fullImage" src="" alt="Full Image">
+      <div id="modalCaption" class="caption"></div>
+    </div>
+  </div>
 
-        let currentImageIndex = -1;
+  <script>
+    let currentImageIndex = 0;
+    const images = [
+      { src: "C:/Users/hp/Desktop/college/gallery/jj.jpg", caption: "Caption for Image 1" },
+      { src: "C:/Users/hp/Desktop/college/gallery/aa.jpg", caption: "Caption for Image 2" },
+      { src: "C:/Users/hp/Desktop/college/gallery/jj.jpg", caption: "Caption for Image 3" },
+      { src: "C:/Users/hp/Desktop/college/gallery/aa.jpg", caption: "Caption for Image 4" },
+      { src: "images/jj.jpg", caption: "Caption for Image 5" }
+    ];
 
-        // Function to open the modal with the clicked image
-        function openModal(index) {
-            currentImageIndex = index;
-            document.getElementById('imageModal').style.display = 'flex';
-            document.getElementById('modalImage').src = images[currentImageIndex]; // Set the clicked image
-            document.getElementById('downloadBtn').style.display = 'block'; // Show download button
-        }
+    // Function to open the modal with full-size image and caption
+    function openModal(index) {
+      currentImageIndex = index;
+      const { src, caption } = images[currentImageIndex];
+      updateModalContent(src, caption);
+      const modal = document.getElementById("imageModal");
+      modal.style.display = "flex";
+      modal.classList.add('show');
+    }
 
-        // Function to close the modal
-        function closeModal() {
-            document.getElementById('imageModal').style.display = 'none';
-        }
+    // Function to change the image (Previous / Next)
+    function changeImage(direction) {
+      currentImageIndex += direction;
 
-        // Function to change images (Next/Previous)
-        function changeImage(direction) {
-            currentImageIndex += direction;
+      // Ensure the index is within bounds
+      if (currentImageIndex < 0) {
+        currentImageIndex = images.length - 1;
+      } else if (currentImageIndex >= images.length) {
+        currentImageIndex = 0;
+      }
 
-            // If current index is out of bounds, wrap around
-            if (currentImageIndex < 0) currentImageIndex = images.length - 1;
-            if (currentImageIndex >= images.length) currentImageIndex = 0;
+      const { src, caption } = images[currentImageIndex];
+      updateModalContent(src, caption);
+    }
 
-            // Update the image source in the modal
-            document.getElementById('modalImage').src = images[currentImageIndex];
-        }
+    // Function to update the modal content
+    function updateModalContent(imageSrc, captionText) {
+      document.getElementById("fullImage").src = imageSrc;
+      document.getElementById("modalCaption").innerText = captionText;
+    }
 
-        // Function to download the image
-        function downloadImage() {
-            const image = document.getElementById('modalImage').src;
-            const a = document.createElement('a');
-            a.href = image;
-            a.download = image.substring(image.lastIndexOf('/') + 1); // Use image filename as download name
-            a.click();
-        }
+    // Function to close the modal
+    function closeModal() {
+      const modal = document.getElementById("imageModal");
+      modal.style.display = "none";
+      modal.classList.remove('show');
+    }
 
-        // Disable right-click on images
-        document.querySelectorAll('.gallery img').forEach(img => {
-            img.addEventListener('contextmenu', function(event) {
-                event.preventDefault();
-            });
-        });
-    </script>
+    // Close the modal when clicking outside the modal content
+    document.getElementById("imageModal").addEventListener("click", function (e) {
+      if (e.target === document.getElementById("imageModal")) {
+        closeModal();
+      }
+    });
 
-    <!-- Bootstrap JavaScript (Optional) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    // Prevent right-click to stop downloading images
+    document.querySelectorAll('img').forEach(image => {
+      image.addEventListener('contextmenu', (event) => {
+        event.preventDefault();
+        alert('Right-click is disabled. Image download is not allowed.');
+      });
+
+      // Prevent image dragging
+      image.addEventListener('dragstart', (event) => {
+        event.preventDefault();
+      });
+    });
+  </script>
+
 </body>
+
 </html>
