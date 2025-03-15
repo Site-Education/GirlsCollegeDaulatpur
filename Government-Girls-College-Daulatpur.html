@@ -139,6 +139,18 @@
                 max-height: 150px;
             }
         }
+        .caption {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+}
+
 
         /* Prevent image drag */
         img {
@@ -183,6 +195,7 @@
            
             <div class="image-item" onclick="openModal(0)">
                 <img src="./gallery/aa.jpg" alt="Image 1">
+                <div class="caption">Image 1 Caption</div>
             </div>
             <div class="image-item" onclick="openModal(1)">
                 <img src="./gallery/ff.jpg" alt="Image 2">
