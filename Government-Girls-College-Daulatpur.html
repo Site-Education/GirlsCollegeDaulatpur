@@ -28,19 +28,22 @@
             border-radius: 0.25rem;
         }
 
-        /* Image Gallery */
+        /* Image Gallery - Boxed Container */
         .image-gallery-container {
             max-width: 80%; /* Limit the width of the gallery container */
             margin: 0 auto; /* Center the gallery */
             padding: 20px;
+            background-color: #fff; /* White background for box */
+            border-radius: 10px; /* Rounded corners for the box */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle 3D effect */
+            padding: 20px;
         }
 
         .image-gallery {
-            width: 100%;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 0.1vw;
+            gap: 20px; /* Spacing between images */
         }
 
         .image-item {
@@ -54,13 +57,14 @@
             justify-content: center;
             align-items: center;
             overflow: hidden;
+            border-radius: 8px; /* Rounded corners for images */
+            border: 2px solid #f0f0f0; /* Light border around images */
         }
 
         .image-item img {
             width: 100%;
             height: 100%;
             object-fit: cover; /* Ensures the image covers the entire container without stretching */
-            border-radius: 4px;
         }
 
         /* Caption */
@@ -202,9 +206,8 @@
     <h1 style="text-align:center; font-size: 2rem;">Image Gallery</h1>
 
     <div class="image-gallery-container">
-        
         <div class="image-gallery">
-            <!-- First set of images -->
+            <!-- First set of images inside a boxed container -->
             <figure class="image-item" onclick="openModal(0)">
                 <img src="./gallery/aa.jpg" alt="Image 1">
                 <figcaption>Caption for Image 1</figcaption>
@@ -221,17 +224,6 @@
                 <img src="./gallery/kk.jpg" alt="Image 4">
                 <figcaption>Caption for Image 4</figcaption>
             </figure>
-        </div>
-    </div>
-
-    <div class="image-gallery-container">
-        <div class="image-gallery">
-            <!-- Second set of images -->
-            <figure class="image-item" onclick="openModal(4)">
-                <img src="./gallery/aa.jpg" alt="Image 5">
-                <figcaption>Caption for Image 5</figcaption>
-            </figure>
-            <!-- Add more figure elements as needed for other images -->
         </div>
     </div>
 
