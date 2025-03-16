@@ -56,6 +56,27 @@
             overflow: hidden;
         }
 
+        /* Privacy Overlay */
+        .image-item::after {
+            content: "No Screenshots Allowed";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            visibility: hidden; /* Initially hidden */
+        }
+
+        .image-item:hover::after {
+            visibility: visible; /* Display on hover */
+        }
+
         .image-item img {
             width: 100%;
             height: 100%;
@@ -124,37 +145,66 @@
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .image-item {
-                width: 40vw; /* Adjusted width for medium screens */
-                height: 40vw; /* Same height */
+                width: 45vw; /* Adjust width for medium screens */
+                height: 45vw; /* Same height */
                 max-width: 200px;
                 max-height: 200px;
+            }
+
+            .navbar-custom {
+                padding-left: 1vw;
+                padding-right: 1vw;
+            }
+
+            .modal-content img {
+                width: 80%; /* Ensures images fit well on mobile screens */
+                height: auto;
+            }
+
+            .modal-close {
+                font-size: 24px; /* Smaller close button */
+            }
+
+            .modal-nav {
+                font-size: 24px; /* Smaller navigation buttons */
             }
         }
 
         @media (max-width: 480px) {
             .image-item {
-                width: 50vw; /* Adjusted width for smaller screens */
+                width: 50vw; /* Adjust width for smaller screens */
                 height: 50vw; /* Same height */
                 max-width: 150px;
                 max-height: 150px;
             }
-        }
-        .caption {
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    right: 0;
-    text-align: center;
-    color: white;
-    font-size: 1rem;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 5px;
-}
 
+            .navbar-custom {
+                padding-left: 2vw;
+                padding-right: 2vw;
+            }
+
+            .modal-content img {
+                width: 90%; /* Ensures better fit for smaller screens */
+                height: auto;
+            }
+
+            .modal-close {
+                font-size: 20px;
+            }
+
+            .modal-nav {
+                font-size: 20px;
+            }
+        }
 
         /* Prevent image drag */
         img {
             user-drag: none;
+        }
+
+        /* Disable right-click and image dragging */
+        img {
+            pointer-events: none; /* Disable interaction with images */
         }
     </style>
 </head>
@@ -192,7 +242,6 @@
         <h4 style="text-align:center; font-size: 1rem; color: red;">Vist of Prof Muhammad Suliman Siyal Director College Education Shaheed benazir Abad Region<br>7-3-25</h4>
         <div class="image-gallery">
             <!-- First set of images -->
-           
             <div class="image-item" onclick="openModal(0)">
                 <img src="./gallery/SB1.jpg" alt="Image 1">
                 <div class="caption">Image 1 Caption</div>
@@ -207,56 +256,14 @@
                 <img src="./gallery/SB4.jpg" alt="Image 4">
             </div>
              <div class="image-item" onclick="openModal(4)">
-                <img src="./gallery/SB5.jpg" alt="Image 3">
+                <img src="./gallery/SB5.jpg" alt="Image 5">
             </div>
              <div class="image-item" onclick="openModal(5)">
-                <img src="./gallery/SB6.jpg" alt="Image 3">
+                <img src="./gallery/SB6.jpg" alt="Image 6">
             </div>
              <div class="image-item" onclick="openModal(6)">
-                <img src="./gallery/SB7.jpg" alt="Image 3">
+                <img src="./gallery/SB7.jpg" alt="Image 7">
             </div>
-        </div>
-    </div>
-
-    <div class="image-gallery-container">
-        <h4 style="text-align:center; font-size: 1rem; color: red;">2024 to 2025</h4>
-        <div class="image-gallery">
-            <!-- Second set of images -->
-            <div class="image-item" onclick="openModal(7)">
-                <img src="./gallery/aa.jpg" alt="Image 5">
-                
-            </div>
-            <div class="image-item" onclick="openModal(8)">
-                <img src="./gallery/bb.jpg" alt="Image 6">
-            </div>
-            <div class="image-item" onclick="openModal(9)">
-                <img src="./gallery/cc.jpg" alt="Image 7">
-            </div>
-            <div class="image-item" onclick="openModal(10)">
-                <img src="./gallery/dd.jpg" alt="Image 8">
-            </div>
-            <div class="image-item" onclick="openModal(11)">
-                <img src="./gallery/ee.jpg" alt="Image 9">
-            </div>
-            <div class="image-item" onclick="openModal(12)">
-                <img src="./gallery/ff.jpg" alt="Image 10">
-            </div>
-            <div class="image-item" onclick="openModal(13)">
-                <img src="./gallery/gg.jpg" alt="Image 11">
-            </div>
-            <div class="image-item" onclick="openModal(14)">
-                <img src="./gallery/hh.jpg" alt="Image 12">
-            </div>
-            <div class="image-item" onclick="openModal(15)">
-                <img src="./gallery/ii.jpg" alt="Image 13">
-            </div>
-            <div class="image-item" onclick="openModal(16)">
-                <img src="./gallery/jj.jpg" alt="Image 14">
-            </div>
-            <div class="image-item" onclick="openModal(17)">
-                <img src="./gallery/kk.jpg" alt="Image 15">
-            </div>
-           
         </div>
     </div>
 
@@ -279,18 +286,7 @@
             { src: "./gallery/SB4.jpg", caption: "Caption for Image 4" },
             { src: "./gallery/SB5.jpg", caption: "Caption for Image 5" },
             { src: "./gallery/SB6.jpg", caption: "Caption for Image 6" },
-            { src: "./gallery/SB7.jpg", caption: "Caption for Image 7" },
-            { src: "./gallery/aa.jpg", caption: "Caption for Image 8" },
-            { src: "./gallery/bb.jpg", caption: "Caption for Image 9" },
-            { src: "./gallery/cc.jpg", caption: "Caption for Image 10" },
-            { src: "./gallery/dd.jpg", caption: "Caption for Image 11" },
-            { src: "./gallery/ee.jpg", caption: "Caption for Image 12" },
-            { src: "./gallery/ff.jpg", caption: "Caption for Image 13" },
-            { src: "./gallery/gg.jpg", caption: "Caption for Image 14" },
-            { src: "./gallery/hh.jpg", caption: "Caption for Image 15" },
-            { src: "./gallery/ii.jpg", caption: "Caption for Image 16" },
-            { src: "./gallery/jj.jpg", caption: "Caption for Image 15" },
-            { src: "./gallery/kk.jpg", caption: "Caption for Image 16" }
+            { src: "./gallery/SB7.jpg", caption: "Caption for Image 7" }
         ];
 
         function openModal(index) {
@@ -329,7 +325,7 @@
             }
         });
 
-        // Prevent right-click to stop downloading images
+        // Disable right-click to prevent image downloads
         document.querySelectorAll('img').forEach(image => {
             image.addEventListener('contextmenu', (event) => {
                 event.preventDefault();
@@ -340,7 +336,16 @@
                 event.preventDefault();
             });
         });
+
+        // Disable keyboard shortcuts for screenshots (Common ones like PrintScreen, etc.)
+        window.addEventListener("keydown", (e) => {
+            if (e.key === "PrintScreen" || e.ctrlKey && (e.key === "s" || e.key === "S" || e.key === "c" || e.key === "C")) {
+                e.preventDefault();
+                alert("Screenshots and downloads are disabled.");
+            }
+        });
     </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
