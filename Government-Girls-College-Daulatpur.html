@@ -30,8 +30,8 @@
 
         /* Image Gallery */
         .image-gallery-container {
-            max-width: 100%; /* Limit the width of the gallery container */
-            margin: 0 auto; /* Center the gallery */
+            max-width: 100%;
+            margin: 0 auto;
             padding: 20px;
         }
 
@@ -40,16 +40,16 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 0.1vw;
+            gap: 1vw;
         }
 
         .image-item {
             position: relative;
             cursor: pointer;
-            width: 25vw; /* Equal width */
-            height: 25vw; /* Equal height (to make square images) */
-            max-width: 250px; /* Max size */
-            max-height: 250px; /* Max size */
+            width: 25vw;
+            height: 25vw;
+            max-width: 250px;
+            max-height: 250px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -59,11 +59,11 @@
         .image-item img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ensures the image covers the entire container without stretching */
+            object-fit: cover;
             border-radius: 4px;
         }
 
-        /* Modal (Full-Screen View) */
+        /* Modal for Full Image View */
         .modal {
             display: none;
             position: fixed;
@@ -124,8 +124,8 @@
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .image-item {
-                width: 40vw; /* Adjusted width for medium screens */
-                height: 40vw; /* Same height */
+                width: 40vw; 
+                height: 40vw;
                 max-width: 200px;
                 max-height: 200px;
             }
@@ -133,28 +133,50 @@
 
         @media (max-width: 480px) {
             .image-item {
-                width: 50vw; /* Adjusted width for smaller screens */
-                height: 50vw; /* Same height */
+                width: 50vw; 
+                height: 50vw; 
                 max-width: 150px;
                 max-height: 150px;
             }
         }
 
-        .caption {
+        /* Watermark Style */
+        .watermark {
             position: absolute;
-            bottom: 10px;
-            left: 0;
-            right: 0;
-            text-align: center;
-            color: white;
-            font-size: 1rem;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 5px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: bold;
+            pointer-events: none;
+            user-select: none;
+            z-index: 100;
         }
 
-        /* Prevent image drag */
+        /* Disable Right-Click and Drag */
         img {
             user-drag: none;
+        }
+
+        /* Preventing screenshots via mobile detection */
+        @media all and (max-width: 480px) {
+            body::before {
+                content: "Screenshots are disabled.";
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.8);
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 2rem;
+                z-index: 1000;
+                pointer-events: none;
+            }
         }
     </style>
 </head>
@@ -191,29 +213,11 @@
     <div class="image-gallery-container">
         <h4 style="text-align:center; font-size: 1rem; color: red;">Visit of Prof Muhammad Suliman Siyal Director College Education Shaheed Benazirabad Region<br>7-3-25</h4>
         <div class="image-gallery">
-                   <div class="image-item" onclick="openModal(0)">
+            <!-- Image Items Here -->
+            <div class="image-item" onclick="openModal(0)">
                 <img src="./gallery/SB1.jpg" alt="Image 1">
-                <div class="caption">Image 1 Caption</div>
+                <div class="watermark">Govt Girls College</div>
             </div>
-            <div class="image-item" onclick="openModal(1)">
-                <img src="./gallery/SB2.jpg" alt="Image 2">
-            </div>
-            <div class="image-item" onclick="openModal(2)">
-                <img src="./gallery/SB3.jpg" alt="Image 3">
-            </div>
-            <div class="image-item" onclick="openModal(3)">
-                <img src="./gallery/SB4.jpg" alt="Image 4">
-            </div>
-             <div class="image-item" onclick="openModal(4)">
-                <img src="./gallery/SB5.jpg" alt="Image 3">
-            </div>
-             <div class="image-item" onclick="openModal(5)">
-                <img src="./gallery/SB6.jpg" alt="Image 3">
-            </div>
-             <div class="image-item" onclick="openModal(6)">
-                <img src="./gallery/SB7.jpg" alt="Image 3">
-            </div>
-        
         </div>
     </div>
 
@@ -231,10 +235,7 @@
         let currentImageIndex = 0;
         const images = [
             { src: "./gallery/SB1.jpg", caption: "Caption for Image 1" },
-            { src: "./gallery/SB2.jpg", caption: "Caption for Image 2" },
-            { src: "./gallery/SB3.jpg", caption: "Caption for Image 3" },
-            { src: "./gallery/SB4.jpg", caption: "Caption for Image 4" },
-            // More image objects...
+            // More images...
         ];
 
         function openModal(index) {
@@ -289,4 +290,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
