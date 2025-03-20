@@ -26,55 +26,129 @@
             background-color: #9b1d38;
             border-radius: 0.25rem;
         }
-
-        .walking-heading {
-            display: inline-block;
-            font-size: 2rem;
-            font-weight: bold;
-            white-space: nowrap;
-            animation: walk 5s linear infinite;
+.container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            flex-direction: column;
+            align-items: center;
         }
 
-        /* Keyframes for the walking effect */
-        @keyframes walk {
-            0% {
-                transform: translateX(100%);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
+        /* Left side - Image Gallery */
+        .left-side {
+            width: 100%;
+            max-width: 800px;  /* Set a max-width to keep images balanced */
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 2px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+            height: 400px;
         }
 
-        .scrolling-container {
-            white-space: nowrap;
-            overflow-x: auto;
+        .gallery {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;  /* Ensure it stretches the full width */
         }
 
-        .scrolling-container img {
-            max-width: 100%;
-            height: auto;
-            display: inline-block;
-            flex-shrink: 0;
+        .gallery img {
+            width: 100%;
+            height: 100%;  /* Ensure images fill the container */
+            object-fit: cover;  /* Preserve aspect ratio while covering the container */
+            border-radius: 2px;
         }
 
-        .second-image {
-            width: 40%;
-            max-width: 100%;
-            height: auto;
-            padding: 1rem;
-            margin: 0 auto;
-            display: block;
+        /* Navigation Buttons for Slideshow */
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            transform: translateY(-50%);
+        }
+
+        .prev-btn {
+            left: 10px;
+        }
+
+        .next-btn {
+            right: 10px;
+        }
+
+        /* Right side - Scrolling Paragraph */
+        .right-side {
+            width: 100%;
+            max-width: 800px; /* Match the max width for balance */
+            background-color: #fff;
+            padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            height: 400px;
+            overflow: hidden;
         }
 
-        .second-image + p {
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-top: 0.5rem;
+        /* First Paragraph - Slower Scrolling */
+        .scroll-paragraph {
+            position: absolute;
+            top: 100%;
+            animation: scroll-up 14s linear infinite; /* Continuous scroll for the first paragraph */
+            font-size: 18px;
             color: #333;
+            line-height: 1.0;
         }
 
+        @keyframes scroll-up {
+            0% {
+                top: 100%;
+            }
+            50% {
+                top: -50%;
+            }
+            100% {
+                top: -100%;
+            }
+        }
+
+        /* Second Paragraph - Faster Scrolling */
+        .scroll-paragraph-2 {
+            position: absolute;
+            top: 100%;
+            animation: scroll-up-2 14s linear infinite; /* Continuous scroll for the second paragraph */
+            animation-delay: 10s; /* Delay to ensure it starts after the first paragraph */
+            font-size: 18px;
+            color: #333;
+            line-height: 1.0;
+        }
+
+        @keyframes scroll-up-2 {
+            0% {
+                top: 100%;
+            }
+            50% {
+                top: -50%;
+            }
+            100% {
+                top: -100%;
+            }
+        }
+
+        /* Responsive Design - Flexbox adjustment for larger screens */
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row; /* Display side by side on larger screens */
+            }
+            .left-side, .right-side {
+                width: 48%; /* Adjust the width on medium screens */
+                margin-bottom: 1;
+            }
+        }
         /* Footer styles */
         footer {
             background-color: #ffffff;
@@ -200,18 +274,40 @@
             </div>
         </div>
     </nav>
+<div class="container">
+        <!-- Left Side - Image Gallery (Slideshow) -->
+        <div class="left-side">
+            <h2>Image Slideshow</h2>
+            <div class="gallery">
+                <img src="C:\Users\hp\Desktop\college\gallery/SB2.jpg" alt="Image 1">
+                <img src="C:\Users\hp\Desktop\college\gallery/SB3.jpg" alt="Image 2">
+                <img src="C:\Users\hp\Desktop\college\gallery/SB4.jpg" alt="Image 3">
+                <img src="C:\Users\hp\Desktop\college\gallery/SB5.jpg" alt="Image 4">
+            </div>
+            <button class="nav-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="nav-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
+        </div>
 
-    <div class="container py-2">
-        <h2 class="text-center">
-            <span class="walking-heading">Notice Board</span>
-        </h2>
-        
-        <div class="scrolling-container">
-            <img src="./gallery/aa.jpg" alt="Image 1" class="img-fluid">
-            <img src="./gallery/exam form.jpg" alt="Image 2" class="img-fluid">
-            <img src="./gallery/exam form.jpg" alt="Image 3" class="img-fluid">
+        <!-- Right Side - Scrolling Paragraph -->
+        <div class="right-side">
+            <h2>New</h2>
+            <div class="scroll-paragraph">
+                <p>The midterm exams are starting from March 21
+                   <br>Tell your children to come to college
+                   <button style="font-size: 1em; padding: 0.5em 1em; border: none; border-radius: 0.25em; color: white; cursor: pointer; position: relative; overflow: hidden; background: linear-gradient(45deg, #ff007f, #ff9b00, #7f00ff, #00d4ff); background-size: 400% 400%; animation: shine 3s ease infinite, glow 1.5s ease-in-out infinite;" onclick="window.location.href='COLLEGE.html';">VIEW MORE..</button>
+                </p>
+            </div>
+
+            <!-- Second paragraph that starts after the first one finishes -->
+            <div class="scroll-paragraph-2">
+                <p>The midterm exams are starting from March 21
+                   <br>Dear students, come to college daily
+                   <button style="font-size: 1em; padding: 0.5em 1em; border: none; border-radius: 0.25em; color: white; cursor: pointer; position: relative; overflow: hidden; background: linear-gradient(45deg, #ff007f, #ff9b00, #7f00ff, #00d4ff); background-size: 400% 400%; animation: shine 3s ease infinite, glow 1.5s ease-in-out infinite;" onclick="window.location.href='COLLEGE.html';">VIEW MORE..</button>
+                </p>
+            </div>
         </div>
     </div>
+     
 
     <p style="text-align: center; color: black; font-size: 1.3rem; font-family: Arial, sans-serif; padding-left: 1em; padding-right: 2em;">Note: Students must follow college rules and wear the official uniform neatly and respectfully, reflecting the values of our institution!</p>
     
@@ -267,6 +363,34 @@
         <p style ="color: red;">&copy; 2025 Government Girls College Daulatpur All rights reserved.</p>
     </footer>
 
+    <script>
+        let currentIndex = 0;
+
+        const images = document.querySelectorAll(".gallery img");
+
+        // Function to change the slide
+        function moveSlide(step) {
+            currentIndex += step;
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;  // Loop back to last image
+            }
+            if (currentIndex >= images.length) {
+                currentIndex = 0;  // Loop back to first image
+            }
+            updateGallery();
+        }
+
+        // Update gallery to show the correct image
+        function updateGallery() {
+            const offset = -currentIndex * 100;  // Offset to slide the images
+            document.querySelector(".gallery").style.transform = `translateX(${offset}%)`;
+        }
+
+        // Auto-slide every 1 seconds
+        setInterval(() => {
+            moveSlide(1);
+        }, 1000);
+    </script>
     <!-- Bootstrap JS and Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
