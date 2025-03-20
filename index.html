@@ -150,6 +150,38 @@
                 margin-bottom: 1;
             }
         }
+        .second-image {
+            width: 40%; /* 90% of the container width */
+            max-width: 100%; /* Ensures it doesn't stretch beyond its container */
+            height: auto; /* Maintain aspect ratio */
+            padding: 1rem; /* Padding around the image */
+            margin: 0 auto; /* Center the image horizontally */
+            display: block; /* Makes the image block-level to apply margin auto */
+            border-radius: 8px; /* Rounded corners for a modern look */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+        }
+
+        /* Optional: Styling the text below the image */
+        .second-image + p {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 0.5rem;
+            color: #333;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 767px) {
+            .second-image {
+                width: 100%; /* Image takes full width on smaller screens */
+                padding-left: 0; /* Remove left padding on small screens */
+                padding-right: 0; /* Remove right padding on small screens */
+            }
+
+            /* Adjust text size for small screens */
+            .second-image + p {
+                font-size: 1rem;
+            }
+        }
         /* Footer styles */
         footer {
             background-color: #ffffff;
@@ -312,12 +344,12 @@
 
     <p style="text-align: center; color: black; font-size: 1.3rem; font-family: Arial, sans-serif; padding-left: 1em; padding-right: 2em;">Note: Students must follow college rules and wear the official uniform neatly and respectfully, reflecting the values of our institution!</p>
     
-<div class="col-12 col-md-6">
-    <img src="./gallery/33.jpg" alt="Image" class="img-fluid" style="margin-left: 0; width: 80%; height: auto;">
-    <p style="text-align: center; color: red; font-size: 1.0rem; font-family: Arial, sans-serif;">
-        PRINCIPAL.KHALID HUSSAIN BURIRO
-    </p><br>
-</div>
+<div class="container mt-5 d-flex flex-wrap justify-content-between">
+        <!-- Left-side image -->
+        <div class="col-12 col-md-6">
+            <img src="./gallery/33.jpg" alt="Image related to chemistry learning" class="img-fluid second-image">
+			<p style="text-align: center; color: white; font-size: 1.0rem; font-family: Arial, sans-serif; padding-left: 0em; padding-right: 0em;">PRINCIPAL.KHALID HUSSAIN BURIRO</p><br>
+        </div>
 
 
 
