@@ -95,92 +95,53 @@
             overflow: hidden;
         }
 
-        /* First Paragraph - Slower Scrolling */
+        /* Scrolling Container for both paragraphs */
+        .scroll-wrapper {
+            position: relative;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /* First Paragraph - Slow Scroll */
         .scroll-paragraph {
             position: absolute;
             top: 100%;
-            animation: scroll-up 14s linear infinite; /* Continuous scroll for the first paragraph */
+            animation: scroll-left 14s linear infinite; /* Slow scroll to the left */
             font-size: 18px;
             color: #333;
             line-height: 1.0;
+            width: 100%; /* Make sure the text takes the full width */
         }
 
-        @keyframes scroll-up {
+        @keyframes scroll-left {
             0% {
-                top: 100%;
-            }
-            50% {
-                top: -50%;
+                left: 100%;
             }
             100% {
-                top: -100%;
+                left: -100%;
             }
         }
 
-        /* Second Paragraph - Faster Scrolling */
+        /* Second Paragraph - Fast Scroll */
         .scroll-paragraph-2 {
             position: absolute;
             top: 100%;
-            animation: scroll-up-2 14s linear infinite; /* Continuous scroll for the second paragraph */
-            animation-delay: 10s; /* Delay to ensure it starts after the first paragraph */
+            animation: scroll-left-fast 7s linear infinite; /* Faster scroll to the left */
+            animation-delay: 14s; /* Starts after the first paragraph finishes */
             font-size: 18px;
             color: #333;
             line-height: 1.0;
+            width: 100%; /* Make sure the text takes the full width */
         }
 
-        @keyframes scroll-up-2 {
+        @keyframes scroll-left-fast {
             0% {
-                top: 100%;
-            }
-            50% {
-                top: -50%;
+                left: 100%;
             }
             100% {
-                top: -100%;
+                left: -100%;
             }
         }
-
-        /* Responsive Design - Flexbox adjustment for larger screens */
-        @media (min-width: 768px) {
-            .container {
-                flex-direction: row; /* Display side by side on larger screens */
-            }
-            .left-side, .right-side {
-                width: 48%; /* Adjust the width on medium screens */
-                margin-bottom: 1;
-            }
-        }
-        .second-image {
-            width: 40%; /* 90% of the container width */
-            max-width: 100%; /* Ensures it doesn't stretch beyond its container */
-            height: auto; /* Maintain aspect ratio */
-            padding: 1rem; /* Padding around the image */
-            margin: 0 auto; /* Center the image horizontally */
-            display: block; /* Makes the image block-level to apply margin auto */
-            border-radius: 8px; /* Rounded corners for a modern look */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-        }
-
-        /* Optional: Styling the text below the image */
-        .second-image + p {
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-top: 0.5rem;
-            color: #333;
-        }
-/* Make the image responsive on all devices */
-.img-fluid {
-  max-width: 100%;
-  height: auto;
-}
-
-/* For mobile devices (screen width 768px or smaller) */
-@media (max-width: 768px) {
-  .second-image {
-    width: 40%; /* Adjust the percentage as needed */
-    margin: 0 auto; /* Center the image */
-  }
-}
 
         /* Footer styles */
         footer {
@@ -247,12 +208,6 @@
             flex-direction: column;
         }
 
-
-        @media (max-width: 480px) {
-            footer .container {
-                padding: 0 1rem;
-            }
-        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-teal-300 via-indigo-200 to-blue-300">
@@ -290,73 +245,30 @@
             </div>
         </div>
     </nav>
-<div class="container">
-        <!-- Left Side - Image Gallery (Slideshow) -->
-        <div class="left-side">
-            <h2></h2>
-            <div class="gallery">
-                <img src="./gallery/aa1.jpg" alt="Image 1">
-                <img src="./gallery/11.jpg" alt="Image 2">
-                <img src="./gallery/22.jpg" alt="Image 3">
-                <img src="./gallery/33.jpg" alt="Image 4">
-            </div>
-            <button class="nav-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="nav-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
-        </div>
 
-        <!-- Right Side - Scrolling Paragraph -->
+    <!-- Right Side - Scrolling Paragraph -->
+    <div class="container mt-5">
         <div class="right-side">
             <h2  style="font-size: 1em; padding: 0.5em 1em; border: none; border-radius: 0.25em; cursor: pointer; background: linear-gradient(45deg, #ff007f, #ff9b00, #7f00ff, #00d4ff);"  onclick="window.location.href='Notice.html';">VIEW ALL</h2>
-            <div class="scroll-paragraph">
-                <p>The practical exams are starting from March 21
-                   <br>Dear students, come to college daily<br><br>
-			پریکٹیکل امتحان 21 مارچ کان شروع ٿي رهيا آهن 
-پيارا شاگردو، روزانو ڪاليج اچو.
-			<br><br>
-			 پریکٹیکل امتحانات 21 مارچ سے شروع ہو رہے ہیں۔ <br> عزیز طلباء، روزانہ کالج آئیںں
-                   <button style="font-size: 1em; padding: 0.5em 1em; border: none; border-radius: 0.25em; color: white; cursor: pointer; position: relative; overflow: hidden; background: linear-gradient(45deg, #ff007f, #ff9b00, #7f00ff, #00d4ff); background-size: 200% 200%; animation: shine 3s ease infinite, glow 1.5s ease-in-out infinite;" onclick="window.location.href='Notice.html';">VIEW MORE..</button>
-                </p>
-            </div>
 
-            <!-- Second paragraph that starts after the first one finishes -->
-            <div class="scroll-paragraph-2">
-                <p>The practical exams are starting from March 21
-                   <br>Dear students, come to college daily<br><br>
+            <!-- Scrolling Container -->
+            <div class="scroll-wrapper">
+                <!-- First Paragraph - Slow Scroll -->
+                <div class="scroll-paragraph">
+                    <p>The practical exams are starting from March 21.<br>Dear students, come to college daily.<br><br>
+                    Practical exams are starting from March 21.<br> Dear students, come to college daily.</p>
+                </div>
 
-			پریکٹیکل امتحان 21 مارچ کان شروع ٿي رهيا آهن 
-پيارا شاگردو، روزانو ڪاليج اچو.
-			<br><br>
-			 پریکٹیکل امتحانات 21 مارچ سے شروع ہو رہے ہیں۔ <br> عزیز طلباء، روزانہ کالج آئیںں
-                   <button style="font-size: 1em; padding: 0.5em 1em; border: none; border-radius: 0.25em; color: white; cursor: pointer; position: relative; overflow: hidden; background: linear-gradient(45deg, #ff007f, #ff9b00, #7f00ff, #00d4ff); background-size: 400% 400%; animation: shine 3s ease infinite, glow 1.5s ease-in-out infinite;" onclick="window.location.href='Notice.html';">VIEW MORE..</button>
-                </p>
- 
-	 
+                <!-- Second Paragraph - Fast Scroll -->
+                <div class="scroll-paragraph-2">
+                    <p>The practical exams are starting from March 21.<br>Dear students, come to college daily.<br><br>
+                    Practical exams are starting from March 21.<br> Dear students, come to college daily.</p>
+                </div>
             </div>
         </div>
     </div>
-     
 
-    <p style="text-align: center; color: black; font-size: 1.3rem; font-family: Arial, sans-serif; padding-left: 1em; padding-right: 2em;">
-	    Note: Students must follow college rules and wear the official uniform neatly and respectfully, reflecting the values of our institution!</p>
-    
-<div class="container mt-5 d-flex flex-wrap justify-content-between">
-        <!-- Left-side image -->
-        <div class="col-12 col-md-6">
-		<img src="./gallery/sir khalid.jpg" alt="Image" class="img-fluid second-image">
-		
-			<p style="text-align: center; color: red; font-size: 1.0rem; font-family: Arial, sans-serif; padding-left: 0em; padding-right: 0em;">PRINCIPAL.KHALID HUSSAIN BURIRO</p><br>
-        </div>
-
-
-
-        <!-- Right-side text -->
-        <div class="col-12 col-md-6 text-center">
-            <p style="text-align: center; color: pink; font-size: 1.3rem; font-family: Arial, sans-serif;">PRINCIPAL'S MESSAGE</p>
-<p style="text-align: center; color: black; font-size: 1.0rem; font-family: Arial, sans-serif; padding-left: 0em; padding-right: 2em;">Education is the most powerful tool you can use to shape your future. It is not simply about earning grades, but about developing your intellect, character, and the skills needed to navigate the world ahead. Through education, you gain the ability to think critically, solve problems, and contribute meaningfully to society.</p>
-<p style="text-align: center; color: black; font-size: 1.0rem; font-family: Arial, sans-serif; padding-left: 0em; padding-right: 2em;">As you move forward in your studies, always remember that education is not just about what you learn but how you live and work each day. Let discipline guide you in your efforts, and education will open doors you never imagined.</p><br> 
-        </div>
-    </div>
-
+    <!-- Footer Section -->
     <footer>
         <div class="container">
             <div class="footer-grid">
@@ -376,54 +288,19 @@
                         <li><a href="https://quest.edu.pk/" target="_self"> QUAID-E-AWAM UNIVERSITY</a></li>
                         <li><a href="https://www.usindh.edu.pk/" target="_self">University of Sindh JAMSHORO</a></li>
                         <li><a href="https://www.muet.edu.pk/" target="_self"> MEHRAN University</a></li>
-                        
                     </ul>
                 </div>
                 <div>
                     <ul>
-                         <li><a href="https://www.lumhs.edu.pk/home/" target="_self">LUMS Jamshoro</a></li>
+                        <li><a href="https://www.lumhs.edu.pk/home/" target="_self">LUMS Jamshoro</a></li>
                         <li><a href="https://isra.edu.pk/" target="_self"> ISRA University</a></li>
-                        <li><a href="https://www.aiou.edu.pk/" target="_self">Allama Iqbal Open University</a></li>
-                        <li><a href="https://www.uok.edu.pk/" target="_self">UNIVERSITY OF KARACHI</a></li>
-                        <li><a href="https://www.szabmu.edu.pk/" target="_self">SZABMU</a></li>
-                        <li><a href="https://www.vu.edu.pk/" target="_self">Virtual University of Pakistan</a></li>
+                        <li><a href="https://www.aiou.edu.pk/" target="_self"> Allama Iqbal University</a></li>
                     </ul>
                 </div>
             </div>
         </div>
-        <p style ="color: red;">&copy; 2025 Government Girls College Daulatpur All rights reserved.</p>
     </footer>
 
-    <script>
-        let currentIndex = 0;
-
-        const images = document.querySelectorAll(".gallery img");
-
-        // Function to change the slide
-        function moveSlide(step) {
-            currentIndex += step;
-            if (currentIndex < 0) {
-                currentIndex = images.length - 1;  // Loop back to last image
-            }
-            if (currentIndex >= images.length) {
-                currentIndex = 0;  // Loop back to first image
-            }
-            updateGallery();
-        }
-
-        // Update gallery to show the correct image
-        function updateGallery() {
-            const offset = -currentIndex * 100;  // Offset to slide the images
-            document.querySelector(".gallery").style.transform = `translateX(${offset}%)`;
-        }
-
-        // Auto-slide every 1 seconds
-        setInterval(() => {
-            moveSlide(1);
-        }, 5000);
-    </script>
-    <!-- Bootstrap JS and Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
