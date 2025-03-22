@@ -21,7 +21,7 @@
         .navbar-custom {
             background-color: #FFF8DC;
         }
-        
+
         .navbar a:hover {
             background-color: #9b1d38;
             border-radius: 0.25rem;
@@ -117,12 +117,32 @@
             100% { top: -100%; }
         }
 
-        @media (min-width: 768px) {
+        /* Media Query for Mobile */
+        @media (max-width: 767px) {
+            /* Stack the container vertically */
             .container {
-                flex-direction: row; /* Display side by side on larger screens */
+                flex-direction: column; /* Stack elements */
+                align-items: center;
             }
+
+            /* Adjust the width for small screens */
             .left-side, .right-side {
-                width: 48%; /* Adjust the width on medium screens */
+                width: 90%; /* Make both sides take 90% of the width */
+                margin-bottom: 20px; /* Add space between the two sections */
+                height: auto; /* Adjust height to fit content */
+            }
+
+            /* Mobile-friendly font sizes */
+            .right-side h2 {
+                font-size: 1.2em;
+            }
+
+            .scroll-paragraph p {
+                font-size: 14px;
+            }
+
+            .gallery img {
+                height: 300px; /* Limit the height of images for smaller screens */
             }
         }
 
@@ -229,8 +249,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-black" href="CONTACT-US.html">CONTACT US</a>
-                    </li>
-                </ul>
+                    </ul>
             </div>
         </div>
     </nav>
