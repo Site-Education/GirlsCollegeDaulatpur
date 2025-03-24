@@ -169,7 +169,38 @@
                 font-size: 16px; /* Make text more readable on mobile */
             }
         }
+	    
+        .second-image {
+            width: 40%; /* 90% of the container width */
+            max-width: 100%; /* Ensures it doesn't stretch beyond its container */
+            height: auto; /* Maintain aspect ratio */
+            padding: 1rem; /* Padding around the image */
+            margin: 0 auto; /* Center the image horizontally */
+            display: block; /* Makes the image block-level to apply margin auto */
+            border-radius: 8px; /* Rounded corners for a modern look */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+        }
 
+        /* Optional: Styling the text below the image */
+        .second-image + p {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 0.5rem;
+            color: #333;
+        }
+/* Make the image responsive on all devices */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+/* For mobile devices (screen width 768px or smaller) */
+@media (max-width: 768px) {
+  .second-image {
+    width: 40%; /* Adjust the percentage as needed */
+    margin: 0 auto; /* Center the image */
+  }
+}
 	    .mySlides {display: none}
 img {
   vertical-align: middle;
@@ -264,38 +295,6 @@ img {
   .prev, .next,.text {font-size: 11px}
 }
 	    
-        .second-image {
-            width: 40%; /* 90% of the container width */
-            max-width: 100%; /* Ensures it doesn't stretch beyond its container */
-            height: auto; /* Maintain aspect ratio */
-            padding: 1rem; /* Padding around the image */
-            margin: 0 auto; /* Center the image horizontally */
-            display: block; /* Makes the image block-level to apply margin auto */
-            border-radius: 8px; /* Rounded corners for a modern look */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-        }
-
-        /* Optional: Styling the text below the image */
-        .second-image + p {
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-top: 0.5rem;
-            color: #333;
-        }
-/* Make the image responsive on all devices */
-.img-fluid {
-  max-width: 100%;
-  height: auto;
-}
-
-/* For mobile devices (screen width 768px or smaller) */
-@media (max-width: 768px) {
-  .second-image {
-    width: 40%; /* Adjust the percentage as needed */
-    margin: 0 auto; /* Center the image */
-  }
-}
-
         /* Footer styles */
         footer {
             background-color: #ffffff;
@@ -496,6 +495,36 @@ img {
   <div class="text">Caption Two</div>
 </div>
 
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="./gallery/SB12.jpg" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="./gallery/SB1.jpg" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="./gallery/SB2.jpg" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="./gallery/SB3.jpg" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="./gallery/SB4.jpg" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="./gallery/SB10.jpg" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
 <div class="mySlides fade">
   <div class="numbertext">3 / 3</div>
   <img src="./gallery/SB11.jpg" style="width:100%">
