@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Government Girls College</title>
+    <!-- Link to Bootstrap CSS (CDN) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Global Styles */
         body {
@@ -16,15 +16,6 @@
             background: #E0FFFF;
         }
 
-        .navbar-custom {
-            background-color: #FFF8DC;
-        }
-
-        .navbar a:hover {
-            background-color: #9b1d38;
-            border-radius: 0.25rem;
-        }
-
         .container {
             display: flex;
             justify-content: space-between;
@@ -33,57 +24,10 @@
             align-items: center;
         }
 
-        /* Left side - Image Gallery */
-        .left-side {
-            width: 100%;
-            max-width: 800px;
-            background-color: #fff;
-            padding: 5px;
-            border-radius: 2px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            position: relative;
-            height: 450px;
-        }
-
-        .gallery {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-            width: 100%;
-        }
-
-        .gallery img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;  /* Ensures that images fill the container while maintaining aspect ratio */
-            border-radius: 2px;
-        }
-
-        /* Navigation Buttons for Slideshow */
-        .nav-btn {
-            position: absolute;
-            top: 50%;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            padding: 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 18px;
-            transform: translateY(-50%);
-        }
-
-        .prev-btn {
-            left: 10px;
-        }
-
-        .next-btn {
-            right: 10px;
-        }
-
         /* Right side - Scrolling Paragraph */
         .right-side {
             width: 100%;
-            max-width: 800px;
+            max-width: 800px; /* Match the max width for balance */
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
@@ -93,196 +37,49 @@
             overflow: hidden;
         }
 
-        /* Scrolling Paragraph */
+        /* Continuous Scrolling Paragraph */
         .scroll-paragraph {
             position: absolute;
             top: 100%;
-            animation: scroll-up 14s linear infinite;
+            animation: scroll-up 10s linear infinite; /* Continuous scroll */
             font-size: 18px;
             color: #333;
-            line-height: 1.0;
+            line-height: 1.5;
+            white-space: nowrap; /* Prevents line breaks */
         }
 
         @keyframes scroll-up {
             0% {
                 top: 100%;
             }
-            50% {
-                top: -50%;
-            }
             100% {
                 top: -100%;
             }
         }
 
-        .scroll-paragraph-2 {
-            position: absolute;
-            top: 100%;
-            animation: scroll-up-2 14s linear infinite;
-            animation-delay: 10s;
-            font-size: 18px;
-            color: #333;
-            line-height: 1.0;
-        }
-
-        @keyframes scroll-up-2 {
-            0% {
-                top: 100%;
-            }
-            50% {
-                top: -50%;
-            }
-            100% {
-                top: -100%;
-            }
-        }
-
-        /* Responsive Design - Flexbox adjustment for larger screens */
-        @media (min-width: 768px) {
-            .container {
-                flex-direction: row;
-            }
-            .right-side, .left-side {
-                width: 48%;
-                margin-bottom: 1rem;
-            }
-        }
-
-        /* For Mobile View */
+        /* Responsive Design */
         @media (max-width: 768px) {
             .container {
-                flex-direction: column-reverse;
+                flex-direction: column-reverse; /* Reverses the order of left-side and right-side */
             }
 
             .right-side, .left-side {
-                width: 100%;
-                margin-bottom: 20px;
+                width: 100%; /* Full width for both sides on mobile */
+                margin-bottom: 20px; /* Space between the sections */
             }
 
-            .nav-btn {
-                font-size: 14px;
-            }
-
-            .scroll-paragraph, .scroll-paragraph-2 {
-                font-size: 16px;
-            }
-        }
-
-        /* Make the image responsive on all devices */
-        .img-fluid {
-            max-width: 100%;
-            height: auto;
-        }
-
-        /* Footer styles */
-        footer {
-            background-color: #ffffff;
-            color: #333;
-            padding: 2rem 0;
-            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-            margin-top: auto;
-            text-align: center;
-        }
-
-        footer .container {
-            width: 90%;
-            margin: 0 auto;
-            max-width: 1200px;
-        }
-
-        footer h2 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 1rem;
-        }
-
-        footer ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        footer ul li {
-            margin-bottom: 0.75rem;
-        }
-
-        footer a {
-            text-decoration: none;
-            color: #666;
-            font-size: 1rem;
-            transition: color 0.3s ease;
-        }
-
-        footer a:hover {
-            color: #007BFF;
-        }
-
-        .social-icons a {
-            margin-right: 1rem;
-            font-size: 1.25rem;
-            color: #666;
-            transition: color 0.3s ease;
-        }
-
-        .social-icons a:hover {
-            color: #007BFF;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-        }
-
-        .footer-grid > div {
-            display: flex;
-            flex-direction: column;
-        }
-
-        @media (max-width: 480px) {
-            footer .container {
-                padding: 0 1rem;
+            .scroll-paragraph {
+                font-size: 16px; /* Make text more readable on mobile */
             }
         }
     </style>
 </head>
 <body class="bg-gradient-to-br from-teal-300 via-indigo-200 to-blue-300">
 
-    <div class="col-auto">
-        <h5 style="color: red; padding-left: 1.8em;">GOVERNMENT GIRLS COLLEGE<br> DAULATPUR</h5>
-    </div>
-
-    <nav class="navbar navbar-expand-lg navbar-light navbar-custom p-2 w-100">
-        <div class="container-fluid">
-            <a class="navbar-brand text-black" href="Government-Girls-College-Daulatpur.html">Govt Girls College Daulatpur</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link text-black active" href="index.html">HOME</a></li>
-                    <li class="nav-item"><a class="nav-link text-black" href="ONLINE-TEST.html">ONLINE TEST</a></li>
-                    <li class="nav-item"><a class="nav-link text-black" href="Government-Girls-College-Daulatpur.html">GALLERY</a></li>
-                    <li class="nav-item"><a class="nav-link text-black" href="ABOUT-US.html">ABOUT</a></li>
-                    <li class="nav-item"><a class="nav-link text-black" href="CONTACT-US.html">CONTACT US</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
     <div class="container">
-        <!-- Left Side - Image Gallery -->
+        <!-- Left Side - Image Gallery (Slideshow) -->
         <div class="left-side">
-            <div class="gallery">
-                <img src="./gallery/aa1.jpg" alt="Image 1">
-                <img src="./gallery/SB5.jpg" alt="Image 2">
-                <img src="./gallery/SB7.jpg" alt="Image 3">
-                <img src="./gallery/SB8.jpg" alt="Image 4">
-                <img src="./gallery/22.jpg" alt="Image 5">
-                <img src="./gallery/33.jpg" alt="Image 6">
-            </div>
-            <button class="nav-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="nav-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
+            <!-- Add your gallery code here -->
         </div>
 
         <!-- Right Side - Scrolling Paragraph -->
@@ -291,63 +88,18 @@
                 <a href="Notice.html" style="font-size: 30px; text-decoration: none;">VIEW ALL</a>
                 <img src="https://pu.edu.pk/images/News/a-new.gif" style="width:80px; height:auto;">
             </div>
+
+            <!-- Scrolling Paragraph -->
             <div class="scroll-paragraph">
-                <p>It is hereby notified that the pre-board examinations in our college will begin on Wednesday, 26th March...</p>
-            </div>
-            <div class="scroll-paragraph-2">
-                <p>It is hereby notified that the pre-board examinations in our college will begin on Wednesday, 26th March...</p>
+                <p>Don’t stop walking, for each step brings you closer to your goal. The journey ahead may seem long, but every second you walk, every movement you make, is a step toward your future. Keep moving forward, for time never stops, and neither should you. Keep walking, keep pushing, and the road ahead will eventually come to you.</p>
             </div>
         </div>
     </div>
 
+    <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <h2>About</h2>
-                    <ul>
-                        <li><a href="CONTACT-US.html">Contact</a></li>
-                        <li><a href="Government-Girls-College-Daulatpur.html">GGC, Daulatpur</a></li>
-                        <li><a href="COLLEGE.html">College</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h2>Universities Links</h2>
-                    <ul>
-                        <li><a href="https://www.sbbusba.edu.pk/">Shaheed Benazir Bhutto University</a></li>
-                        <li><a href="https://pumhs.edu.pk/">PUMHS University</a></li>
-                        <li><a href="https://quest.edu.pk/">QUAID-E-AWAM UNIVERSITY</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <p>&copy; 2025 Government Girls College Daulatpur. All rights reserved.</p>
+        <!-- Footer content here -->
     </footer>
-
-    <script>
-        let currentIndex = 0;
-        const images = document.querySelectorAll(".gallery img");
-
-        function moveSlide(step) {
-            currentIndex += step;
-            if (currentIndex < 0) {
-                currentIndex = images.length - 1;
-            }
-            if (currentIndex >= images.length) {
-                currentIndex = 0;
-            }
-            updateGallery();
-        }
-
-        function updateGallery() {
-            const offset = -currentIndex * 100;
-            document.querySelector(".gallery").style.transform = `translateX(${offset}%)`;
-        }
-
-        setInterval(() => {
-            moveSlide(1);
-        }, 5000);
-    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
