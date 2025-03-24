@@ -5,24 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body, html { height: 100%; font-family: Arial, sans-serif; }
-    .container { display: flex; height: 100%; }
-    .left { position: relative; width: 50%; height: 100%; }
-    .left img { position: absolute; animation: slide 5s infinite; width: 100%; height: auto; }
-    .right { position: relative; width: 50%; height: 100%; overflow: hidden; }
-    .right p { position: absolute; bottom: -100%; animation: walk 5s infinite; font-size: 2vw; }
-    @keyframes slide { 0% { left: -100%; } 100% { left: 100%; } }
-    @keyframes walk { 0% { bottom: -100%; } 100% { bottom: 100%; } }
+    body, html { height: 100%; font-family: Arial, sans-serif; display: flex; }
+
+    /* Left container (image sliding) */
+    .left-container { position: relative; width: 50%; height: 100vh; }
+    .left-container img { position: absolute; animation: slide 5s infinite; width: 100%; height: auto; }
+
+    /* Right container (text walking) */
+    .right-container { position: relative; width: 50%; height: 100vh; overflow: hidden; }
+    .right-container p { position: absolute; bottom: -100%; animation: walk 5s infinite; font-size: 2vw; }
+
+    /* Sliding image animation */
+    @keyframes slide {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+
+    /* Walking text animation */
+    @keyframes walk {
+      0% { bottom: -100%; }
+      100% { bottom: 100%; }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="left">
-      <img src="./gallery/aa1.jpg" alt="Sliding Image">
-    </div>
-    <div class="right">
-      <p>Walking Text from bottom to top.</p>
-    </div>
+  <div class="left-container">
+    <img src="./gallery/aa1.jpg" alt="Sliding Image">
+  </div>
+  <div class="right-container">
+    <p>Walking Text from bottom to top.</p>
   </div>
 </body>
 </html>
