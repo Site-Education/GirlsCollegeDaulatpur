@@ -589,32 +589,10 @@ img {
     </footer>
 
     <script>
-        let currentIndex = 0;
 
-        const images = document.querySelectorAll(".gallery img");
 
-        // Function to change the slide
-        function moveSlide(step) {
-            currentIndex += step;
-            if (currentIndex < 0) {
-                currentIndex = images.length - 1;  // Loop back to last image
-            }
-            if (currentIndex >= images.length) {
-                currentIndex = 0;  // Loop back to first image
-            }
-            updateGallery();
-        }
 
-        // Update gallery to show the correct image
-        function updateGallery() {
-            const offset = -currentIndex * 100;  // Offset to slide the images
-            document.querySelector(".gallery").style.transform = `translateX(${offset}%)`;
-        }
-
-        // Auto-slide every 1 seconds
-        setInterval(() => {
-            moveSlide(1);
-        }, 5000);
+	    
 
 	    let slideIndex = 1;
 showSlides(slideIndex);
