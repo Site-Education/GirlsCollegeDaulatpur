@@ -380,55 +380,283 @@
             </div>
         </div>
     </nav>
-<div class="container">
-        <!-- Left Side - Image Gallery (Slideshow) -->
-        <div class="left-side">
-            <h2> Ma'am</h2>
-            <div class="gallery">
-				<img src="./gallery/mdm.jpg" alt="Image 1">
-		
-            
-                
-            </div>
-            <button class="nav-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="nav-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
-        </div>
+<style>
+/* =========================================
+   LEFT / RIGHT NAVIGATION ARROW BUTTONS
+   ========================================= */
 
-        <!-- Right Side - Scrolling Paragraph -->
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 55px;
+    height: 55px;
+
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+
+    background: linear-gradient(135deg, #0066cc, #003d80);
+
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+
+    cursor: pointer;
+    z-index: 20;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0.8;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.30),
+        0 0 10px rgba(0, 102, 204, 0.35);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease,
+        opacity 0.25s ease;
+}
+
+/* LEFT ARROW */
+.prev-btn {
+    left: 15px;
+}
+
+/* RIGHT ARROW */
+.next-btn {
+    right: 15px;
+}
+
+/* ARROW ICON */
+.nav-btn span {
+    display: block;
+    transition: transform 0.25s ease;
+}
+
+/* HOVER */
+.nav-btn:hover {
+    opacity: 1;
+
+    background: linear-gradient(
+        135deg,
+        #00aaff,
+        #0066cc
+    );
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.35),
+        0 0 20px rgba(0, 170, 255, 0.75);
+
+    transform: translateY(-50%) scale(1.12);
+}
+
+/* MOVE ARROW ON HOVER */
+.prev-btn:hover span {
+    transform: translateX(-4px);
+}
+
+.next-btn:hover span {
+    transform: translateX(4px);
+}
+
+/* CLICK EFFECT */
+.nav-btn:active {
+    transform: translateY(-50%) scale(0.90);
+}
+
+/* KEYBOARD FOCUS */
+.nav-btn:focus {
+    outline: none;
+    border-color: #00d9ff;
+
+    box-shadow:
+        0 0 0 4px rgba(0, 217, 255, 0.25),
+        0 0 20px rgba(0, 217, 255, 0.7);
+}
 
 
-	<div class="right-side">
-		
-    <div style="display: flex; justify-content: space-between; align-items: center;">
-    <a href="Notice.html" style="font-size: 30px; text-decoration: none;">VIEW ALL</a>
-    <img src="https://pu.edu.pk/images/News/a-new.gif" style="width:100px; height:auto;">
+/* =========================================
+   NOTICE / RIGHT SIDE
+   ========================================= */
+
+.right-side {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* VIEW ALL BUTTON */
+.right-side a {
+    transition: all 0.25s ease;
+}
+
+.right-side a:hover {
+    color: #0066cc;
+    transform: translateX(4px);
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .nav-btn {
+        width: 43px;
+        height: 43px;
+        font-size: 19px;
+    }
+
+    .prev-btn {
+        left: 8px;
+    }
+
+    .next-btn {
+        right: 8px;
+    }
+}
+</style>
+
+
+<!-- =========================================
+     YOUR SLIDER
+     ========================================= -->
+
 </div>
 
-<div class="scroll-paragraph" style="padding-right: 270px;">
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;اطلاع 2026<br>
-					
-                شاگردياڻين کي اطلاع ٿو ڏجي ته سندن ڪلاس ڀرپور ھلي رھيا آھن. ان سان گڏ چوڏھين آگسٽ جي پروگرام جي تياري جاري آھي. غير حاضر شاگردياڻين کي ھدايت ٿي ڪجي ته ڪاليج اچن
-					
-                  <div style="width:440px">
-  <a href="Notice.html">View more..
-    <img src="https://pu.edu.pk/images/News/a-new.gif" style="width:70px; height:auto;"> </a></div><br>
-                </p>
-            </div>
+<button
+    class="nav-btn prev-btn"
+    onclick="moveSlide(-1)"
+    aria-label="Previous slide">
+    <span>❮</span>
+</button>
 
-            <!-- Second paragraph that starts after the first one finishes -->
-		    <div class="scroll-paragraph-2" style="padding-right: 270px;">
-			    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;اطلاع 2026<br>
-					
-					شاگردياڻين کي اطلاع ٿو ڏجي ته سندن ڪلاس ڀرپور ھلي رھيا آھن. ان سان گڏ چوڏھين آگسٽ جي پروگرام جي تياري جاري آھي. غير حاضر شاگردياڻين کي ھدايت ٿي ڪجي ته ڪاليج اچن
-                
-			
-                   <div style="width:440px">
-  <a href="Notice.html">View more..
-    <img src="https://pu.edu.pk/images/News/a-new.gif" style="width:70px; height:auto;"> </a></div><br>
+<button
+    class="nav-btn next-btn"
+    onclick="moveSlide(1)"
+    aria-label="Next slide">
+    <span>❯</span>
+</button>
 
-            </div>
-        </div>
+</div>
+
+
+<!-- =========================================
+     RIGHT SIDE - SCROLLING PARAGRAPHS
+     ========================================= -->
+
+<div class="right-side">
+
+    <!-- HEADER -->
+    <div style="
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+    ">
+
+        <a
+            href="Notice.html"
+            style="
+                font-size:30px;
+                text-decoration:none;
+                font-weight:bold;
+            ">
+            VIEW ALL
+        </a>
+
+        <img
+            src="https://pu.edu.pk/images/News/a-new.gif"
+            style="
+                width:100px;
+                height:auto;
+            "
+            alt="New">
     </div>
+
+
+    <!-- =====================================
+         FIRST NOTICE
+         ===================================== -->
+
+    <div class="scroll-paragraph-1">
+
+        <p>
+            شاگردياڻين کي اطلاع ٿو ڏجي ته سندن ڪلاس ڀرپور ھلي رھيا آھن.
+            ان سان گڏ چوڏھين آگسٽ جي پروگرام جي تياري جاري آھي.
+            غير حاضر شاگردياڻين کي ھدايت ٿي ڪجي ته ڪاليج اچن
+        </p>
+
+        <div style="width:440px;">
+
+            <a href="Notice.html">
+                View more..
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         SECOND NOTICE
+         ===================================== -->
+
+    <div
+        class="scroll-paragraph-2"
+        style="padding-right:270px;">
+
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;
+
+            اطلاع 2026
+            <br><br>
+
+            شاگردياڻين کي اطلاع ٿو ڏجي ته سندن ڪلاس ڀرپور ھلي رھيا آھن.
+            ان سان گڏ چوڏھين آگسٽ جي پروگرام جي تياري جاري آھي.
+            غير حاضر شاگردياڻين کي ھدايت ٿي ڪجي ته ڪاليج اچن
+        </p>
+
+        <div style="width:440px;">
+
+            <a href="Notice.html">
+                View more..
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================
+     KEYBOARD NAVIGATION
+     ========================================= -->
+
+<script>
+
+document.addEventListener("keydown", function(event) {
+
+    /* LEFT ARROW */
+    if (event.key === "ArrowLeft") {
+        moveSlide(-1);
+    }
+
+    /* RIGHT ARROW */
+    if (event.key === "ArrowRight") {
+        moveSlide(1);
+    }
+
+});
+
+</script>
 <p style="text-align: center; color: black; font-size: 1.3rem; font-family: Arial, sans-serif; padding-left: 1em; padding-right: 2em;">
 	    Note: Students must follow college rules and wear the official uniform neatly and respectfully, reflecting the values of our institution!</p>
     
