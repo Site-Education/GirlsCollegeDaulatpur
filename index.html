@@ -27,7 +27,46 @@
             border-radius: 0.25rem;
         }
      
-    
+    .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Left side - Image Gallery */
+        .left-side {
+            width: 100%;
+            max-width: 1000px;  /* Set a max-width to keep images balanced */
+            background-color: #fff;
+            padding: 5px;
+            border-radius: 2px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+            height: 550px;
+        }
+
+      .gallery {
+    width: 100%;
+    height: 430px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f5f5;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.gallery img {
+    width: 100%;
+    height: 50%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+
         /* Navigation Buttons for Slideshow */
         .nav-btn {
             position: absolute;
@@ -40,52 +79,14 @@
             font-size: 18px;
             transform: translateY(-50%);
         }
-		/* =========================
-   MAIN LEFT + RIGHT LAYOUT
-========================= */
 
-.container {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 10px;
-    box-sizing: border-box;
-}
+        .prev-btn {
+            left: 10px;
+        }
 
-
-/* =========================
-   LEFT SIDE - IMAGE
-========================= */
-
-.left-side {
-    width: 48%;
-    max-width: 700px;
-    background-color: #fff;
-    padding: 5px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    box-sizing: border-box;
-    overflow: hidden;
-}
-
-.gallery {
-    width: 100%;
-    height: 430px;
-    position: relative;
-    overflow: hidden;
-    background-color: #f5f5f5;
-    border-radius: 8px;
-}
-
-.gallery img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-}
+        .next-btn {
+            right: 10px;
+        }
 
         /* Right side - Scrolling Paragraph */
         .right-side {
@@ -386,13 +387,19 @@
         </div>
     </nav>
 
-
- <div class="left-side">
-    <img src="./gallery/aa1.jpg" 
-         alt="Ma'am"
-         style="width:100%; height:430px; object-fit:contain;">
-</div>
-	
+	<div class="container">
+        <!-- Left Side - Image Gallery (Slideshow) -->
+        <div class="left-side">
+            <h2> Ma'am</h2>
+            <div class="gallery">
+				<img src="./gallery/aa1.jpg" alt="Image 1">
+		
+            
+                
+            </div>
+            <button class="nav-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="nav-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
+        </div>
 
         <!-- Right Side - Scrolling Paragraph -->
 
