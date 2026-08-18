@@ -459,34 +459,34 @@ As you move forward in your studies, always remember that education is not just 
 <div class="slideshow-container">
 
 <div class="mySlides fade">
-  <div class="numbertext">1 / 9</div>
+  <div class="numbertext">1 / 6</div>
   <img src="./gallery/august1.jpg" style="width:100%">
   <div class="text">At Govt Girls College Daulatpur<br>On the eve of world TB Day a Session </div>
 </div>
 
 <div class="mySlides fade">
-  <div class="numbertext">2 / 9</div>
+  <div class="numbertext">2 / 6</div>
   <img src="./gallery/august2.jpg" style="width:100%">
   <div class="text">At Govt Girls College Daulatpur<br>On the eve of world TB Day a Session</div>
 </div>
 
 <div class="mySlides fade">
-  <div class="numbertext">3 / 9</div>
+  <div class="numbertext">3 / 6</div>
   <img src="./gallery/august3.jpg" style="width:100%">
   <div class="text">23 March Pakistan Day</div>
 </div>
 <div class="mySlides fade">
-  <div class="numbertext">4 / 9</div>
+  <div class="numbertext">4 / 6</div>
   <img src="./gallery/august8.jpg" style="width:100%">
   <div class="text">Vist of Prof Muhammad Suleman Siyal Director College Education Shaheed benazir Abad Region</div>
 </div>
 <div class="mySlides fade">
-  <div class="numbertext">5 / 9</div>
+  <div class="numbertext">5 / 6</div>
   <img src="./gallery/august9.jpg" style="width:100%">
   <div class="text">Vist of Prof Muhammad Suleman Siyal Director College Education Shaheed benazir Abad Region</div>
 </div>
 <div class="mySlides fade">
-  <div class="numbertext">6 / 9</div>
+  <div class="numbertext">6 / 6</div>
   <img src="./gallery/august10.jpg" style="width:100%">
   <div class="text">Vist of Prof Muhammad Suleman Siyal Director College Education Shaheed benazir Abad Region</div>
 
@@ -618,41 +618,118 @@ As you move forward in your studies, always remember that education is not just 
 
     <script>
 
+// ================================
+// FIRST SLIDESHOW - 6 IMAGES
+// ================================
+
+let slideIndex1 = 1;
+
+showSlides1(slideIndex1);
+
+function plusSlides1(n) {
+    showSlides1(slideIndex1 += n);
+}
+
+function currentSlide1(n) {
+    showSlides1(slideIndex1 = n);
+}
+
+function showSlides1(n) {
+
+    let i;
+    let slides = document.getElementsByClassName("mySlides1");
+    let dots = document.getElementsByClassName("dot1");
+
+    if (n > slides.length) {
+        slideIndex1 = 1;
+    }
+
+    if (n < 1) {
+        slideIndex1 = slides.length;
+    }
+
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    for (i = 0; i < dots.length; i++) {
+        dots[i].classList.remove("active");
+    }
+
+    if (slides.length > 0) {
+        slides[slideIndex1 - 1].style.display = "block";
+    }
+
+    if (dots.length > 0) {
+        dots[slideIndex1 - 1].classList.add("active");
+    }
+}
+
+
+// ================================
+// SECOND SLIDESHOW - 9 IMAGES
+// ================================
+
+let slideIndex2 = 1;
+
+showSlides2(slideIndex2);
+
+function plusSlides2(n) {
+    showSlides2(slideIndex2 += n);
+}
+
+function currentSlide2(n) {
+    showSlides2(slideIndex2 = n);
+}
+
+function showSlides2(n) {
+
+    let i;
+    let slides = document.getElementsByClassName("mySlides2");
+    let dots = document.getElementsByClassName("dot2");
+
+    if (n > slides.length) {
+        slideIndex2 = 1;
+    }
+
+    if (n < 1) {
+        slideIndex2 = slides.length;
+    }
+
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    for (i = 0; i < dots.length; i++) {
+        dots[i].classList.remove("active");
+    }
+
+    if (slides.length > 0) {
+        slides[slideIndex2 - 1].style.display = "block";
+    }
+
+    if (dots.length > 0) {
+        dots[slideIndex2 - 1].classList.add("active");
+    }
+}
+
+
+// ================================
+// AUTOMATIC SLIDESHOW
+// ================================
+
+setInterval(function () {
+    plusSlides1(1);
+}, 6000);
+
+setInterval(function () {
+    plusSlides2(1);
+}, 6000);
 
 
 	    
 
-	    let slideIndex = 1;
-showSlides(slideIndex);
 
-// Automatic slide show
-setInterval(function() {
-  plusSlides(1); // Move to the next slide every 3 seconds
-}, 6000); // Change slide every 3 seconds
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-}
     </script>
     <!-- Bootstrap JS and Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
