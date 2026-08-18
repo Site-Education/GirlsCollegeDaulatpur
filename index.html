@@ -478,53 +478,52 @@ As you move forward in your studies, always remember that education is not just 
  <div class="section-gap"></div>
                                    
 
-	
 
 <div class="slideshow-container">
 
-<div class="mySlides1 fade">
+<div class="mySlides fade">
   <div class="numbertext">1 / 9</div>
   <img src="./gallery/TB2.jpg" style="width:100%">
   <div class="text">At Govt Girls College Daulatpur<br>On the eve of world TB Day a Session </div>
 </div>
 
-<div class="mySlides1 fade">
+<div class="mySlides fade">
   <div class="numbertext">2 / 9</div>
   <img src="./gallery/TB1.jpg" style="width:100%">
   <div class="text">At Govt Girls College Daulatpur<br>On the eve of world TB Day a Session</div>
 </div>
 
-<div class="mySlides1 fade">
+<div class="mySlides fade">
   <div class="numbertext">3 / 9</div>
   <img src="./gallery/SB12.jpg" style="width:100%">
   <div class="text">23 March Pakistan Day</div>
 </div>
-<div class="mySlides1 fade">
+<div class="mySlides fade">
   <div class="numbertext">4 / 9</div>
   <img src="./gallery/SB1.jpg" style="width:100%">
   <div class="text">Vist of Prof Muhammad Suleman Siyal Director College Education Shaheed benazir Abad Region</div>
 </div>
-<div class="mySlides1 fade">
+<div class="mySlides fade">
   <div class="numbertext">5 / 9</div>
   <img src="./gallery/SB2.jpg" style="width:100%">
   <div class="text">Vist of Prof Muhammad Suleman Siyal Director College Education Shaheed benazir Abad Region</div>
 </div>
-<div class="mySlides1 fade">
+<div class="mySlides fade">
   <div class="numbertext">6 / 9</div>
   <img src="./gallery/SB3.jpg" style="width:100%">
   <div class="text">Vist of Prof Muhammad Suleman Siyal Director College Education Shaheed benazir Abad Region</div>
 </div>
-<div class="mySlides1 fade">
+<div class="mySlides fade">
   <div class="numbertext">7 / 9</div>
   <img src="./gallery/SB4.jpg" style="width:100%">
   <div class="text">Vist of Prof Muhammad Suleman Siyal Director College Education Shaheed benazir Abad Region</div>
 </div>
-<div class="mySlides1 fade">
+<div class="mySlides fade">
   <div class="numbertext">8 / 9</div>
   <img src="./gallery/SB10.jpg" style="width:100%">
   <div class="text">Vist of Prof Muhammad Suleman Siyal Director College Education Shaheed benazir Abad Region</div>
 </div>
-<div class="mySlides1 fade">
+<div class="mySlides fade">
   <div class="numbertext">9 / 9</div>
   <img src="./gallery/SB11.jpg" style="width:100%">
   <div class="text">Vist of Prof Muhammad Suleman Siyal Director College Education Shaheed benazir Abad Region</div>
@@ -537,15 +536,17 @@ As you move forward in your studies, always remember that education is not just 
 <br>
 
 <div style="text-align:center">
-<span class="dot1" onclick="currentSlide1(1)"></span>
-<span class="dot1" onclick="currentSlide1(2)"></span>
-<span class="dot1" onclick="currentSlide1(3)"></span>
-<span class="dot1" onclick="currentSlide1(4)"></span>
-<span class="dot1" onclick="currentSlide1(5)"></span>
-<span class="dot1" onclick="currentSlide1(6)"></span>
-<span class="dot1" onclick="currentSlide1(7)"></span>
-<span class="dot1" onclick="currentSlide1(8)"></span>
-<span class="dot1" onclick="currentSlide1(9)"></span>
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span>
+<span class="dot" onclick="currentSlide(4)"></span> 
+  <span class="dot" onclick="currentSlide(5)"></span> 
+  <span class="dot" onclick="currentSlide(6)"></span> 
+<span class="dot" onclick="currentSlide(7)"></span> 
+  <span class="dot" onclick="currentSlide(8)"></span> 
+  <span class="dot" onclick="currentSlide(9)"></span> 
+<a href="Government-Girls-College-Daulatpur.html" style="font-size: 20px; text-decoration: none;">VIEW ALL</a>
+</div>
 
 <a href="Government-Girls-College-Daulatpur.html" style="font-size: 20px; text-decoration: none;">VIEW ALL</a>
 </div>
@@ -589,84 +590,34 @@ As you move forward in your studies, always remember that education is not just 
 
     <script>
 
-// ================================
-// FIRST SLIDESHOW - 6 IMAGES
-// ================================
-
-let slideIndex1 = 1;
-
-showSlides1(slideIndex1);
-
-function plusSlides1(n) {
-    showSlides1(slideIndex1 += n);
+let slideIndex = 1;
+showSlides (slideIndex);
+// Automatic slide show
+setInterval(function() {
+plusSlides(1); // Move to the next slide every 3 seconds
+}, 6000); // Change slide every 3 seconds
+function plusSlides(n) {
+showSlides(slidelndex += n);
 }
-
-function currentSlide1(n) {
-    showSlides1(slideIndex1 = n);
+function currentSlide(n) {
+showSlides(slidelndex = n);
 }
-
-function showSlides1(n) {
-
-    let i;
-    let slides = document.getElementsByClassName("mySlides1");
-    let dots = document.getElementsByClassName("dot1");
-
-    if (n > slides.length) {
-        slideIndex1 = 1;
-    }
-
-    if (n < 1) {
-        slideIndex1 = slides.length;
-    }
-
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-
-    for (i = 0; i < dots.length; i++) {
-        dots[i].classList.remove("active");
-    }
-
-    if (slides.length > 0) {
-        slides[slideIndex1 - 1].style.display = "block";
-    }
-
-    if (dots.length > 0) {
-        dots[slideIndex1 - 1].classList.add("active");
-    }
+function showSlides(n) {
+let i;
+let slides =
+document.getElementsByClassName("mySlides");
+let dots = document.getElementsByClassName("dot");
+if (n > slides.length) (slideIndex = 1}
+if (n < 1) {slideIndex = slides.length}
+for (i = 0; i < slides.length; i++) {
+slides[i].style.display = "none";
 }
-
-
-// ================================
-// SECOND SLIDESHOW - 9 IMAGES
-// ================================
-
-let slideIndex2 = 1;
-
-showSlides2(slideIndex2);
-
-function plusSlides2(n) {
-    showSlides2(slideIndex2 += n);
+for (i = 0; i < dots.length; i++) {
+""); dots[i].className = dots[i].className.replace(" active",
 }
-
+slides[slideIndex-1].style.display = "block";
+dots[slideIndex-1].className + = "active";
 }
-
-
-// ================================
-// AUTOMATIC SLIDESHOW
-// ================================
-
-setInterval(function () {
-    plusSlides1(1);
-}, 6000);
-
-setInterval(function () {
-    plusSlides2(1);
-}, 6000);
-
-
-	    
-
 
     </script>
     <!-- Bootstrap JS and Popper.js -->
