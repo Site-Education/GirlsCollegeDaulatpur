@@ -586,48 +586,35 @@ As you move forward in your studies, always remember that education is not just 
         <p style ="color: red;">&copy; 2025 Government Girls College Daulatpur All rights reserved.</p>
     </footer>
 
-    <script>
-
 <script>
+
 let slideIndex = 1;
-
-showSlides(slideIndex);
-
+showSlides (slideIndex);
+// Automatic slide show
 setInterval(function() {
-    plusSlides(1);
-}, 6000);
-
+plusSlides(1); // Move to the next slide every 3 seconds
+}, 6000); // Change slide every 3 seconds
 function plusSlides(n) {
-    showSlides(slideIndex += n);
+showSlides(slidelndex += n);
 }
-
 function currentSlide(n) {
-    showSlides(slideIndex = n);
+showSlides(slidelndex = n);
 }
-
 function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("dot");
-
-    if (n > slides.length) {
-        slideIndex = 1;
-    }
-
-    if (n < 1) {
-        slideIndex = slides.length;
-    }
-
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-
-    for (i = 0; i < dots.length; i++) {
-        dots[i].classList.remove("active");
-    }
-
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].classList.add("active");
+let i;
+let slides =
+document.getElementsByClassName("mySlides");
+let dots = document.getElementsByClassName("dot");
+if (n > slides.length) (slideIndex = 1}
+if (n < 1) {slideIndex = slides.length}
+for (i = 0; i < slides.length; i++) {
+slides[i].style.display = "none";
+}
+for (i = 0; i < dots.length; i++) {
+""); dots[i].className = dots[i].className.replace(" active",
+}
+slides[slideIndex-1].style.display = "block";
+dots[slideIndex-1].className + = "active";
 }
 </script>
 
