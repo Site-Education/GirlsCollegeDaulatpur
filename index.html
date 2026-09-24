@@ -508,6 +508,250 @@ As you move forward in your studies, always remember that education is not just 
 <div class="section-gap"></div>
 <!-- SECTION BREAK SPACE END -->                     
 
+<title>RTL Continuous Gallery</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #111;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Gallery */
+    .gallery {
+      width: 100%;
+      overflow: hidden;
+      padding: 30px 0;
+    }
+
+    .gallery-track {
+      display: flex;
+      width: max-content;
+      gap: 20px;
+      animation: scrollRTL 20s linear infinite;
+    }
+
+    .gallery-item {
+      width: 280px;
+      height: 180px;
+      flex-shrink: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Right to Left */
+    @keyframes scrollRTL {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* Pause while mouse is over gallery */
+    .gallery:hover .gallery-track {
+      animation-play-state: paused;
+    }
+
+    /* Fullscreen popup */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      inset: 0;
+
+      background: rgba(0, 0, 0, 0.92);
+
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .lightbox img {
+      max-width: 95%;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    /* Close button */
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+
+      color: white;
+      font-size: 45px;
+      font-weight: bold;
+
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .close:hover {
+      color: #ff4444;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Gallery -->
+  <div class="gallery">
+    <div class="gallery-track">
+
+      <!-- Image 1 -->
+      <div class="gallery-item">
+        <img src="./gallery/august2.jpg" alt="Image 1">
+      </div>
+
+      <!-- Image 2 -->
+      <div class="gallery-item">
+        <img src="./gallery/august1.jpg" alt="Image 2">
+      </div>
+
+      <!-- Image 3 -->
+      <div class="gallery-item">
+        <img src="./gallery/august3.jpg" alt="Image 3">
+      </div>
+
+      <!-- Image 4 -->
+      <div class="gallery-item">
+        <img src="./gallery/august4.jpg" alt="Image 4">
+      </div>
+
+      <!-- Image 5 -->
+      <div class="gallery-item">
+        <img src="./gallery/august5.jpg" alt="Image 5">
+      </div>
+
+
+      <!-- Duplicate images for continuous scrolling -->
+
+      <div class="gallery-item">
+        <img src="./gallery/august6.jpg" alt="Image 1">
+      </div>
+
+      <div class="gallery-item">
+        <img src="./gallery/august7.jpg" alt="Image 2">
+      </div>
+
+      <div class="gallery-item">
+        <img src="./gallery/august8.jpg" alt="Image 3">
+      </div>
+
+      <div class="gallery-item">
+        <img src="./gallery/august9.jpg" alt="Image 4">
+      </div>
+
+      <div class="gallery-item">
+        <img src="./gallery/august10.jpg" alt="Image 5">
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Fullscreen Lightbox -->
+  <div class="lightbox" id="lightbox">
+
+    <span class="close" id="close">&times;</span>
+
+    <img id="lightboxImage" src="" alt="Full Image">
+
+  </div>
+
+
+  <script>
+
+    const gallery = document.querySelector(".gallery");
+    const track = document.querySelector(".gallery-track");
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const close = document.getElementById("close");
+
+    /* Gallery speed */
+    track.style.animationDuration = "15s";
+
+
+    /* Click any image */
+    document.querySelectorAll(".gallery-item img").forEach(function(img) {
+
+      img.addEventListener("click", function() {
+
+        lightboxImage.src = this.src;
+
+        lightbox.style.display = "flex";
+
+        /* Stop gallery */
+        track.style.animationPlayState = "paused";
+
+      });
+
+    });
+
+
+    /* Close button */
+    close.addEventListener("click", function() {
+
+      lightbox.style.display = "none";
+
+      track.style.animationPlayState = "running";
+
+    });
+
+
+    /* Click outside image to close */
+    lightbox.addEventListener("click", function(e) {
+
+      if (e.target === lightbox) {
+
+        lightbox.style.display = "none";
+
+        track.style.animationPlayState = "running";
+
+      }
+
+    });
+
+
+    /* ESC key to close */
+    document.addEventListener("keydown", function(e) {
+
+      if (e.key === "Escape") {
+
+        lightbox.style.display = "none";
+
+        track.style.animationPlayState = "running";
+
+      }
+
+    });
+
+  </script>
+
+	
 
 <div class="slideshow-container">
 
