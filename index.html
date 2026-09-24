@@ -508,8 +508,6 @@ As you move forward in your studies, always remember that education is not just 
 <div class="section-gap"></div>
 <!-- SECTION BREAK SPACE END -->                     
 
-<title>Continuous RTL Gallery</title>
-
 <style>
   * {
     box-sizing: border-box;
@@ -525,20 +523,16 @@ As you move forward in your studies, always remember that education is not just 
 
   .gallery-track {
     display: flex;
-    width: max-content;
     gap: 20px;
-
-    /* Continuous movement */
-    animation: scrollRTL 20s linear infinite;
-
-    /* Never pause */
-    animation-play-state: running;
+    width: max-content;
+    will-change: transform;
   }
 
   .gallery-item {
-    width: 280px;
-    height: 180px;
-    flex-shrink: 0;
+    width: 350px;
+    height: 225px;
+    flex: 0 0 350px;
+
     overflow: hidden;
     border-radius: 12px;
     cursor: pointer;
@@ -547,38 +541,22 @@ As you move forward in your studies, always remember that education is not just 
   .gallery-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
     display: block;
-    transition: transform 0.3s;
-  }
-
-  .gallery-item:hover img {
-    transform: scale(1.05);
-  }
-
-  /* RIGHT → LEFT */
-  @keyframes scrollRTL {
-    from {
-      transform: translateX(0);
-    }
-
-    to {
-      transform: translateX(calc(-50% - 10px));
-    }
+    object-fit: cover;
   }
 
 
   /* =========================
-     FULL SCREEN IMAGE
+     FULL SCREEN
      ========================= */
 
   .lightbox {
     display: none;
 
     position: fixed;
-    z-index: 99999;
-
     inset: 0;
+
+    z-index: 99999;
 
     background: rgba(0, 0, 0, 0.95);
 
@@ -597,110 +575,88 @@ As you move forward in your studies, always remember that education is not just 
     border-radius: 8px;
   }
 
-
-  /* Close button */
-
   .close {
     position: absolute;
-
     top: 15px;
     right: 30px;
 
     color: white;
-
     font-size: 50px;
     font-weight: bold;
 
     cursor: pointer;
-
-    line-height: 1;
-
-    z-index: 100000;
   }
-
-  .close:hover {
-    color: red;
-  }
-
 </style>
 
 
-<!-- =========================
-     GALLERY
-     ========================= -->
-
 <div class="gallery">
 
-  <div class="gallery-track">
+  <div class="gallery-track" id="galleryTrack">
 
-
-    <!-- ORIGINAL SET -->
+    <!-- FIRST SET -->
 
     <div class="gallery-item">
-      <img src="./gallery/august1.jpg" alt="Image 1">
+      <img src="./gallery/august1.jpg" alt="">
     </div>
 
     <div class="gallery-item">
-      <img src="./gallery/august2.jpg" alt="Image 2">
+      <img src="./gallery/august2.jpg" alt="">
     </div>
 
     <div class="gallery-item">
-      <img src="./gallery/august3.jpg" alt="Image 3">
+      <img src="./gallery/august3.jpg" alt="">
     </div>
 
     <div class="gallery-item">
-      <img src="./gallery/august4.jpg" alt="Image 4">
+      <img src="./gallery/august4.jpg" alt="">
     </div>
 
     <div class="gallery-item">
-      <img src="./gallery/august5.jpg" alt="Image 5">
+      <img src="./gallery/august5.jpg" alt="">
     </div>
 
 
-    <!-- DUPLICATE SAME SET -->
+    <!-- SECOND SET - EXACT SAME -->
 
     <div class="gallery-item">
-      <img src="./gallery/august1.jpg" alt="Image 1">
-    </div>
-
-    <div class="gallery-item">
-      <img src="./gallery/august2.jpg" alt="Image 2">
+      <img src="./gallery/august1.jpg" alt="">
     </div>
 
     <div class="gallery-item">
-      <img src="./gallery/august3.jpg" alt="Image 3">
+      <img src="./gallery/august2.jpg" alt="">
     </div>
 
     <div class="gallery-item">
-      <img src="./gallery/august4.jpg" alt="Image 4">
+      <img src="./gallery/august3.jpg" alt="">
     </div>
 
     <div class="gallery-item">
-      <img src="./gallery/august5.jpg" alt="Image 5">
+      <img src="./gallery/august4.jpg" alt="">
     </div>
 
+    <div class="gallery-item">
+      <img src="./gallery/august5.jpg" alt="">
+    </div>
 
   </div>
 
 </div>
 
 
-<!-- =========================
-     FULL SCREEN
-     ========================= -->
+<!-- FULL SCREEN IMAGE -->
 
 <div class="lightbox" id="lightbox">
 
   <span class="close" id="close">&times;</span>
 
-  <img id="lightboxImage" src="" alt="Full Image">
+  <img id="lightboxImage" src="" alt="">
 
 </div>
 
 
 <script>
 
-  const track = document.querySelector(".gallery-track");
+  const track = document.getElementById("galleryTrack");
 
   const lightbox = document.getElementById("lightbox");
 
@@ -709,9 +665,104 @@ As you move forward in your studies, always remember that education is not just 
   const close = document.getElementById("close");
 
 
-  /* =========================
-     IMAGE CLICK
-     ========================= */
+  let position = 0;
+
+  const speed = 0.6;
+
+  let firstSetWidth = 0;
+
+
+  /*
+  =========================================
+  GET EXACT WIDTH OF FIRST 5 IMAGES
+  =========================================
+  */
+
+  function calculateWidth() {
+
+    const items = track.querySelectorAll(".gallery-item");
+
+    firstSetWidth = 0;
+
+    for (let i = 0; i < 5; i++) {
+
+      firstSetWidth += items[i].getBoundingClientRect().width;
+
+    }
+
+    /*
+      4 gaps between first 5 images
+    */
+
+    firstSetWidth += 20 * 4;
+
+  }
+
+
+  /*
+  =========================================
+  CONTINUOUS RIGHT → LEFT
+  =========================================
+  */
+
+  function animate() {
+
+    position -= speed;
+
+
+    /*
+      When first complete set has gone left,
+      immediately bring it back.
+
+      Because second set is exactly identical,
+      there will be NO EMPTY SPACE.
+    */
+
+    if (Math.abs(position) >= firstSetWidth) {
+
+      position += firstSetWidth;
+
+    }
+
+
+    track.style.transform =
+      "translate3d(" + position + "px, 0, 0)";
+
+
+    requestAnimationFrame(animate);
+
+  }
+
+
+  /*
+  Calculate after images load
+  */
+
+  window.addEventListener("load", function() {
+
+    calculateWidth();
+
+    animate();
+
+  });
+
+
+  /*
+  Recalculate if screen size changes
+  */
+
+  window.addEventListener("resize", function() {
+
+    calculateWidth();
+
+  });
+
+
+  /*
+  =========================================
+  FULL SCREEN IMAGE
+  =========================================
+  */
 
   document.querySelectorAll(".gallery-item img").forEach(function(img) {
 
@@ -721,19 +772,14 @@ As you move forward in your studies, always remember that education is not just 
 
       lightbox.style.display = "flex";
 
-      /*
-        IMPORTANT:
-        Gallery will NOT stop.
-      */
-
     });
 
   });
 
 
-  /* =========================
-     CLOSE BUTTON
-     ========================= */
+  /*
+  CLOSE
+  */
 
   close.addEventListener("click", function() {
 
@@ -742,9 +788,9 @@ As you move forward in your studies, always remember that education is not just 
   });
 
 
-  /* =========================
-     CLICK OUTSIDE IMAGE
-     ========================= */
+  /*
+  CLICK OUTSIDE
+  */
 
   lightbox.addEventListener("click", function(e) {
 
@@ -757,9 +803,9 @@ As you move forward in your studies, always remember that education is not just 
   });
 
 
-  /* =========================
-     ESC KEY
-     ========================= */
+  /*
+  ESC
+  */
 
   document.addEventListener("keydown", function(e) {
 
@@ -772,6 +818,7 @@ As you move forward in your studies, always remember that education is not just 
   });
 
 </script>
+
 
 
 	
