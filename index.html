@@ -525,7 +525,9 @@ As you move forward in your studies, always remember that education is not just 
     display: flex;
     gap: 20px;
     width: max-content;
+
     will-change: transform;
+    transform: translate3d(0, 0, 0);
   }
 
   .gallery-item {
@@ -541,14 +543,17 @@ As you move forward in your studies, always remember that education is not just 
   .gallery-item img {
     width: 100%;
     height: 100%;
+
     display: block;
     object-fit: cover;
+
+    user-select: none;
   }
 
 
   /* =========================
-     FULL SCREEN
-     ========================= */
+     FULL SCREEN IMAGE
+  ========================= */
 
   .lightbox {
     display: none;
@@ -571,12 +576,12 @@ As you move forward in your studies, always remember that education is not just 
     max-height: 90vh;
 
     object-fit: contain;
-
     border-radius: 8px;
   }
 
   .close {
     position: absolute;
+
     top: 15px;
     right: 30px;
 
@@ -585,57 +590,43 @@ As you move forward in your studies, always remember that education is not just 
     font-weight: bold;
 
     cursor: pointer;
+    z-index: 100000;
+  }
+
+  .close:hover {
+    color: red;
   }
 </style>
 
+
+<!-- =========================
+     GALLERY
+========================= -->
 
 <div class="gallery">
 
   <div class="gallery-track" id="galleryTrack">
 
-    <!-- FIRST SET -->
+    <!-- ORIGINAL IMAGES -->
 
     <div class="gallery-item">
-      <img src="./gallery/august1.jpg" alt="">
+      <img src="./gallery/august1.jpg" alt="Image 1">
     </div>
 
     <div class="gallery-item">
-      <img src="./gallery/august2.jpg" alt="">
+      <img src="./gallery/august2.jpg" alt="Image 2">
     </div>
 
     <div class="gallery-item">
-      <img src="./gallery/august3.jpg" alt="">
+      <img src="./gallery/august3.jpg" alt="Image 3">
     </div>
 
     <div class="gallery-item">
-      <img src="./gallery/august4.jpg" alt="">
+      <img src="./gallery/august4.jpg" alt="Image 4">
     </div>
 
     <div class="gallery-item">
-      <img src="./gallery/august5.jpg" alt="">
-    </div>
-
-
-    <!-- SECOND SET - EXACT SAME -->
-
-    <div class="gallery-item">
-      <img src="./gallery/august1.jpg" alt="">
-    </div>
-
-    <div class="gallery-item">
-      <img src="./gallery/august2.jpg" alt="">
-    </div>
-
-    <div class="gallery-item">
-      <img src="./gallery/august3.jpg" alt="">
-    </div>
-
-    <div class="gallery-item">
-      <img src="./gallery/august4.jpg" alt="">
-    </div>
-
-    <div class="gallery-item">
-      <img src="./gallery/august5.jpg" alt="">
+      <img src="./gallery/august5.jpg" alt="Image 5">
     </div>
 
   </div>
@@ -643,13 +634,15 @@ As you move forward in your studies, always remember that education is not just 
 </div>
 
 
-<!-- FULL SCREEN IMAGE -->
+<!-- =========================
+     LIGHTBOX
+========================= -->
 
 <div class="lightbox" id="lightbox">
 
   <span class="close" id="close">&times;</span>
 
-  <img id="lightboxImage" src="" alt="">
+  <img id="lightboxImage" src="" alt="Full Image">
 
 </div>
 
@@ -665,45 +658,102 @@ As you move forward in your studies, always remember that education is not just 
   const close = document.getElementById("close");
 
 
+  /* =========================================
+     SETTINGS
+  ========================================= */
+
+  const speed = 0.7;
+
+
   let position = 0;
 
-  const speed = 0.6;
-
-  let firstSetWidth = 0;
+  let loopWidth = 0;
 
 
-  /*
-  =========================================
-  GET EXACT WIDTH OF FIRST 5 IMAGES
-  =========================================
-  */
+  /* =========================================
+     CREATE INFINITE COPIES AUTOMATICALLY
+  ========================================= */
 
-  function calculateWidth() {
+  function createInfiniteGallery() {
 
-    const items = track.querySelectorAll(".gallery-item");
+    /*
+      Remove old clones first
+    */
 
-    firstSetWidth = 0;
+    track.querySelectorAll(".clone").forEach(function(item) {
+      item.remove();
+    });
 
-    for (let i = 0; i < 5; i++) {
 
-      firstSetWidth += items[i].getBoundingClientRect().width;
+    /*
+      Original images
+    */
+
+    const originalItems = Array.from(
+      track.querySelectorAll(".gallery-item")
+    );
+
+
+    /*
+      Make copies until there is MORE than
+      enough content to cover the screen.
+
+      This is the important part.
+    */
+
+    let totalWidth = track.scrollWidth;
+
+    const screenWidth = window.innerWidth;
+
+
+    while (totalWidth < screenWidth * 3) {
+
+      originalItems.forEach(function(item) {
+
+        const clone = item.cloneNode(true);
+
+        clone.classList.add("clone");
+
+        track.appendChild(clone);
+
+      });
+
+      totalWidth = track.scrollWidth;
 
     }
 
+
     /*
-      4 gaps between first 5 images
+      Find first cloned image
     */
 
-    firstSetWidth += 20 * 4;
+    const firstClone = track.querySelector(".clone");
+
+
+    /*
+      Exact distance between:
+      
+      ORIGINAL IMAGE 1
+      and
+      DUPLICATE IMAGE 1
+
+      No manual calculation.
+    */
+
+    loopWidth = firstClone.offsetLeft;
+
+
+    position = 0;
+
+    track.style.transform =
+      "translate3d(0, 0, 0)";
 
   }
 
 
-  /*
-  =========================================
-  CONTINUOUS RIGHT → LEFT
-  =========================================
-  */
+  /* =========================================
+     ANIMATION
+  ========================================= */
 
   function animate() {
 
@@ -711,16 +761,13 @@ As you move forward in your studies, always remember that education is not just 
 
 
     /*
-      When first complete set has gone left,
-      immediately bring it back.
-
-      Because second set is exactly identical,
-      there will be NO EMPTY SPACE.
+      When first complete set moves away,
+      immediately continue from duplicate set.
     */
 
-    if (Math.abs(position) >= firstSetWidth) {
+    if (Math.abs(position) >= loopWidth) {
 
-      position += firstSetWidth;
+      position += loopWidth;
 
     }
 
@@ -734,52 +781,50 @@ As you move forward in your studies, always remember that education is not just 
   }
 
 
-  /*
-  Calculate after images load
-  */
+  /* =========================================
+     START AFTER PAGE LOAD
+  ========================================= */
 
   window.addEventListener("load", function() {
 
-    calculateWidth();
+    createInfiniteGallery();
 
     animate();
 
   });
 
 
-  /*
-  Recalculate if screen size changes
-  */
+  /* =========================================
+     RESIZE
+  ========================================= */
 
   window.addEventListener("resize", function() {
 
-    calculateWidth();
+    createInfiniteGallery();
 
   });
 
 
-  /*
-  =========================================
-  FULL SCREEN IMAGE
-  =========================================
-  */
+  /* =========================================
+     FULL SCREEN IMAGE
+  ========================================= */
 
-  document.querySelectorAll(".gallery-item img").forEach(function(img) {
+  document.addEventListener("click", function(e) {
 
-    img.addEventListener("click", function() {
+    if (e.target.matches(".gallery-item img")) {
 
-      lightboxImage.src = this.src;
+      lightboxImage.src = e.target.src;
 
       lightbox.style.display = "flex";
 
-    });
+    }
 
   });
 
 
-  /*
-  CLOSE
-  */
+  /* =========================================
+     CLOSE BUTTON
+  ========================================= */
 
   close.addEventListener("click", function() {
 
@@ -788,9 +833,9 @@ As you move forward in your studies, always remember that education is not just 
   });
 
 
-  /*
-  CLICK OUTSIDE
-  */
+  /* =========================================
+     CLICK OUTSIDE
+  ========================================= */
 
   lightbox.addEventListener("click", function(e) {
 
@@ -803,9 +848,9 @@ As you move forward in your studies, always remember that education is not just 
   });
 
 
-  /*
-  ESC
-  */
+  /* =========================================
+     ESC KEY
+  ========================================= */
 
   document.addEventListener("keydown", function(e) {
 
