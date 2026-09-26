@@ -355,287 +355,6 @@
     }
 
     /* =====================================================
-       MOVING GALLERY
-    ===================================================== */
-
-    .moving-gallery {
-        width: 100%;
-        max-width: 100%;
-
-        overflow: hidden;
-
-        padding: 20px 0 30px;
-
-        background: transparent;
-    }
-
-    .gallery-heading {
-        text-align: center;
-        margin-bottom: 20px;
-        font-size: 28px;
-    }
-
-    .gallery-track {
-        display: flex;
-
-        gap: 20px;
-
-        width: max-content;
-
-        will-change: transform;
-
-        transform: translate3d(0, 0, 0);
-    }
-
-    .gallery-item {
-        width: 350px;
-        height: 225px;
-
-        min-width: 350px;
-
-        flex: 0 0 350px;
-
-        overflow: hidden;
-
-        border-radius: 12px;
-
-        cursor: pointer;
-
-        background: #ffffff;
-    }
-
-    .gallery-item img {
-        width: 100%;
-        height: 100%;
-
-        display: block;
-
-        object-fit: cover;
-
-        user-select: none;
-
-        -webkit-user-drag: none;
-    }
-
-    /* =====================================================
-       LIGHTBOX
-    ===================================================== */
-
-    .lightbox {
-        display: none;
-
-        position: fixed;
-
-        inset: 0;
-
-        z-index: 99999;
-
-        background: rgba(0, 0, 0, 0.95);
-
-        justify-content: center;
-        align-items: center;
-
-        padding: 20px;
-    }
-
-    .lightbox img {
-        max-width: 95vw;
-        max-height: 90vh;
-
-        width: auto;
-        height: auto;
-
-        object-fit: contain;
-
-        border-radius: 8px;
-    }
-
-    .close {
-        position: absolute;
-
-        top: 10px;
-        right: 25px;
-
-        color: white;
-
-        font-size: 50px;
-        font-weight: bold;
-
-        cursor: pointer;
-
-        z-index: 100000;
-    }
-
-    .close:hover {
-        color: red;
-    }
-
-    /* =====================================================
-       SECOND SLIDESHOW
-    ===================================================== */
-
-    .slideshow-container {
-        width: 100%;
-        max-width: 1000px;
-
-        position: relative;
-
-        margin: 30px auto 0;
-
-        overflow: hidden;
-    }
-
-    .mySlides {
-        display: none;
-
-        width: 100%;
-    }
-
-    .mySlides img {
-        width: 100%;
-        height: auto;
-
-        max-height: 650px;
-
-        object-fit: contain;
-
-        display: block;
-
-        margin: auto;
-    }
-
-    .prev,
-    .next {
-        cursor: pointer;
-
-        position: absolute;
-
-        top: 50%;
-
-        width: auto;
-
-        padding: 16px;
-
-        margin-top: -22px;
-
-        color: white;
-
-        font-weight: bold;
-
-        font-size: 18px;
-
-        transition: 0.4s ease;
-
-        border-radius: 0 3px 3px 0;
-
-        user-select: none;
-
-        text-decoration: none;
-
-        background: rgba(0, 0, 0, 0.25);
-    }
-
-    .next {
-        right: 0;
-
-        border-radius: 3px 0 0 3px;
-    }
-
-    .prev:hover,
-    .next:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-    }
-
-    .text {
-        color: #000000;
-
-        font-size: 15px;
-
-        padding: 8px 12px;
-
-        position: absolute;
-
-        bottom: 8px;
-
-        width: 100%;
-
-        text-align: center;
-
-        background: rgba(255, 255, 255, 0.6);
-    }
-
-    .numbertext {
-        color: #ffffff;
-
-        font-size: 12px;
-
-        padding: 8px 12px;
-
-        position: absolute;
-
-        top: 0;
-
-        z-index: 2;
-    }
-
-    .dots-container {
-        width: 100%;
-
-        text-align: center;
-
-        padding: 15px 10px;
-    }
-
-    .dot {
-        cursor: pointer;
-
-        height: 15px;
-        width: 15px;
-
-        margin: 0 2px;
-
-        background-color: #bbb;
-
-        border-radius: 50%;
-
-        display: inline-block;
-
-        transition: background-color 0.4s ease;
-    }
-
-    .dot.active,
-    .dot:hover {
-        background-color: #717171;
-    }
-
-    .view-all {
-        display: inline-block;
-
-        margin-left: 15px;
-
-        font-size: 20px;
-
-        text-decoration: none;
-    }
-
-    .fade {
-        animation-name: fade;
-        animation-duration: 1s;
-    }
-
-    @keyframes fade {
-
-        from {
-            opacity: 0.4;
-        }
-
-        to {
-            opacity: 1;
-        }
-
-    }
-
-    /* =====================================================
        FOOTER
     ===================================================== */
 
@@ -1219,322 +938,1257 @@
 
 <div class="section-gap"></div>
 
-<!-- =====================================================
-     MOVING GALLERY
-===================================================== -->
+<!-- =========================================================
+     GALLERY 1
+     MOVING GALLERY + LIGHTBOX
+========================================================= -->
 
-<section class="moving-gallery">
+<section id="movingGallery">
 
-    <h2 class="gallery-heading">
+    <!-- =========================
+         GALLERY 1 CSS
+    ========================== -->
+
+    <style>
+
+        #movingGallery {
+            width: 100%;
+            overflow: hidden;
+            padding: 20px 0 30px;
+            background: transparent;
+        }
+
+        #movingGallery .mg-title {
+            text-align: center;
+            margin: 0 0 20px;
+            font-size: 28px;
+            color: #000;
+        }
+
+        #movingGallery .mg-viewport {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #movingGallery .mg-track {
+            display: flex;
+            gap: 20px;
+            width: max-content;
+            will-change: transform;
+            transform: translate3d(0, 0, 0);
+        }
+
+        #movingGallery .mg-item {
+            width: 350px;
+            height: 225px;
+            min-width: 350px;
+            flex: 0 0 350px;
+            overflow: hidden;
+            border-radius: 12px;
+            cursor: pointer;
+            background: #fff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+        }
+
+        #movingGallery .mg-item img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            user-select: none;
+            -webkit-user-drag: none;
+            transition: transform 0.3s ease;
+        }
+
+        #movingGallery .mg-item:hover img {
+            transform: scale(1.05);
+        }
+
+
+        /* =========================
+           LIGHTBOX
+        ========================== */
+
+        #movingGallery .mg-lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            background: rgba(0,0,0,0.95);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        #movingGallery .mg-lightbox img {
+            max-width: 95vw;
+            max-height: 90vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        #movingGallery .mg-close {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 100000;
+        }
+
+        #movingGallery .mg-close:hover {
+            color: red;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 767px) {
+
+            #movingGallery .mg-title {
+                font-size: 24px;
+            }
+
+            #movingGallery .mg-track {
+                gap: 15px;
+            }
+
+            #movingGallery .mg-item {
+                width: 260px;
+                min-width: 260px;
+                height: 180px;
+            }
+
+        }
+
+
+        @media (max-width: 400px) {
+
+            #movingGallery .mg-item {
+                width: 230px;
+                min-width: 230px;
+                height: 160px;
+            }
+
+        }
+
+    </style>
+
+
+    <!-- =========================
+         GALLERY 1 HTML
+    ========================== -->
+
+    <h2 class="mg-title">
         Gallery
     </h2>
 
+    <div class="mg-viewport">
+
+        <div
+            class="mg-track"
+            id="mgTrack"
+        >
+
+            <div class="mg-item">
+                <img
+                    src="./gallery/aa1.jpg"
+                    alt="Gallery Image 1"
+                >
+            </div>
+
+            <div class="mg-item">
+                <img
+                    src="./gallery/mdm.jpg"
+                    alt="Gallery Image 2"
+                >
+            </div>
+
+            <div class="mg-item">
+                <img
+                    src="./gallery/august1.jpg"
+                    alt="Gallery Image 3"
+                >
+            </div>
+
+            <div class="mg-item">
+                <img
+                    src="./gallery/august2.jpg"
+                    alt="Gallery Image 4"
+                >
+            </div>
+
+            <div class="mg-item">
+                <img
+                    src="./gallery/21sep1.jpg"
+                    alt="Gallery Image 5"
+                >
+            </div>
+
+            <div class="mg-item">
+                <img
+                    src="./gallery/21sep3.jpg"
+                    alt="Gallery Image 6"
+                >
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         GALLERY 1 LIGHTBOX HTML
+    ========================== -->
+
     <div
-        class="gallery-track"
-        id="galleryTrack"
+        class="mg-lightbox"
+        id="mgLightbox"
     >
 
-        <div class="gallery-item">
+        <span
+            class="mg-close"
+            id="mgClose"
+        >
+            &times;
+        </span>
+
+        <img
+            id="mgLightboxImage"
+            src=""
+            alt="Full Gallery Image"
+        >
+
+    </div>
+
+
+    <!-- =========================
+         GALLERY 1 JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        (function () {
+
+            const track =
+                document.getElementById("mgTrack");
+
+            const lightbox =
+                document.getElementById("mgLightbox");
+
+            const lightboxImage =
+                document.getElementById("mgLightboxImage");
+
+            const closeButton =
+                document.getElementById("mgClose");
+
+
+            if (!track) {
+                return;
+            }
+
+
+            let speed = 0.7;
+            let position = 0;
+            let loopWidth = 0;
+
+
+            /* =========================
+               CREATE INFINITE GALLERY
+            ========================== */
+
+            function createGallery() {
+
+                track
+                    .querySelectorAll(".mg-clone")
+                    .forEach(function (item) {
+
+                        item.remove();
+
+                    });
+
+
+                const originals =
+                    Array.from(
+                        track.querySelectorAll(
+                            ".mg-item:not(.mg-clone)"
+                        )
+                    );
+
+
+                if (originals.length === 0) {
+                    return;
+                }
+
+
+                originals.forEach(function (item) {
+
+                    const clone =
+                        item.cloneNode(true);
+
+                    clone.classList.add(
+                        "mg-clone"
+                    );
+
+                    track.appendChild(clone);
+
+                });
+
+
+                let safety = 0;
+
+
+                while (
+                    track.scrollWidth <
+                        window.innerWidth * 3 &&
+                    safety < 10
+                ) {
+
+                    originals.forEach(
+                        function (item) {
+
+                            const clone =
+                                item.cloneNode(true);
+
+                            clone.classList.add(
+                                "mg-clone"
+                            );
+
+                            track.appendChild(clone);
+
+                        }
+                    );
+
+                    safety++;
+
+                }
+
+
+                const firstClone =
+                    track.querySelector(
+                        ".mg-clone"
+                    );
+
+
+                if (firstClone) {
+
+                    loopWidth =
+                        firstClone.offsetLeft;
+
+                }
+
+
+                position = 0;
+
+                track.style.transform =
+                    "translate3d(0,0,0)";
+
+            }
+
+
+            /* =========================
+               ANIMATION
+            ========================== */
+
+            function animateGallery() {
+
+                position -= speed;
+
+
+                if (
+                    loopWidth > 0 &&
+                    position <= -loopWidth
+                ) {
+
+                    position += loopWidth;
+
+                }
+
+
+                track.style.transform =
+                    "translate3d(" +
+                    position +
+                    "px,0,0)";
+
+
+                requestAnimationFrame(
+                    animateGallery
+                );
+
+            }
+
+
+            /* =========================
+               LIGHTBOX OPEN
+            ========================== */
+
+            track.addEventListener(
+                "click",
+                function (event) {
+
+                    const image =
+                        event.target.closest(
+                            ".mg-item img"
+                        );
+
+
+                    if (!image) {
+                        return;
+                    }
+
+
+                    lightboxImage.src =
+                        image.src;
+
+
+                    lightbox.style.display =
+                        "flex";
+
+
+                    document.body.style.overflow =
+                        "hidden";
+
+                }
+            );
+
+
+            /* =========================
+               LIGHTBOX CLOSE
+            ========================== */
+
+            function closeLightbox() {
+
+                lightbox.style.display =
+                    "none";
+
+                lightboxImage.src =
+                    "";
+
+                document.body.style.overflow =
+                    "";
+
+            }
+
+
+            closeButton.addEventListener(
+                "click",
+                closeLightbox
+            );
+
+
+            lightbox.addEventListener(
+                "click",
+                function (event) {
+
+                    if (
+                        event.target === lightbox
+                    ) {
+
+                        closeLightbox();
+
+                    }
+
+                }
+            );
+
+
+            document.addEventListener(
+                "keydown",
+                function (event) {
+
+                    if (
+                        event.key === "Escape"
+                    ) {
+
+                        closeLightbox();
+
+                    }
+
+                }
+            );
+
+
+            /* =========================
+               START
+            ========================== */
+
+            window.addEventListener(
+                "load",
+                function () {
+
+                    createGallery();
+
+                    requestAnimationFrame(
+                        animateGallery
+                    );
+
+                }
+            );
+
+
+            /* =========================
+               RESIZE
+            ========================== */
+
+            let resizeTimer;
+
+
+            window.addEventListener(
+                "resize",
+                function () {
+
+                    clearTimeout(
+                        resizeTimer
+                    );
+
+
+                    resizeTimer =
+                        setTimeout(
+                            createGallery,
+                            300
+                        );
+
+                }
+            );
+
+        })();
+
+    </script>
+
+</section>
+
+    
+<!-- =========================================================
+     GALLERY 2
+     SLIDESHOW
+========================================================= -->
+
+<section id="slideGallery">
+
+    <!-- =========================
+         GALLERY 2 CSS
+    ========================== -->
+
+    <style>
+
+        #slideGallery {
+            width: 100%;
+            max-width: 1000px;
+            margin: 30px auto 0;
+            padding: 0 15px;
+        }
+
+
+        /* =========================
+           SLIDESHOW
+        ========================== */
+
+        #slideGallery .sg-container {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            background: #fff;
+        }
+
+
+        #slideGallery .sg-slide {
+            display: none;
+            width: 100%;
+            position: relative;
+        }
+
+
+        #slideGallery .sg-slide.sg-active {
+            display: block;
+        }
+
+
+        #slideGallery .sg-slide img {
+            width: 100%;
+            height: auto;
+            max-height: 650px;
+            object-fit: contain;
+            display: block;
+            margin: auto;
+        }
+
+
+        /* =========================
+           FADE
+        ========================== */
+
+        #slideGallery .sg-fade {
+            animation: slideGalleryFade 1s ease;
+        }
+
+
+        @keyframes slideGalleryFade {
+
+            from {
+                opacity: 0.4;
+            }
+
+            to {
+                opacity: 1;
+            }
+
+        }
+
+
+        /* =========================
+           NUMBER
+        ========================== */
+
+        #slideGallery .sg-number {
+            color: #fff;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 5;
+            background: rgba(0,0,0,0.25);
+        }
+
+
+        /* =========================
+           CAPTION
+        ========================== */
+
+        #slideGallery .sg-caption {
+            color: #000;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            background: rgba(255,255,255,0.65);
+        }
+
+
+        /* =========================
+           PREVIOUS / NEXT
+        ========================== */
+
+        #slideGallery .sg-prev,
+        #slideGallery .sg-next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            user-select: none;
+            text-decoration: none;
+            background: rgba(0,0,0,0.25);
+            z-index: 10;
+            transition: 0.3s ease;
+        }
+
+
+        #slideGallery .sg-prev {
+            left: 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+
+        #slideGallery .sg-next {
+            right: 0;
+            border-radius: 4px 0 0 4px;
+        }
+
+
+        #slideGallery .sg-prev:hover,
+        #slideGallery .sg-next:hover {
+            background: rgba(0,0,0,0.8);
+        }
+
+
+        /* =========================
+           DOTS
+        ========================== */
+
+        #slideGallery .sg-dots {
+            width: 100%;
+            text-align: center;
+            padding: 15px 10px;
+        }
+
+
+        #slideGallery .sg-dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 3px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: 0.3s ease;
+        }
+
+
+        #slideGallery .sg-dot:hover,
+        #slideGallery .sg-dot.sg-active {
+            background-color: #717171;
+        }
+
+
+        /* =========================
+           VIEW ALL
+        ========================== */
+
+        #slideGallery .sg-view-all {
+            display: inline-block;
+            margin-left: 15px;
+            font-size: 20px;
+            text-decoration: none;
+            color: #000;
+        }
+
+
+        #slideGallery .sg-view-all:hover {
+            color: #007bff;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 767px) {
+
+            #slideGallery {
+                margin-top: 20px;
+                padding: 0 10px;
+            }
+
+
+            #slideGallery .sg-prev,
+            #slideGallery .sg-next {
+                padding: 10px;
+                font-size: 16px;
+            }
+
+
+            #slideGallery .sg-dot {
+                height: 12px;
+                width: 12px;
+            }
+
+
+            #slideGallery .sg-view-all {
+                display: block;
+                margin: 15px 0 0;
+            }
+
+
+            #slideGallery .sg-caption {
+                font-size: 13px;
+            }
+
+        }
+
+    </style>
+
+
+    <!-- =========================
+         GALLERY 2 HTML
+    ========================== -->
+
+    <div class="sg-container">
+
+
+        <!-- Slide 1 -->
+
+        <div class="sg-slide sg-fade">
+
+            <div class="sg-number">
+                1 / 9
+            </div>
+
             <img
                 src="./gallery/aa1.jpg"
                 alt="Gallery Image 1"
             >
+
+            <div class="sg-caption">
+                Govt Girls College Daulatpur
+            </div>
+
         </div>
 
-        <div class="gallery-item">
+
+        <!-- Slide 2 -->
+
+        <div class="sg-slide sg-fade">
+
+            <div class="sg-number">
+                2 / 9
+            </div>
+
             <img
-                src="./gallery/mdm.jpg"
+                src="./gallery/pashto1.jpg"
                 alt="Gallery Image 2"
             >
+
         </div>
 
-        <div class="gallery-item">
-            <img
-                src="./gallery/august1.jpg"
-                alt="Gallery Image 3"
-            >
-        </div>
 
-        <div class="gallery-item">
-            <img
-                src="./gallery/august2.jpg"
-                alt="Gallery Image 4"
-            >
-        </div>
+        <!-- Slide 3 -->
 
-        <div class="gallery-item">
+        <div class="sg-slide sg-fade">
+
+            <div class="sg-number">
+                3 / 9
+            </div>
+
             <img
                 src="./gallery/21sep1.jpg"
+                alt="Gallery Image 3"
+            >
+
+        </div>
+
+
+        <!-- Slide 4 -->
+
+        <div class="sg-slide sg-fade">
+
+            <div class="sg-number">
+                4 / 9
+            </div>
+
+            <img
+                src="./gallery/august6.jpg"
+                alt="Gallery Image 4"
+            >
+
+        </div>
+
+
+        <!-- Slide 5 -->
+
+        <div class="sg-slide sg-fade">
+
+            <div class="sg-number">
+                5 / 9
+            </div>
+
+            <img
+                src="./gallery/august8.jpg"
                 alt="Gallery Image 5"
             >
+
         </div>
 
-        <div class="gallery-item">
+
+        <!-- Slide 6 -->
+
+        <div class="sg-slide sg-fade">
+
+            <div class="sg-number">
+                6 / 9
+            </div>
+
             <img
-                src="./gallery/21sep3.jpg"
+                src="./gallery/august10.jpg"
                 alt="Gallery Image 6"
             >
+
         </div>
 
+
+        <!-- Slide 7 -->
+
+        <div class="sg-slide sg-fade">
+
+            <div class="sg-number">
+                7 / 9
+            </div>
+
+            <img
+                src="./gallery/milad.jpeg"
+                alt="Milad"
+            >
+
+            <div class="sg-caption">
+                Milad
+            </div>
+
+        </div>
+
+
+        <!-- Slide 8 -->
+
+        <div class="sg-slide sg-fade">
+
+            <div class="sg-number">
+                8 / 9
+            </div>
+
+            <img
+                src="./gallery/august3.jpg"
+                alt="Gallery Image 8"
+            >
+
+        </div>
+
+
+        <!-- Slide 9 -->
+
+        <div class="sg-slide sg-fade">
+
+            <div class="sg-number">
+                9 / 9
+            </div>
+
+            <img
+                src="./gallery/august2.jpg"
+                alt="Gallery Image 9"
+            >
+
+        </div>
+
+
+        <!-- Previous -->
+
+        <a
+            class="sg-prev"
+            id="sgPrev"
+            href="javascript:void(0)"
+        >
+            ❮
+        </a>
+
+
+        <!-- Next -->
+
+        <a
+            class="sg-next"
+            id="sgNext"
+            href="javascript:void(0)"
+        >
+            ❯
+        </a>
+
     </div>
+
+
+    <!-- =========================
+         DOTS
+    ========================== -->
+
+    <div class="sg-dots">
+
+        <span
+            class="sg-dot"
+            data-slide="1"
+        ></span>
+
+        <span
+            class="sg-dot"
+            data-slide="2"
+        ></span>
+
+        <span
+            class="sg-dot"
+            data-slide="3"
+        ></span>
+
+        <span
+            class="sg-dot"
+            data-slide="4"
+        ></span>
+
+        <span
+            class="sg-dot"
+            data-slide="5"
+        ></span>
+
+        <span
+            class="sg-dot"
+            data-slide="6"
+        ></span>
+
+        <span
+            class="sg-dot"
+            data-slide="7"
+        ></span>
+
+        <span
+            class="sg-dot"
+            data-slide="8"
+        ></span>
+
+        <span
+            class="sg-dot"
+            data-slide="9"
+        ></span>
+
+
+        <a
+            href="Government-Girls-College-Daulatpur.html"
+            class="sg-view-all"
+        >
+            VIEW ALL
+        </a>
+
+    </div>
+
+
+    <!-- =========================
+         GALLERY 2 JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        (function () {
+
+            const slides =
+                document.querySelectorAll(
+                    "#slideGallery .sg-slide"
+                );
+
+            const dots =
+                document.querySelectorAll(
+                    "#slideGallery .sg-dot"
+                );
+
+            const previousButton =
+                document.getElementById(
+                    "sgPrev"
+                );
+
+            const nextButton =
+                document.getElementById(
+                    "sgNext"
+                );
+
+
+            if (slides.length === 0) {
+                return;
+            }
+
+
+            let current =
+                0;
+
+            let autoPlay;
+
+
+            /* =========================
+               SHOW SLIDE
+            ========================== */
+
+            function showSlide(index) {
+
+                if (
+                    index >= slides.length
+                ) {
+
+                    current = 0;
+
+                }
+
+
+                if (
+                    index < 0
+                ) {
+
+                    current =
+                        slides.length - 1;
+
+                }
+
+
+                slides.forEach(
+                    function (slide) {
+
+                        slide.style.display =
+                            "none";
+
+                        slide.classList.remove(
+                            "sg-active"
+                        );
+
+                    }
+                );
+
+
+                dots.forEach(
+                    function (dot) {
+
+                        dot.classList.remove(
+                            "sg-active"
+                        );
+
+                    }
+                );
+
+
+                slides[
+                    current
+                ].style.display =
+                    "block";
+
+
+                slides[
+                    current
+                ].classList.add(
+                    "sg-active"
+                );
+
+
+                if (dots[current]) {
+
+                    dots[
+                        current
+                    ].classList.add(
+                        "sg-active"
+                    );
+
+                }
+
+            }
+
+
+            /* =========================
+               NEXT
+            ========================== */
+
+            function nextSlide() {
+
+                current++;
+
+                showSlide(current);
+
+            }
+
+
+            /* =========================
+               PREVIOUS
+            ========================== */
+
+            function previousSlide() {
+
+                current--;
+
+                showSlide(current);
+
+            }
+
+
+            /* =========================
+               BUTTONS
+            ========================== */
+
+            nextButton.addEventListener(
+                "click",
+                function () {
+
+                    nextSlide();
+
+                    restartAutoPlay();
+
+                }
+            );
+
+
+            previousButton.addEventListener(
+                "click",
+                function () {
+
+                    previousSlide();
+
+                    restartAutoPlay();
+
+                }
+            );
+
+
+            /* =========================
+               DOTS
+            ========================== */
+
+            dots.forEach(
+                function (dot, index) {
+
+                    dot.addEventListener(
+                        "click",
+                        function () {
+
+                            current =
+                                index;
+
+                            showSlide(
+                                current
+                            );
+
+                            restartAutoPlay();
+
+                        }
+                    );
+
+                }
+            );
+
+
+            /* =========================
+               AUTO PLAY
+            ========================== */
+
+            function startAutoPlay() {
+
+                autoPlay =
+                    setInterval(
+                        function () {
+
+                            nextSlide();
+
+                        },
+                        6000
+                    );
+
+            }
+
+
+            function restartAutoPlay() {
+
+                clearInterval(
+                    autoPlay
+                );
+
+                startAutoPlay();
+
+            }
+
+
+            /* =========================
+               INITIALIZE
+            ========================== */
+
+            showSlide(0);
+
+            startAutoPlay();
+
+        })();
+
+    </script>
 
 </section>
 
-<!-- =====================================================
-     LIGHTBOX
-===================================================== -->
-
-<div
-    class="lightbox"
-    id="lightbox"
->
-
-    <span
-        class="close"
-        id="close"
-        aria-label="Close"
-    >
-        &times;
-    </span>
-
-    <img
-        id="lightboxImage"
-        src=""
-        alt="Full Image"
-    >
-
-</div>
-
-<!-- =====================================================
-     IMAGE SLIDESHOW
-===================================================== -->
-
-<div class="slideshow-container">
-
-    <!-- Slide 1 -->
-
-    <div class="mySlides fade">
-
-        <div class="numbertext">
-            1 / 9
-        </div>
-
-        <img
-            src="./gallery/aa1.jpg"
-            alt="Gallery Image"
-        >
-
-        <div class="text">
-            Govt Girls College Daulatpur
-        </div>
-
-    </div>
-
-    <!-- Slide 2 -->
-
-    <div class="mySlides fade">
-
-        <div class="numbertext">
-            2 / 9
-        </div>
-
-        <img
-            src="./gallery/pashto1.jpg"
-            alt="Gallery Image"
-        >
-
-    </div>
-
-    <!-- Slide 3 -->
-
-    <div class="mySlides fade">
-
-        <div class="numbertext">
-            3 / 9
-        </div>
-
-        <img
-            src="./gallery/21sep1.jpg"
-            alt="Gallery Image"
-        >
-
-    </div>
-
-    <!-- Slide 4 -->
-
-    <div class="mySlides fade">
-
-        <div class="numbertext">
-            4 / 9
-        </div>
-
-        <img
-            src="./gallery/august6.jpg"
-            alt="Gallery Image"
-        >
-
-    </div>
-
-    <!-- Slide 5 -->
-
-    <div class="mySlides fade">
-
-        <div class="numbertext">
-            5 / 9
-        </div>
-
-        <img
-            src="./gallery/august8.jpg"
-            alt="Gallery Image"
-        >
-
-    </div>
-
-    <!-- Slide 6 -->
-
-    <div class="mySlides fade">
-
-        <div class="numbertext">
-            6 / 9
-        </div>
-
-        <img
-            src="./gallery/august10.jpg"
-            alt="Gallery Image"
-        >
-
-    </div>
-
-    <!-- Slide 7 -->
-
-    <div class="mySlides fade">
-
-        <div class="numbertext">
-            7 / 9
-        </div>
-
-        <img
-            src="./gallery/milad.jpeg"
-            alt="Milad"
-        >
-
-        <div class="text">
-            Milad
-        </div>
-
-    </div>
-
-    <!-- Slide 8 -->
-
-    <div class="mySlides fade">
-
-        <div class="numbertext">
-            8 / 9
-        </div>
-
-        <img
-            src="./gallery/august3.jpg"
-            alt="Gallery Image"
-        >
-
-    </div>
-
-    <!-- Slide 9 -->
-
-    <div class="mySlides fade">
-
-        <div class="numbertext">
-            9 / 9
-        </div>
-
-        <img
-            src="./gallery/august2.jpg"
-            alt="Gallery Image"
-        >
-
-    </div>
-
-    <!-- Previous -->
-
-    <a
-        class="prev"
-        onclick="plusSlides(-1)"
-        aria-label="Previous slide"
-    >
-        ❮
-    </a>
-
-    <!-- Next -->
-
-    <a
-        class="next"
-        onclick="plusSlides(1)"
-        aria-label="Next slide"
-    >
-        ❯
-    </a>
-
-</div>
-
-<!-- =====================================================
-     SLIDESHOW DOTS
-===================================================== -->
-
-<div class="dots-container">
-
-    <span
-        class="dot"
-        onclick="currentSlide(1)"
-    ></span>
-
-    <span
-        class="dot"
-        onclick="currentSlide(2)"
-    ></span>
-
-    <span
-        class="dot"
-        onclick="currentSlide(3)"
-    ></span>
-
-    <span
-        class="dot"
-        onclick="currentSlide(4)"
-    ></span>
-
-    <span
-        class="dot"
-        onclick="currentSlide(5)"
-    ></span>
-
-    <span
-        class="dot"
-        onclick="currentSlide(6)"
-    ></span>
-
-    <span
-        class="dot"
-        onclick="currentSlide(7)"
-    ></span>
-
-    <span
-        class="dot"
-        onclick="currentSlide(8)"
-    ></span>
-
-    <span
-        class="dot"
-        onclick="currentSlide(9)"
-    ></span>
-
-    <a
-        href="Government-Girls-College-Daulatpur.html"
-        class="view-all"
-    >
-        VIEW ALL
-    </a>
-
-</div>
 
 <!-- =====================================================
      FOOTER
@@ -2003,146 +2657,6 @@
             }
 
         }
-    );
-
-</script>
-
-<!-- =====================================================
-     JAVASCRIPT - SLIDESHOW
-===================================================== -->
-
-<script>
-
-    let slideIndex = 1;
-
-    /* Show first slide */
-
-    showSlides(slideIndex);
-
-    /* =====================================================
-       NEXT / PREVIOUS
-    ===================================================== */
-
-    function plusSlides(n) {
-
-        showSlides(
-            slideIndex += n
-        );
-
-    }
-
-    /* =====================================================
-       DOT CONTROLS
-    ===================================================== */
-
-    function currentSlide(n) {
-
-        showSlides(
-            slideIndex = n
-        );
-
-    }
-
-    /* =====================================================
-       SHOW SLIDES
-    ===================================================== */
-
-    function showSlides(n) {
-
-        const slides =
-            document.getElementsByClassName(
-                "mySlides"
-            );
-
-        const dots =
-            document.getElementsByClassName(
-                "dot"
-            );
-
-        if (
-            slides.length === 0
-        ) {
-            return;
-        }
-
-        if (
-            n > slides.length
-        ) {
-
-            slideIndex = 1;
-
-        }
-
-        if (
-            n < 1
-        ) {
-
-            slideIndex =
-                slides.length;
-
-        }
-
-        /* Hide all slides */
-
-        for (
-            let i = 0;
-            i < slides.length;
-            i++
-        ) {
-
-            slides[i].style.display =
-                "none";
-
-        }
-
-        /* Remove active dots */
-
-        for (
-            let i = 0;
-            i < dots.length;
-            i++
-        ) {
-
-            dots[i].classList.remove(
-                "active"
-            );
-
-        }
-
-        /* Show current slide */
-
-        slides[
-            slideIndex - 1
-        ].style.display =
-            "block";
-
-        /* Activate current dot */
-
-        if (
-            dots[slideIndex - 1]
-        ) {
-
-            dots[
-                slideIndex - 1
-            ].classList.add(
-                "active"
-            );
-
-        }
-
-    }
-
-    /* =====================================================
-       AUTOMATIC SLIDESHOW
-    ===================================================== */
-
-    setInterval(
-        function() {
-
-            plusSlides(1);
-
-        },
-        6000
     );
 
 </script>
