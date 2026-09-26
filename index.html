@@ -510,222 +510,128 @@ As you move forward in your studies, always remember that education is not just 
 
 
 <style>
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  /* =========================
-     GALLERY
-  ========================= */
+/* =========================
+   GALLERY
+========================= */
 
-  .gallery {
-    width: 100%;
-    overflow: hidden;
-    padding: 20px 0 30px;
-  }
+.gallery {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 20px 0 30px;
+}
 
-  .gallery-heading {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 28px;
-  }
+.gallery-heading {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
 
-  .gallery-track {
-    display: flex;
-    gap: 20px;
-    width: max-content;
+.gallery-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
 
-    will-change: transform;
-    transform: translate3d(0, 0, 0);
-  }
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
 
-  .gallery-item {
-    width: 350px;
-    height: 225px;
+.gallery-item {
+  width: 350px;
+  height: 225px;
 
-    flex: 0 0 350px;
+  min-width: 350px;
+  flex: 0 0 350px;
 
-    overflow: hidden;
-    border-radius: 12px;
-    cursor: pointer;
-  }
+  overflow: hidden;
+  border-radius: 12px;
 
-  .gallery-item img {
-    width: 100%;
-    height: 100%;
+  cursor: pointer;
+}
 
-    display: block;
+.gallery-item img {
+  width: 100%;
+  height: 100%;
 
-    object-fit: cover;
+  display: block;
 
-    user-select: none;
-    -webkit-user-drag: none;
+  object-fit: cover;
 
-    transition: transform 0.3s ease;
-  }
+  user-select: none;
+  -webkit-user-drag: none;
+}
 
-  .gallery-item:hover img {
-    transform: scale(1.05);
-  }
 
+/* =========================
+   LIGHTBOX
+========================= */
 
-  /* =========================
-     TABLET
-  ========================= */
+.lightbox {
+  display: none;
 
-  @media (max-width: 768px) {
+  position: fixed;
+  inset: 0;
 
-    .gallery {
-      padding: 15px 0 25px;
-    }
+  z-index: 99999;
 
-    .gallery-heading {
-      font-size: 24px;
-      margin-bottom: 15px;
-    }
+  background: rgba(0, 0, 0, 0.95);
 
-    .gallery-track {
-      gap: 15px;
-    }
+  justify-content: center;
+  align-items: center;
 
-    .gallery-item {
-      width: 280px;
-      height: 180px;
-      flex: 0 0 280px;
-      border-radius: 10px;
-    }
+  padding: 20px;
+}
 
-  }
+.lightbox img {
+  max-width: 95vw;
+  max-height: 90vh;
 
+  width: auto;
+  height: auto;
 
-  /* =========================
-     MOBILE
-  ========================= */
+  object-fit: contain;
 
-  @media (max-width: 480px) {
+  border-radius: 8px;
+}
 
-    .gallery {
-      padding: 10px 0 20px;
-    }
+.close {
+  position: absolute;
 
-    .gallery-heading {
-      font-size: 22px;
-      margin-bottom: 12px;
-    }
+  top: 10px;
+  right: 25px;
 
-    .gallery-track {
-      gap: 10px;
-    }
+  color: white;
 
-    .gallery-item {
-      width: 220px;
-      height: 145px;
-      flex: 0 0 220px;
-      border-radius: 8px;
-    }
+  font-size: 50px;
+  font-weight: bold;
 
-  }
+  cursor: pointer;
 
+  z-index: 100000;
+}
 
-  /* =========================
-     VERY SMALL MOBILE
-  ========================= */
+.close:hover {
+  color: red;
+}
 
-  @media (max-width: 360px) {
 
-    .gallery-item {
-      width: 190px;
-      height: 125px;
-      flex: 0 0 190px;
-    }
+/* =========================
+   VERY SMALL SCREEN
+   Only prevents horizontal
+   page overflow.
+========================= */
 
-    .gallery-track {
-      gap: 8px;
-    }
-
-    .gallery-heading {
-      font-size: 20px;
-    }
-
-  }
-
-
-  /* =========================
-     FULL SCREEN IMAGE
-  ========================= */
-
-  .lightbox {
-    display: none;
-
-    position: fixed;
-    inset: 0;
-
-    z-index: 99999;
-
-    background: rgba(0, 0, 0, 0.95);
-
-    justify-content: center;
-    align-items: center;
-
-    padding: 15px;
-  }
-
-  .lightbox img {
-    max-width: 95%;
-    max-height: 90vh;
-
-    width: auto;
-    height: auto;
-
-    object-fit: contain;
-
-    border-radius: 8px;
-  }
-
-  .close {
-    position: absolute;
-
-    top: 10px;
-    right: 20px;
-
-    color: white;
-
-    font-size: 45px;
-    font-weight: bold;
-
-    cursor: pointer;
-
-    z-index: 100000;
-  }
-
-  .close:hover {
-    color: red;
-  }
-
-
-  /* MOBILE LIGHTBOX */
-
-  @media (max-width: 480px) {
-
-    .lightbox {
-      padding: 10px;
-    }
-
-    .lightbox img {
-      max-width: 100%;
-      max-height: 85vh;
-    }
-
-    .close {
-      top: 5px;
-      right: 12px;
-      font-size: 38px;
-    }
-
-  }
-
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 </style>
 
 
@@ -738,8 +644,6 @@ As you move forward in your studies, always remember that education is not just 
   <h2 class="gallery-heading">Gallery</h2>
 
   <div class="gallery-track" id="galleryTrack">
-
-    <!-- ORIGINAL IMAGES -->
 
     <div class="gallery-item">
       <img src="./gallery/aa1.jpg" alt="Gallery Image">
@@ -781,211 +685,264 @@ As you move forward in your studies, always remember that education is not just 
   <img id="lightboxImage" src="" alt="Full Image">
 
 </div>
+
+
 <script>
 
-  const track = document.getElementById("galleryTrack");
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImage = document.getElementById("lightboxImage");
-  const close = document.getElementById("close");
+const track = document.getElementById("galleryTrack");
 
-  const speed = 0.7;
+const lightbox = document.getElementById("lightbox");
 
-  let position = 0;
-  let loopWidth = 0;
+const lightboxImage =
+  document.getElementById("lightboxImage");
+
+const close =
+  document.getElementById("close");
 
 
-  /* =========================
-     CREATE INFINITE GALLERY
-  ========================= */
+/* =========================
+   SETTINGS
+========================= */
 
-  function createInfiniteGallery() {
+const speed = 0.7;
 
-    // Remove previous clones
-    track.querySelectorAll(".clone").forEach(function(item) {
-      item.remove();
+let position = 0;
+
+let loopWidth = 0;
+
+
+/* =========================
+   CREATE INFINITE GALLERY
+========================= */
+
+function createInfiniteGallery() {
+
+  /* Remove previous clones */
+
+  track.querySelectorAll(".clone").forEach(function(item) {
+    item.remove();
+  });
+
+
+  /* Original images */
+
+  const originals = Array.from(
+    track.querySelectorAll(".gallery-item")
+  );
+
+
+  if (originals.length === 0) {
+    return;
+  }
+
+
+  /*
+     First clone set
+  */
+
+  originals.forEach(function(item) {
+
+    const clone = item.cloneNode(true);
+
+    clone.classList.add("clone");
+
+    track.appendChild(clone);
+
+  });
+
+
+  /*
+     Add more copies.
+     This works for:
+     mobile
+     tablet
+     laptop
+     desktop
+     large monitors
+  */
+
+  while (track.scrollWidth < window.innerWidth * 3) {
+
+    originals.forEach(function(item) {
+
+      const clone = item.cloneNode(true);
+
+      clone.classList.add("clone");
+
+      track.appendChild(clone);
+
     });
 
-    // Get only original images
-    const originalItems = Array.from(
-      track.querySelectorAll(".gallery-item")
-    );
-
-    if (originalItems.length === 0) {
-      return;
-    }
-
-    /*
-      First create enough copies
-      for all screen sizes
-    */
-
-    let totalWidth = track.scrollWidth;
-    const screenWidth = window.innerWidth;
-
-    while (totalWidth < screenWidth * 3) {
-
-      originalItems.forEach(function(item) {
-
-        const clone = item.cloneNode(true);
-
-        clone.classList.add("clone");
-
-        track.appendChild(clone);
-
-      });
-
-      totalWidth = track.scrollWidth;
-    }
-
-
-    /*
-      IMPORTANT:
-      Use the exact position of the
-      FIRST CLONE.
-
-      This includes the gap correctly.
-    */
-
-    const firstClone = track.querySelector(".clone");
-
-    if (firstClone) {
-      loopWidth = firstClone.offsetLeft;
-    }
-
-
-    // Reset position
-    position = 0;
-
-    track.style.transform =
-      "translate3d(0, 0, 0)";
   }
 
 
-  /* =========================
-     ANIMATION
-  ========================= */
+  /*
+     EXACT LOOP WIDTH
 
-  function animate() {
+     First cloned image position
+  */
 
-    position -= speed;
-
-
-    /*
-      When one complete original set
-      has moved away, jump exactly to
-      the same position of the clone.
-    */
-
-    if (loopWidth > 0 && Math.abs(position) >= loopWidth) {
-
-      position += loopWidth;
-
-    }
+  const firstClone =
+    track.querySelector(".clone");
 
 
-    track.style.transform =
-      "translate3d(" + position + "px, 0, 0)";
+  if (firstClone) {
 
+    loopWidth =
+      firstClone.offsetLeft;
 
-    requestAnimationFrame(animate);
   }
 
 
-  /* =========================
-     START
-  ========================= */
+  position = 0;
 
-  window.addEventListener("load", function() {
+  track.style.transform =
+    "translate3d(0, 0, 0)";
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+function animate() {
+
+  position -= speed;
+
+
+  /*
+     Seamless reset
+  */
+
+  if (
+    loopWidth > 0 &&
+    position <= -loopWidth
+  ) {
+
+    position += loopWidth;
+
+  }
+
+
+  track.style.transform =
+    "translate3d(" +
+    position +
+    "px, 0, 0)";
+
+
+  requestAnimationFrame(animate);
+}
+
+
+/* =========================
+   START
+========================= */
+
+window.addEventListener("load", function() {
+
+  createInfiniteGallery();
+
+  requestAnimationFrame(animate);
+
+});
+
+
+/* =========================
+   SCREEN RESIZE
+========================= */
+
+let resizeTimer;
+
+window.addEventListener("resize", function() {
+
+  clearTimeout(resizeTimer);
+
+  resizeTimer = setTimeout(function() {
 
     createInfiniteGallery();
 
-    requestAnimationFrame(animate);
+  }, 300);
 
-  });
-
-
-  /* =========================
-     RESIZE
-  ========================= */
-
-  let resizeTimer;
-
-  window.addEventListener("resize", function() {
-
-    clearTimeout(resizeTimer);
-
-    resizeTimer = setTimeout(function() {
-
-      createInfiniteGallery();
-
-    }, 250);
-
-  });
+});
 
 
-  /* =========================
-     OPEN IMAGE
-  ========================= */
+/* =========================
+   OPEN IMAGE
+========================= */
 
-  document.addEventListener("click", function(e) {
+document.addEventListener("click", function(e) {
 
-    if (e.target.matches(".gallery-item img")) {
+  if (
+    e.target.matches(
+      ".gallery-item img"
+    )
+  ) {
 
-      lightboxImage.src = e.target.src;
+    lightboxImage.src =
+      e.target.src;
 
-      lightbox.style.display = "flex";
+    lightbox.style.display =
+      "flex";
 
-      document.body.style.overflow = "hidden";
-    }
+    document.body.style.overflow =
+      "hidden";
 
-  });
+  }
 
-
-  /* =========================
-     CLOSE
-  ========================= */
-
-  close.addEventListener("click", function() {
-
-    lightbox.style.display = "none";
-
-    document.body.style.overflow = "";
-
-  });
+});
 
 
-  /* =========================
-     CLICK OUTSIDE
-  ========================= */
+/* =========================
+   CLOSE
+========================= */
 
-  lightbox.addEventListener("click", function(e) {
+close.addEventListener("click", function() {
 
-    if (e.target === lightbox) {
+  lightbox.style.display =
+    "none";
 
-      lightbox.style.display = "none";
+  document.body.style.overflow =
+    "";
 
-      document.body.style.overflow = "";
-
-    }
-
-  });
+});
 
 
-  /* =========================
-     ESC
-  ========================= */
+/* =========================
+   CLICK OUTSIDE
+========================= */
 
-  document.addEventListener("keydown", function(e) {
+lightbox.addEventListener("click", function(e) {
 
-    if (e.key === "Escape") {
+  if (e.target === lightbox) {
 
-      lightbox.style.display = "none";
+    lightbox.style.display =
+      "none";
 
-      document.body.style.overflow = "";
+    document.body.style.overflow =
+      "";
 
-    }
+  }
 
-  });
+});
+
+
+/* =========================
+   ESC KEY
+========================= */
+
+document.addEventListener("keydown", function(e) {
+
+  if (e.key === "Escape") {
+
+    lightbox.style.display =
+      "none";
+
+    document.body.style.overflow =
+      "";
+
+  }
+
+});
 
 </script>
 
