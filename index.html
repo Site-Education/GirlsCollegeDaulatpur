@@ -508,6 +508,7 @@ As you move forward in your studies, always remember that education is not just 
 <div class="section-gap"></div>
 <!-- SECTION BREAK SPACE END -->                     
 
+```html
 <style>
   * {
     box-sizing: border-box;
@@ -515,10 +516,20 @@ As you move forward in your studies, always remember that education is not just 
     padding: 0;
   }
 
+  /* =========================
+     GALLERY
+  ========================= */
+
   .gallery {
     width: 100%;
     overflow: hidden;
-    padding: 30px 0;
+    padding: 20px 0 30px;
+  }
+
+  .gallery-heading {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
   }
 
   .gallery-track {
@@ -533,6 +544,7 @@ As you move forward in your studies, always remember that education is not just 
   .gallery-item {
     width: 350px;
     height: 225px;
+
     flex: 0 0 350px;
 
     overflow: hidden;
@@ -545,9 +557,98 @@ As you move forward in your studies, always remember that education is not just 
     height: 100%;
 
     display: block;
+
     object-fit: cover;
 
     user-select: none;
+    -webkit-user-drag: none;
+
+    transition: transform 0.3s ease;
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.05);
+  }
+
+
+  /* =========================
+     TABLET
+  ========================= */
+
+  @media (max-width: 768px) {
+
+    .gallery {
+      padding: 15px 0 25px;
+    }
+
+    .gallery-heading {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .gallery-track {
+      gap: 15px;
+    }
+
+    .gallery-item {
+      width: 280px;
+      height: 180px;
+      flex: 0 0 280px;
+      border-radius: 10px;
+    }
+
+  }
+
+
+  /* =========================
+     MOBILE
+  ========================= */
+
+  @media (max-width: 480px) {
+
+    .gallery {
+      padding: 10px 0 20px;
+    }
+
+    .gallery-heading {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .gallery-track {
+      gap: 10px;
+    }
+
+    .gallery-item {
+      width: 220px;
+      height: 145px;
+      flex: 0 0 220px;
+      border-radius: 8px;
+    }
+
+  }
+
+
+  /* =========================
+     VERY SMALL MOBILE
+  ========================= */
+
+  @media (max-width: 360px) {
+
+    .gallery-item {
+      width: 190px;
+      height: 125px;
+      flex: 0 0 190px;
+    }
+
+    .gallery-track {
+      gap: 8px;
+    }
+
+    .gallery-heading {
+      font-size: 20px;
+    }
+
   }
 
 
@@ -568,34 +669,63 @@ As you move forward in your studies, always remember that education is not just 
     justify-content: center;
     align-items: center;
 
-    padding: 20px;
+    padding: 15px;
   }
 
   .lightbox img {
     max-width: 95%;
     max-height: 90vh;
 
+    width: auto;
+    height: auto;
+
     object-fit: contain;
+
     border-radius: 8px;
   }
 
   .close {
     position: absolute;
 
-    top: 15px;
-    right: 30px;
+    top: 10px;
+    right: 20px;
 
     color: white;
-    font-size: 50px;
+
+    font-size: 45px;
     font-weight: bold;
 
     cursor: pointer;
+
     z-index: 100000;
   }
 
   .close:hover {
     color: red;
   }
+
+
+  /* MOBILE LIGHTBOX */
+
+  @media (max-width: 480px) {
+
+    .lightbox {
+      padding: 10px;
+    }
+
+    .lightbox img {
+      max-width: 100%;
+      max-height: 85vh;
+    }
+
+    .close {
+      top: 5px;
+      right: 12px;
+      font-size: 38px;
+    }
+
+  }
+
 </style>
 
 
@@ -604,29 +734,35 @@ As you move forward in your studies, always remember that education is not just 
 ========================= -->
 
 <div class="gallery">
-<h2 class="gallery-heading" style="text-align:center;">Gallery</h2>
+
+  <h2 class="gallery-heading">Gallery</h2>
+
   <div class="gallery-track" id="galleryTrack">
 
     <!-- ORIGINAL IMAGES -->
 
     <div class="gallery-item">
-      <img src="./gallery/aa1.jpg" alt="Image 2">
-    </div>
- <div class="gallery-item">
-      <img src="./gallery/mdm.jpg" alt="Image 2">
-    </div>
-    <div class="gallery-item">
-      <img src="./gallery/august1.jpg" alt="Image 3">
+      <img src="./gallery/aa1.jpg" alt="Gallery Image">
     </div>
 
     <div class="gallery-item">
-      <img src="./gallery/august2.jpg" alt="Image 5">
+      <img src="./gallery/mdm.jpg" alt="Gallery Image">
     </div>
-	  <div class="gallery-item">
-      <img src="./gallery/21sep1.jpg" alt="Image 5">
+
+    <div class="gallery-item">
+      <img src="./gallery/august1.jpg" alt="Gallery Image">
     </div>
-	  <div class="gallery-item">
-      <img src="./gallery/21sep3.jpg" alt="Image 5">
+
+    <div class="gallery-item">
+      <img src="./gallery/august2.jpg" alt="Gallery Image">
+    </div>
+
+    <div class="gallery-item">
+      <img src="./gallery/21sep1.jpg" alt="Gallery Image">
+    </div>
+
+    <div class="gallery-item">
+      <img src="./gallery/21sep3.jpg" alt="Gallery Image">
     </div>
 
   </div>
@@ -650,63 +786,81 @@ As you move forward in your studies, always remember that education is not just 
 <script>
 
   const track = document.getElementById("galleryTrack");
-
   const lightbox = document.getElementById("lightbox");
-
   const lightboxImage = document.getElementById("lightboxImage");
-
   const close = document.getElementById("close");
 
 
-  /* =========================================
+  /* =========================
      SETTINGS
-  ========================================= */
+  ========================= */
 
   const speed = 0.7;
 
-
   let position = 0;
-
   let loopWidth = 0;
 
 
-  /* =========================================
-     CREATE INFINITE COPIES AUTOMATICALLY
-  ========================================= */
+  /* =========================
+     CREATE INFINITE GALLERY
+  ========================= */
 
   function createInfiniteGallery() {
 
-    /*
-      Remove old clones first
-    */
+    /* Remove old clones */
 
     track.querySelectorAll(".clone").forEach(function(item) {
       item.remove();
     });
 
 
-    /*
-      Original images
-    */
+    /* Get original images */
 
     const originalItems = Array.from(
-      track.querySelectorAll(".gallery-item")
+      track.querySelectorAll(".gallery-item:not(.clone)")
     );
 
 
-    /*
-      Make copies until there is MORE than
-      enough content to cover the screen.
+    if (originalItems.length === 0) {
+      return;
+    }
 
-      This is the important part.
+
+    /*
+      Calculate original set width
     */
 
-    let totalWidth = track.scrollWidth;
+    let originalWidth = 0;
 
-    const screenWidth = window.innerWidth;
+    originalItems.forEach(function(item) {
+
+      originalWidth += item.offsetWidth;
+
+    });
 
 
-    while (totalWidth < screenWidth * 3) {
+    /*
+      Add gaps
+    */
+
+    const gap = parseFloat(
+      window.getComputedStyle(track).gap
+    );
+
+    originalWidth += gap * (originalItems.length - 1);
+
+
+    /*
+      Create enough copies
+      for every screen size
+    */
+
+    const requiredWidth = window.innerWidth * 3;
+
+    let currentWidth = originalWidth;
+
+
+    while (currentWidth < requiredWidth) {
 
       originalItems.forEach(function(item) {
 
@@ -718,30 +872,17 @@ As you move forward in your studies, always remember that education is not just 
 
       });
 
-      totalWidth = track.scrollWidth;
+      currentWidth += originalWidth;
 
     }
 
 
     /*
-      Find first cloned image
+      Exact width of one
+      complete original group
     */
 
-    const firstClone = track.querySelector(".clone");
-
-
-    /*
-      Exact distance between:
-      
-      ORIGINAL IMAGE 1
-      and
-      DUPLICATE IMAGE 1
-
-      No manual calculation.
-    */
-
-    loopWidth = firstClone.offsetLeft;
-
+    loopWidth = originalWidth;
 
     position = 0;
 
@@ -751,9 +892,9 @@ As you move forward in your studies, always remember that education is not just 
   }
 
 
-  /* =========================================
+  /* =========================
      ANIMATION
-  ========================================= */
+  ========================= */
 
   function animate() {
 
@@ -761,8 +902,8 @@ As you move forward in your studies, always remember that education is not just 
 
 
     /*
-      When first complete set moves away,
-      immediately continue from duplicate set.
+      Reset after one complete
+      original group
     */
 
     if (Math.abs(position) >= loopWidth) {
@@ -781,9 +922,9 @@ As you move forward in your studies, always remember that education is not just 
   }
 
 
-  /* =========================================
-     START AFTER PAGE LOAD
-  ========================================= */
+  /* =========================
+     START
+  ========================= */
 
   window.addEventListener("load", function() {
 
@@ -794,20 +935,28 @@ As you move forward in your studies, always remember that education is not just 
   });
 
 
-  /* =========================================
+  /* =========================
      RESIZE
-  ========================================= */
+  ========================= */
+
+  let resizeTimer;
 
   window.addEventListener("resize", function() {
 
-    createInfiniteGallery();
+    clearTimeout(resizeTimer);
+
+    resizeTimer = setTimeout(function() {
+
+      createInfiniteGallery();
+
+    }, 200);
 
   });
 
 
-  /* =========================================
-     FULL SCREEN IMAGE
-  ========================================= */
+  /* =========================
+     OPEN FULL IMAGE
+  ========================= */
 
   document.addEventListener("click", function(e) {
 
@@ -817,25 +966,29 @@ As you move forward in your studies, always remember that education is not just 
 
       lightbox.style.display = "flex";
 
+      document.body.style.overflow = "hidden";
+
     }
 
   });
 
 
-  /* =========================================
+  /* =========================
      CLOSE BUTTON
-  ========================================= */
+  ========================= */
 
   close.addEventListener("click", function() {
 
     lightbox.style.display = "none";
 
+    document.body.style.overflow = "";
+
   });
 
 
-  /* =========================================
+  /* =========================
      CLICK OUTSIDE
-  ========================================= */
+  ========================= */
 
   lightbox.addEventListener("click", function(e) {
 
@@ -843,14 +996,16 @@ As you move forward in your studies, always remember that education is not just 
 
       lightbox.style.display = "none";
 
+      document.body.style.overflow = "";
+
     }
 
   });
 
 
-  /* =========================================
+  /* =========================
      ESC KEY
-  ========================================= */
+  ========================= */
 
   document.addEventListener("keydown", function(e) {
 
@@ -858,12 +1013,14 @@ As you move forward in your studies, always remember that education is not just 
 
       lightbox.style.display = "none";
 
+      document.body.style.overflow = "";
+
     }
 
   });
 
 </script>
-
+```
 
 
 	
