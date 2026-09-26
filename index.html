@@ -508,7 +508,7 @@ As you move forward in your studies, always remember that education is not just 
 <div class="section-gap"></div>
 <!-- SECTION BREAK SPACE END -->                     
 
-```html
+
 <style>
   * {
     box-sizing: border-box;
@@ -781,19 +781,12 @@ As you move forward in your studies, always remember that education is not just 
   <img id="lightboxImage" src="" alt="Full Image">
 
 </div>
-
-
 <script>
 
   const track = document.getElementById("galleryTrack");
   const lightbox = document.getElementById("lightbox");
   const lightboxImage = document.getElementById("lightboxImage");
   const close = document.getElementById("close");
-
-
-  /* =========================
-     SETTINGS
-  ========================= */
 
   const speed = 0.7;
 
@@ -807,60 +800,29 @@ As you move forward in your studies, always remember that education is not just 
 
   function createInfiniteGallery() {
 
-    /* Remove old clones */
-
+    // Remove previous clones
     track.querySelectorAll(".clone").forEach(function(item) {
       item.remove();
     });
 
-
-    /* Get original images */
-
+    // Get only original images
     const originalItems = Array.from(
-      track.querySelectorAll(".gallery-item:not(.clone)")
+      track.querySelectorAll(".gallery-item")
     );
-
 
     if (originalItems.length === 0) {
       return;
     }
 
-
     /*
-      Calculate original set width
+      First create enough copies
+      for all screen sizes
     */
 
-    let originalWidth = 0;
+    let totalWidth = track.scrollWidth;
+    const screenWidth = window.innerWidth;
 
-    originalItems.forEach(function(item) {
-
-      originalWidth += item.offsetWidth;
-
-    });
-
-
-    /*
-      Add gaps
-    */
-
-    const gap = parseFloat(
-      window.getComputedStyle(track).gap
-    );
-
-    originalWidth += gap * (originalItems.length - 1);
-
-
-    /*
-      Create enough copies
-      for every screen size
-    */
-
-    const requiredWidth = window.innerWidth * 3;
-
-    let currentWidth = originalWidth;
-
-
-    while (currentWidth < requiredWidth) {
+    while (totalWidth < screenWidth * 3) {
 
       originalItems.forEach(function(item) {
 
@@ -872,23 +834,30 @@ As you move forward in your studies, always remember that education is not just 
 
       });
 
-      currentWidth += originalWidth;
-
+      totalWidth = track.scrollWidth;
     }
 
 
     /*
-      Exact width of one
-      complete original group
+      IMPORTANT:
+      Use the exact position of the
+      FIRST CLONE.
+
+      This includes the gap correctly.
     */
 
-    loopWidth = originalWidth;
+    const firstClone = track.querySelector(".clone");
 
+    if (firstClone) {
+      loopWidth = firstClone.offsetLeft;
+    }
+
+
+    // Reset position
     position = 0;
 
     track.style.transform =
       "translate3d(0, 0, 0)";
-
   }
 
 
@@ -902,11 +871,12 @@ As you move forward in your studies, always remember that education is not just 
 
 
     /*
-      Reset after one complete
-      original group
+      When one complete original set
+      has moved away, jump exactly to
+      the same position of the clone.
     */
 
-    if (Math.abs(position) >= loopWidth) {
+    if (loopWidth > 0 && Math.abs(position) >= loopWidth) {
 
       position += loopWidth;
 
@@ -918,7 +888,6 @@ As you move forward in your studies, always remember that education is not just 
 
 
     requestAnimationFrame(animate);
-
   }
 
 
@@ -930,7 +899,7 @@ As you move forward in your studies, always remember that education is not just 
 
     createInfiniteGallery();
 
-    animate();
+    requestAnimationFrame(animate);
 
   });
 
@@ -949,13 +918,13 @@ As you move forward in your studies, always remember that education is not just 
 
       createInfiniteGallery();
 
-    }, 200);
+    }, 250);
 
   });
 
 
   /* =========================
-     OPEN FULL IMAGE
+     OPEN IMAGE
   ========================= */
 
   document.addEventListener("click", function(e) {
@@ -967,14 +936,13 @@ As you move forward in your studies, always remember that education is not just 
       lightbox.style.display = "flex";
 
       document.body.style.overflow = "hidden";
-
     }
 
   });
 
 
   /* =========================
-     CLOSE BUTTON
+     CLOSE
   ========================= */
 
   close.addEventListener("click", function() {
@@ -1004,7 +972,7 @@ As you move forward in your studies, always remember that education is not just 
 
 
   /* =========================
-     ESC KEY
+     ESC
   ========================= */
 
   document.addEventListener("keydown", function(e) {
@@ -1020,7 +988,6 @@ As you move forward in your studies, always remember that education is not just 
   });
 
 </script>
-```
 
 
 	
